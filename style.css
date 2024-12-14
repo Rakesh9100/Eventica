@@ -13,6 +13,10 @@
     box-sizing: border-box;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 .logo-container {
     display: flex;
     align-items: center;
@@ -289,16 +293,17 @@ body {
     opacity: 0;
     pointer-events:none;
     transition: all .4s;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.to-top:hover {
+    background: #f0f0f0;
 }
 
 .to-top.active {
     bottom: 32px;
     pointer-events: auto;
     opacity: 1; 
-}
-
-html {
-    scroll-behavior: smooth;
 }
 
 /* Events Section Css */

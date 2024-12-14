@@ -26,26 +26,6 @@ function isEventPast(eventDate) {
     return eventDateObj < todayUTC;
 }
 
-// Scroll to top button
-const toTop = document.querySelector(".to-top");
-
-window.addEventListener("scroll", checkHeight)
-function checkHeight() {
-    if(window.scrollY > 100) {
-        toTop.classList.add("active");
-    }
-    else {
-        toTop.classList.remove("active");
-    }
-}
-
-toTop.addEventListener("click", function() {
-    window.scrollTo({
-        top: 0,
-        behavior: 'smooth'
-    });
-});
-
 // Function to create event cards
 function createEventCard(event, isPastEvent = false) {
     const buttonText = isPastEvent ? 'View Details' : 'Register';
@@ -218,5 +198,41 @@ document.addEventListener('DOMContentLoaded', function() {
             themeOptions.classList.remove('active');
             themeToggle.setAttribute('aria-expanded', 'false');
         }
+    });
+});
+
+// Scroll to top button
+document.addEventListener('DOMContentLoaded', () => {
+    // Select the scroll-to-top button
+    const toTop = document.querySelector(".to-top");
+
+    if (!toTop) {
+        console.error('Scroll-to-top element not found.');
+        return;
+    }
+
+    // Show or hide the button on scroll
+    function checkHeight() {
+        if (window.scrollY > 100) {
+            toTop.classList.add("active");
+        } else {
+            toTop.classList.remove("active");
+        }
+    }
+
+    // Debounce the scroll event for performance
+    let scrollTimeout;
+    window.addEventListener("scroll", () => {
+        clearTimeout(scrollTimeout);
+        scrollTimeout = setTimeout(checkHeight, 100);
+    });
+
+    // Smooth scroll to top on button click
+    toTop.addEventListener("click", (e) => {
+        e.preventDefault();  // Prevent default anchor behavior
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
     });
 });

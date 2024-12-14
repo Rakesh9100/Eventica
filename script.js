@@ -26,6 +26,26 @@ function isEventPast(eventDate) {
     return eventDateObj < todayUTC;
 }
 
+// Scroll to top button
+const toTop = document.querySelector(".to-top");
+
+window.addEventListener("scroll", checkHeight)
+function checkHeight() {
+    if(window.scrollY > 100) {
+        toTop.classList.add("active");
+    }
+    else {
+        toTop.classList.remove("active");
+    }
+}
+
+toTop.addEventListener("click", function() {
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+    });
+});
+
 // Function to create event cards
 function createEventCard(event, isPastEvent = false) {
     const buttonText = isPastEvent ? 'View Details' : 'Register';

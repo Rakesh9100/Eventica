@@ -59,17 +59,19 @@ function createEventCard(event, isPastEvent = false) {
         formattedDate = 'Date not available';
     }
 
-    return `
+    return ` 
         <div class="${isPastEvent ? 'past-event-card' : 'event-card'}">
-            <img src="${event.image}" alt="${event.title}" class="${isPastEvent ? 'past-event-image' : 'event-image'}">
-            <div class="${isPastEvent ? 'past-event-details' : 'event-details'}">
-                <h3 class="${isPastEvent ? 'past-event-title' : 'event-title'}">${event.title}</h3>
-                <p class="${isPastEvent ? 'past-event-date' : 'event-date'}">${formattedDate}</p>
-                <p class="${isPastEvent ? 'past-event-time' : 'event-time'}">${event.time || 'Time not specified'}</p>
-                <p class="${isPastEvent ? 'past-event-location' : 'event-location'}">${event.location || 'Location not specified'}</p>
-                <p class="${isPastEvent ? 'past-event-description' : 'event-description'}">${event.description || 'No description available'}</p>
-                <a href="${event.website || '#'}" target="_blank" rel="noopener noreferrer" class="${buttonClass}">${buttonText}</a>
-            </div>
+            <a href="${event.website || '#'}" target="_blank" rel="noopener noreferrer" class="${isPastEvent ? 'past-card-link' : 'card-link'}">
+                <img src="${event.image}" alt="${event.title}" class="${isPastEvent ? 'past-event-image' : 'event-image'}">
+                <div class="${isPastEvent ? 'past-event-details' : 'event-details'}">
+                    <h3 class="${isPastEvent ? 'past-event-title' : 'event-title'}">${event.title}</h3>
+                    <p class="${isPastEvent ? 'past-event-date' : 'event-date'}">${formattedDate}</p>
+                    <p class="${isPastEvent ? 'past-event-time' : 'event-time'}">${event.time || 'Time not specified'}</p>
+                    <p class="${isPastEvent ? 'past-event-location' : 'event-location'}">${event.location || 'Location not specified'}</p>
+                    <p class="${isPastEvent ? 'past-event-description' : 'event-description'}">${event.description || 'No description available'}</p>
+                    <a href="${event.website || '#'}" target="_blank" rel="noopener noreferrer" class="${buttonClass}">${buttonText}</a>
+                </div>
+            </a>
         </div>
     `;
 }

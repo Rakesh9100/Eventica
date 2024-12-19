@@ -22,6 +22,12 @@ body {
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     transition: all 0.3s ease;
     margin-bottom: 2rem;
+    cursor: pointer;
+}
+
+.past-card-link{
+    text-decoration: none;
+    all: unset;
 }
 
 .past-event-card:hover {

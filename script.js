@@ -47,9 +47,13 @@ function createEventCard(event, isPastEvent = false) {
         }
 
         // Get the components for the desired format
-        const weekday = new Intl.DateTimeFormat('en-US', { weekday: 'long' }).format(eventDateObj);
+        const weekday = new Intl.DateTimeFormat('en-US', {
+            weekday: 'long'
+        }).format(eventDateObj);
         const dayNum = eventDateObj.getUTCDate();
-        const monthName = new Intl.DateTimeFormat('en-US', { month: 'long' }).format(eventDateObj);
+        const monthName = new Intl.DateTimeFormat('en-US', {
+            month: 'long'
+        }).format(eventDateObj);
         const yearNum = eventDateObj.getUTCFullYear();
 
         // Combine components into the desired format
@@ -61,15 +65,17 @@ function createEventCard(event, isPastEvent = false) {
 
     return `
         <div class="${isPastEvent ? 'past-event-card' : 'event-card'}">
-            <img src="${event.image}" alt="${event.title}" class="${isPastEvent ? 'past-event-image' : 'event-image'}">
-            <div class="${isPastEvent ? 'past-event-details' : 'event-details'}">
-                <h3 class="${isPastEvent ? 'past-event-title' : 'event-title'}">${event.title}</h3>
-                <p class="${isPastEvent ? 'past-event-date' : 'event-date'}">${formattedDate}</p>
-                <p class="${isPastEvent ? 'past-event-time' : 'event-time'}">${event.time || 'Time not specified'}</p>
-                <p class="${isPastEvent ? 'past-event-location' : 'event-location'}">${event.location || 'Location not specified'}</p>
-                <p class="${isPastEvent ? 'past-event-description' : 'event-description'}">${event.description || 'No description available'}</p>
-                <a href="${event.website || '#'}" target="_blank" rel="noopener noreferrer" class="${buttonClass}">${buttonText}</a>
-            </div>
+            <a href="${event.website || '#'}" target="_blank" rel="noopener noreferrer" class="${isPastEvent ? 'past-card-link' : 'card-link'}">
+                <img src="${event.image}" alt="${event.title}" class="${isPastEvent ? 'past-event-image' : 'event-image'}">
+                <div class="${isPastEvent ? 'past-event-details' : 'event-details'}">
+                    <h3 class="${isPastEvent ? 'past-event-title' : 'event-title'}">${event.title}</h3>
+                    <p class="${isPastEvent ? 'past-event-date' : 'event-date'}">${formattedDate}</p>
+                    <p class="${isPastEvent ? 'past-event-time' : 'event-time'}">${event.time || 'Time not specified'}</p>
+                    <p class="${isPastEvent ? 'past-event-location' : 'event-location'}">${event.location || 'Location not specified'}</p>
+                    <p class="${isPastEvent ? 'past-event-description' : 'event-description'}">${event.description || 'No description available'}</p>
+                    <a href="${event.website || '#'}" target="_blank" rel="noopener noreferrer" class="${buttonClass}">${buttonText}</a>
+                </div>
+            </a>
         </div>
     `;
 }
@@ -137,7 +143,7 @@ window.addEventListener('scroll', () => {
 });
 
 // Theme switcher functionality
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     const themeToggle = document.getElementById('theme-toggle');
     const themeOptions = document.querySelector('.theme-options');
     const themeButtons = document.querySelectorAll('.theme-btn');
@@ -145,11 +151,26 @@ document.addEventListener('DOMContentLoaded', function() {
     const savedTheme = localStorage.getItem('theme');
 
     const themeAssets = {
-        blue: { logo: '/assets/images/logos/logo1.png', favicon: '/assets/images/favicons/favicon1.png' },
-        red: { logo: '/assets/images/logos/logo2.png', favicon: '/assets/images/favicons/favicon2.png' },
-        yellow: { logo: '/assets/images/logos/logo3.png', favicon: '/assets/images/favicons/favicon3.png' },
-        green: { logo: '/assets/images/logos/logo4.png', favicon: '/assets/images/favicons/favicon4.png' },
-        purple: { logo: '/assets/images/logos/logo5.png', favicon: '/assets/images/favicons/favicon5.png' },
+        blue: {
+            logo: '/assets/images/logos/logo1.png',
+            favicon: '/assets/images/favicons/favicon1.png'
+        },
+        red: {
+            logo: '/assets/images/logos/logo2.png',
+            favicon: '/assets/images/favicons/favicon2.png'
+        },
+        yellow: {
+            logo: '/assets/images/logos/logo3.png',
+            favicon: '/assets/images/favicons/favicon3.png'
+        },
+        green: {
+            logo: '/assets/images/logos/logo4.png',
+            favicon: '/assets/images/favicons/favicon4.png'
+        },
+        purple: {
+            logo: '/assets/images/logos/logo5.png',
+            favicon: '/assets/images/favicons/favicon5.png'
+        },
     };
 
     const updateFavicon = (faviconPath) => {
@@ -165,23 +186,29 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Set initial theme, logo, and favicon based on localStorage
     if (savedTheme && themeAssets[savedTheme]) {
-        const { logo, favicon } = themeAssets[savedTheme];
+        const {
+            logo,
+            favicon
+        } = themeAssets[savedTheme];
         document.documentElement.setAttribute('data-theme', savedTheme);
         logoImage.src = logo;
         updateFavicon(favicon);
     }
 
-    themeToggle.addEventListener('click', function() {
+    themeToggle.addEventListener('click', function () {
         themeOptions.classList.toggle('active');
         const isExpanded = this.getAttribute('aria-expanded') === 'true';
         this.setAttribute('aria-expanded', !isExpanded);
     });
 
     themeButtons.forEach(button => {
-        button.addEventListener('click', function() {
+        button.addEventListener('click', function () {
             const color = this.getAttribute('data-color');
             if (themeAssets[color]) {
-                const { logo, favicon } = themeAssets[color];
+                const {
+                    logo,
+                    favicon
+                } = themeAssets[color];
                 document.documentElement.setAttribute('data-theme', color);
                 localStorage.setItem('theme', color);
                 logoImage.src = logo;
@@ -193,7 +220,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     // Close theme options when clicking outside
-    document.addEventListener('click', function(event) {
+    document.addEventListener('click', function (event) {
         if (!themeToggle.contains(event.target) && !themeOptions.contains(event.target)) {
             themeOptions.classList.remove('active');
             themeToggle.setAttribute('aria-expanded', 'false');
@@ -229,7 +256,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Smooth scroll to top on button click
     toTop.addEventListener("click", (e) => {
-        e.preventDefault();  // Prevent default anchor behavior
+        e.preventDefault(); // Prevent default anchor behavior
         window.scrollTo({
             top: 0,
             behavior: 'smooth'

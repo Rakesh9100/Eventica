@@ -63,7 +63,7 @@ function createEventCard(event, isPastEvent = false) {
         formattedDate = 'Date not available';
     }
 
-    return ` 
+    return `
         <div class="${isPastEvent ? 'past-event-card' : 'event-card'}">
             <a href="${event.website || '#'}" target="_blank" rel="noopener noreferrer" class="${isPastEvent ? 'past-card-link' : 'card-link'}">
                 <img src="${event.image}" alt="${event.title}" class="${isPastEvent ? 'past-event-image' : 'event-image'}">

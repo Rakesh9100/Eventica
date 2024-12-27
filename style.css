@@ -429,7 +429,7 @@ body {
     text-decoration: none;
 }
 
-.past-event-card:hover .register-button {
+.event-card:hover .register-button {
     transform: translate(-50%, 50%);
     opacity: 1;
     background-color: var(--accent-color);

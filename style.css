@@ -499,3 +499,8 @@ body.dark-mode .footer {
 .dark-mode .events{
     background-color: #2a2a2a;
 }
+/* Dark Mode Navbar */
+.dark-mode .navbar {
+    background-color: #2a2a2a !important; /* Dark gray background */
+    transition: background-color 0.3s ease;
+}

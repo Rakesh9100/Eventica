@@ -89,3 +89,24 @@ textarea {
 .submit-button:focus:not(:active) {
     transition: box-shadow 0.3s ease-in-out;
 }
+/* Dark mode styles */
+body.dark-mode .contact-section {
+    background-color: #1e1e1e;
+    color: #f4f4f4;
+}
+
+body.dark-mode .contact-form {
+    background-color: #282828;
+    color: #f4f4f4;
+}
+
+body.dark-mode .contact-form input,
+body.dark-mode .contact-form textarea {
+    background-color: #333;
+    color: #f4f4f4;
+}
+
+body.dark-mode .submit-button {
+    background-color: #444;
+    color: #f4f4f4;
+}

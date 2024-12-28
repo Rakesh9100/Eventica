@@ -78,3 +78,21 @@ body {
     background-color: var(--secondary-color);
     transform: translateY(-2px);
 }
+/* Dark mode styles */
+body.dark-mode .past-events-section {
+    background-color: #1e1e1e;
+    color: #f4f4f4;
+}
+
+body.dark-mode .event-grid {
+    background-color: #282828;
+    color: #f4f4f4;
+}
+
+body.dark-mode .event-card {
+    background-color: #333;
+    color: #f4f4f4;
+}
+body.dark-mode .past-event-card{
+    background-color: #333;
+}

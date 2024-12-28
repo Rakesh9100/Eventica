@@ -110,3 +110,20 @@ body {
         grid-template-columns: 1fr;
     }
 }
+/* Dark mode styles */
+body.dark-mode .about-section {
+    background-color: #1e1e1e;
+    color: #f4f4f4;
+}
+
+body.dark-mode .about-image {
+    filter: brightness(80%);
+}
+
+body.dark-mode .feature-item {
+    background-color: #282828;
+    color: #f4f4f4;
+}
+body.dark-mode .about-content {
+   background-color:rgba(40, 44, 52, 1);
+}

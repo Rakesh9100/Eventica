@@ -312,7 +312,7 @@ body {
     color: #1f1f1f;
     text-decoration: none;
     opacity: 0;
-    pointer-events:none;
+    pointer-events: none;
     transition: all .4s;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
@@ -324,14 +324,14 @@ body {
 .to-top.active {
     bottom: 32px;
     pointer-events: auto;
-    opacity: 1; 
+    opacity: 1;
 }
 
 /* Events Section Css */
 
 .events {
     padding: 6rem 0;
-    background-color:rgba(243, 238, 238, 0.616);
+    background-color: rgba(243, 238, 238, 0.616);
 }
 
 .section-title {
@@ -395,13 +395,15 @@ body {
     color: var(--primary-color);
 }
 
-.event-date, .event-location {
+.event-date,
+.event-location {
     font-size: 0.9rem;
     color: var(--light-text-color);
     margin-bottom: 0.5rem;
 }
 
-.event-time, .past-event-time {
+.event-time,
+.past-event-time {
     font-size: 0.9rem;
     color: #555;
     margin: 0.5rem 0;

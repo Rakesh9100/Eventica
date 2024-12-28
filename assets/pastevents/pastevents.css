@@ -13,7 +13,6 @@ body {
 
 .past-events-section {
     padding: 6rem 0;
-    /* background-color: #fff; */
 }
 
 .past-event-card {
@@ -26,12 +25,6 @@ body {
     border: 2px solid #c3c6ce;
     transition: 0.5s ease-out;
     position: relative;
-    cursor: pointer;
-}
-
-.past-card-link{
-    text-decoration: none;
-    all: unset;
 }
 
 .past-event-card:hover {
@@ -73,40 +66,21 @@ body {
     margin-bottom: 1rem;
 }
 
-/* .gallery-button {
-    display: inline-block;
-    background-color: var(--accent-color);
-    color: #fff;
-    padding: 0.5rem 1rem;
-    border-radius: 5px;
-    text-decoration: none;
-    font-weight: 600;
-    transition: all 0.3s ease;
-}
-
-.gallery-button:hover {
-    background-color: var(--secondary-color);
-    transform: translateY(-2px);
-} */
 .gallery-button {
-    transform: translate(-50%, 125%);
     width: 60%;
     border-radius: 1rem;
     border: none;
-    background-color: var(--accent-color);
     color: #fff;
     font-size: 1rem;
     padding: .5rem 1rem;
     position: relative;
     left: 30%;
     bottom: 0;
-    opacity: 0;
-    transition: 0.3s ease-out;
     text-decoration: none;
+    transition: 0.3s ease-out;
+    background-color: var(--accent-color);
 }
 
 .past-event-card:hover .gallery-button {
-    transform: translate(-50%, 50%);
-    opacity: 1;
     background-color: var(--accent-color);
 }

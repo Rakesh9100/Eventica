@@ -102,6 +102,27 @@ body {
     color: var(--primary-color);
 }
 
+.nav-links a {
+    text-decoration: none;
+    position: relative;
+    color: #000;
+}
+
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    width: 0;
+    height: 2px;
+    background: var(--primary-color);
+    transition: width 0.3s ease-in-out;
+}
+
+.nav-links a:hover::after {
+    width: 100%; /* Animate width to slide the underline */
+}
+
 /* Theme Switcher Css */
 
 .theme-switcher {
@@ -291,7 +312,7 @@ body {
     color: #1f1f1f;
     text-decoration: none;
     opacity: 0;
-    pointer-events:none;
+    pointer-events: none;
     transition: all .4s;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
@@ -303,14 +324,14 @@ body {
 .to-top.active {
     bottom: 32px;
     pointer-events: auto;
-    opacity: 1; 
+    opacity: 1;
 }
 
 /* Events Section Css */
 
 .events {
     padding: 6rem 0;
-    background-color: #fff;
+    background-color: rgba(243, 238, 238, 0.616);
 }
 
 .section-title {
@@ -337,22 +358,30 @@ body {
 }
 
 .event-card {
-    background-color: #fff;
+    background-color: #f9f9f9;
     border-radius: 10px;
     overflow: hidden;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     transition: all 0.3s ease;
+    margin-bottom: 2rem;
+    border: 2px solid #c3c6ce;
+    transition: 0.5s ease-out;
+    position: relative;
 }
 
 .event-card:hover {
     transform: translateY(-5px);
     box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15);
+    border-color: var(--primary-color);
+    box-shadow: 0 4px 18px 0 rgba(0, 0, 0, 0.25);
 }
 
 .event-image {
+    padding: 1rem;
     width: 100%;
     height: 200px;
     object-fit: cover;
+    border-radius: 10px;
 }
 
 .event-details {
@@ -365,13 +394,20 @@ body {
     color: var(--primary-color);
 }
 
-.event-date, .event-location {
+.event-date,
+.event-location {
     font-size: 0.9rem;
     color: var(--light-text-color);
     margin-bottom: 0.5rem;
 }
 
-.event-time, .past-event-time {
+.event-card a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.event-time,
+.past-event-time {
     font-size: 0.9rem;
     color: #555;
     margin: 0.5rem 0;
@@ -383,19 +419,22 @@ body {
 }
 
 .register-button {
-    display: inline-block;
-    background-color: var(--accent-color);
-    color: #fff;
+    width: 60%;
+    border-radius: 1rem;
+    border: none;
+    color: #fff !important;
+    background-color: var(--primary-color);
+    font-size: 1rem;
     padding: 0.5rem 1rem;
-    border-radius: 5px;
+    position: relative;
+    left: 30%;
+    bottom: 0;
     text-decoration: none;
-    font-weight: 600;
-    transition: all 0.3s ease;
+    transition: background-color 0.3s ease;
 }
 
 .register-button:hover {
-    background-color: #c0392b;
-    transform: translateY(-2px);
+    background-color: var(--text-color);
 }
 
 /* Footer Css */
@@ -407,7 +446,7 @@ body {
     padding: 2rem 0;
 }
 
-/* Responsiveness */
+/* Media queries for responsiveness */
 
 @media (max-width: 768px) {
     .navbar-container {

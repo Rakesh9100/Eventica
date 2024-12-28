@@ -27,6 +27,11 @@ body {
     position: relative;
 }
 
+.past-event-card a {
+    text-decoration: none;
+    color: inherit;
+}
+
 .past-event-card:hover {
     transform: translateY(-5px);
     box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15);
@@ -70,17 +75,18 @@ body {
     width: 60%;
     border-radius: 1rem;
     border: none;
-    color: #fff;
+    color: #fff !important;
+    background-color: var(--primary-color);
     font-size: 1rem;
-    padding: .5rem 1rem;
+    padding: 0.5rem 1rem;
     position: relative;
     left: 30%;
     bottom: 0;
     text-decoration: none;
-    transition: 0.3s ease-out;
-    background-color: var(--accent-color);
+    text-decoration: none;
+    transition: background-color 0.3s ease;
 }
 
-.past-event-card:hover .gallery-button {
-    background-color: var(--accent-color);
+.gallery-button:hover {
+    background-color: var(--text-color);
 }

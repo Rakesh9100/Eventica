@@ -8,6 +8,8 @@ body {
     font-family: 'Poppins', sans-serif;
     line-height: 1.6;
     color: var(--text-color);
+    min-height: 100vh;
+    height: 100%;
 }
 
 .about-section {
@@ -98,13 +100,8 @@ body {
 }
 
 @media (max-width: 768px) {
-    .about-section {
-        padding: 4rem 1rem;
-    }
-
     .about-content {
         padding: 1.5rem;
-        margin: 0 1rem;
     }
 
     .about-text {
@@ -118,14 +115,6 @@ body {
 }
 
 @media (max-width: 480px) {
-    .about-section {
-        padding: 3rem 0.5rem;
-    }
-
-    .about-content {
-        padding: 1rem;
-    }
-
     .section-title {
         font-size: 2rem;
     }

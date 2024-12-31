@@ -225,55 +225,93 @@ body {
 /* Hero Section Css */
 
 .hero {
-    background-image: linear-gradient(135deg, rgba(74, 144, 226, 0.8), rgba(231, 76, 60, 0.8)), url('https://images.ctfassets.net/e5382hct74si/5SaFBHqd4zCxkxDNr0xLWl/e9437e7c0a8c6b8a7fc810d72b131370/tech-summit.jpg');
-    background-size: cover;
-    background-position: center;
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    color: #fff;
     position: relative;
+    min-height: 100vh; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: #f8f9fa;
+    overflow: hidden;
 }
 
 .hero-content {
-    max-width: 800px;
-    padding: 2rem;
-    background-color: rgba(0, 0, 0, 0.5);
-    border-radius: 10px;
-    backdrop-filter: blur(10px);
+    max-width: 90%;
+    padding: 30px 10px; 
 }
 
 .hero h1 {
-    font-size: 3.5rem;
-    margin-bottom: 1rem;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    font-size: 48px;
+    font-weight: 600;
+    color: #000;
+    margin: 0;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.highlight-text {
+    font-size: 12vw; 
+    font-weight: 700;
+    color: transparent;
+    background-clip: text;
+    -webkit-background-clip: text;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin: 20px auto;
+    white-space: nowrap; 
+    overflow: hidden; 
+    text-align: center; 
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.3);
+    animation: changeBackground 10s infinite; 
+}
+
+/* Keyframes for background-image transitions */
+@keyframes changeBackground {
+    0% {
+        background-image: url('https://i.ibb.co/v1qbSL4/Slide-16-9-1.png');
+    }
+    20% {
+        background-image: url('https://i.ibb.co/tbBD7dH/Slide-16-9-2.png');
+    }
+    40% {
+        background-image: url('https://i.ibb.co/L8v5tV5/Slide-16-9-3-1.png');
+    }
+    60% {
+        background-image: url('https://i.ibb.co/4THSqLS/Slide-16-9-4.png');
+    }
+    80% {
+        background-image: url('https://i.ibb.co/dj2GfJ6/Slide-16-9-5.png');
+    }
+    100% {
+        background-image: url('https://i.ibb.co/KDnMdKk/Slide-16-9-6.png');
+    }
 }
 
 .hero p {
-    font-size: 1.2rem;
-    max-width: 600px;
-    margin: 0 auto 2rem;
+    font-size: 18px;
+    font-weight: 500;
+    color: #333;
+    margin: 20px 0;
 }
 
 .explore-button {
     display: inline-block;
-    background-color: var(--secondary-color);
+    padding: 15px 30px;
+    font-size: 18px;
+    font-weight: 600;
     color: #fff;
-    padding: 1rem 2.5rem;
+    background-color: var(--secondary-color);
+    border: none;
     border-radius: 50px;
     text-decoration: none;
-    font-weight: 600;
-    transition: all 0.3s ease;
-    text-transform: uppercase;
-    letter-spacing: 1px;
+    transition: all 0.3s;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-top: 40px;
 }
 
 .explore-button:hover {
-    background-color: #e67e22;
-    transform: translateY(-3px);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    background-color: #0056b3;
+    transform: translateY(-2px);
 }
 
 .to-top {

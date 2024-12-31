@@ -4,10 +4,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="../images/favicons/favicon1.png">
     <link rel="stylesheet" href="./contact.css">
     <link rel="stylesheet" href="../../style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap">
     <title>Eventica | Contact Us</title>
 </head>
 
@@ -15,9 +16,12 @@
     <nav class="navbar">
         <div class="container navbar-container">
             <a href="../../index.html" class="logo-container">
-                <img src="" alt="Logo" class="logo">
+                <img src="../images/logos/logo1.png" alt="Logo" class="logo">
                 <span class="logo-text">Eventica</span>
             </a>
+            <button class="mobile-menu-btn" aria-label="Toggle mobile menu">
+                <i class="fas fa-bars"></i>
+            </button>
             <div class="nav-items">
                 <ul class="nav-links">
                     <li><a href="../../index.html"><i class="fas fa-house"></i> Home</a></li>
@@ -75,7 +79,11 @@
 
     <footer class="footer">
         <div class="container">
-            <p>Created By Rakesh Roshan ❤️ | &copy; 2024: All Rights Reserved</p>
+            <p class="copyright">Created By Rakesh Roshan ❤️ | ©
+                <script>
+                    document.write(new Date().getFullYear());
+                </script>: All Rights Reserved
+            </p>
         </div>
     </footer>
 

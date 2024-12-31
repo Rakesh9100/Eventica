@@ -10,6 +10,7 @@
     <meta name="author" content="Rakesh Roshan">
     <meta name="copyright" content="Copyright Rakesh Roshan">
     <link rel="icon" type="image/x-icon" href="./assets/images/favicons/favicon1.png">
+    <link rel="stylesheet" href="./style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap">
     <link rel="stylesheet" href="./style.css">
@@ -24,6 +25,9 @@
                 <img src="./assets/images/logos/logo1.png" alt="Logo" class="logo">
                 <span class="logo-text">Eventica</span>
             </a>
+            <button class="mobile-menu-btn" aria-label="Toggle mobile menu">
+                <i class="fas fa-bars"></i>
+            </button>
             <div class="nav-items">
                 <ul class="nav-links">
                     <li><a href="index.html"><i class="fas fa-house"></i> Home</a></li>
@@ -45,7 +49,7 @@
                         <button class="theme-btn" data-color="yellow" aria-label="Yellow theme"></button>
                         <button class="theme-btn" data-color="green" aria-label="Green theme"></button>
                         <button class="theme-btn" data-color="purple" aria-label="Purple theme"></button>
-                    </div>                    
+                    </div>
                 </div>
             </div>
         </div>
@@ -78,7 +82,11 @@
 
     <footer class="footer">
         <div class="container">
-            <p>Created By Rakesh Roshan ❤️ | &copy; 2024: All Rights Reserved</p>
+            <p class="copyright">Created By Rakesh Roshan ❤️ | ©
+                <script>
+                    document.write(new Date().getFullYear());
+                </script>: All Rights Reserved
+            </p>
         </div>
     </footer>
     <script src="script.js"></script>

@@ -1,48 +1,138 @@
 [
     {
+        "title": "Cloud-Native DevTools Day",
+        "date": "01-02-2025",
+        "time": "1:00 PM - 5:00 PM",
+        "location": "Cloudera, 3rd Floor, Koramangala, Bengaluru, Karnataka 560034, India",
+        "description": "Join Us for the 'Cloud-Native DevTools Day' Meetup in Bangalore! We're thrilled to host Cloud-Native DevTools Day on February 1, 2025, at Cloudera's Bangalore office.",
+        "image": "https://secure.meetupstatic.com/photos/event/3/a/4/4/600_525134916.webp?w=384",
+        "website": "https://www.meetup.com/docker-bangalore/events/304556104"
+    },
+    {
         "title": "IN PERSON! Apache Kafka® Meetup Bangalore",
-        "date": "14-12-2024",
-        "time": "10:30am - 2:00pm",
-        "location": "Nokia Solutions and Networks Pvt Ltd L5 Building, Nagavara, Bengaluru, Karnataka 560045, India",
-        "description": "Hello everyone! Join us for an IN PERSON Apache Kafka® meetup on Dec 14th from 11:00AM, hosted by Nokia in Bangalore!",
+        "date": "18-01-2025",
+        "time": "10:00 AM - 1:00 PM",
+        "location": "Microsoft Reactor Bengaluru, Lavelle Rd, Bengaluru, Karnataka 560001, India",
+        "description": "Hello everyone! Join us for an IN PERSON Apache Kafka® meetup on Jan 18th from 10:00AM, hosted by Microsoft Reactor in Bangalore!",
         "image": "https://secure.meetupstatic.com/photos/event/7/2/1/c/clean_522809212.webp",
-        "website": "https://www.meetup.com/bangalore-kafka-data-streams/events/304754649"
+        "website": "https://www.meetup.com/bangalore-kafka-data-streams/events/305111821"
+    },
+    {
+        "title": ".NET Conf 2024 @ Bengaluru",
+        "date": "18-01-2025",
+        "time": "10:00 AM - 1:00 PM",
+        "location": "Microsoft Luxor North Tower, Mahadevapura, Bengaluru, Karnataka 560048, India",
+        "description": "This year, we're taking the .NET Conf experience to the next level by hosting an in-person event to celebrate our 14th anniversary.",
+        "image": "https://secure.meetupstatic.com/photos/event/b/8/c/1/600_465047297.webp?w=384",
+        "website": "https://www.meetup.com/BDotNetUG/events/305148413"
+    },
+    {
+        "title": "DevTools Day, Bengaluru",
+        "date": "18-01-2025",
+        "time": "10:00 AM - 3:00 PM",
+        "location": "Nokia Solutions and Networks Pvt Ltd L5 Building, Manayata Tech Park, Bengaluru, Karnataka 560045, India",
+        "description": "Join us for the 5th edition of DevTools Day Bengaluru, a community-driven event dedicated to exploring cutting-edge developer tools.",
+        "image": "https://secure.meetupstatic.com/photos/event/2/3/2/8/600_525069000.webp?w=384",
+        "website": "https://www.meetup.com/collabnix/events/304968647"
+    },
+    {
+        "title": "ReactPlay Bangalore Meetup",
+        "date": "11-01-2025",
+        "time": "9:30 AM - 2:00 PM",
+        "location": "Microsoft Reactor Bengaluru, Lavelle Rd, Bengaluru, Karnataka 560001, India",
+        "description": "In this meetup, we will explore the talks on the latest features and technologies in tech. We will also have plenty of time for networking and Q&A. This meetup is open to all experience levels.",
+        "image": "https://secure.meetupstatic.com/photos/event/5/5/e/1/600_525321985.webp?w=384",
+        "website": "https://www.meetup.com/reactplay-bengaluru/events/305195721"
+    },
+    {
+        "title": "AI Community Day - Bengaluru",
+        "date": "08-01-2025",
+        "time": "9:00 AM - 6:00 PM",
+        "location": "Microsoft Reactor Bengaluru, Lavelle Rd, Bengaluru, Karnataka 560001, India",
+        "description": "Welcome to AI Community Day! A day where AI enthusiasts, developers, and innovators come together to geek out, connect, and share their knowledge around artificial intelligence!",
+        "image": "https://secure.meetupstatic.com/photos/event/9/7/c/2/600_525278850.webp?w=384",
+        "website": "https://www.meetup.com/microsoft-reactor-bengaluru/events/305142778"
+    },
+    {
+        "title": "Microsoft AI Tour",
+        "date": "07-01-2025",
+        "time": "8:00 AM - 5:00 PM",
+        "location": "Bangalore International Exhibition Centre, Madanayakahalli, Bengaluru, Karnataka 562162, India",
+        "description": "Microsoft AI Tour in Bengaluru. Learn from industry experts and Microsoft engineering teams with hands-on technical workshops.",
+        "image": "https://media.licdn.com/dms/image/sync/v2/D5627AQHMHdzD9IFYHg/articleshare-shrink_800/articleshare-shrink_800/0/1733810952528?e=2147483647&v=beta&t=Gei_Ds62Wpo10DehqEVWT4N6KVQ4JhKIZzgXek8ZyOs",
+        "website": "https://aitour.microsoft.com/en-US/Bengaluru"
+    },
+    {
+        "title": "JS Meetup #95: Mastering web applications",
+        "date": "04-01-2025",
+        "time": "10:30 AM - 12:30 PM",
+        "location": "Microsoft Reactor Bengaluru, Lavelle Rd, Bengaluru, Karnataka 560001, India",
+        "description": "Join the FREE meetup to learn and network. Talks are by experts in field of web application development. Special thanks to partner Microsoft Reactor.",
+        "image": "https://secure.meetupstatic.com/photos/event/9/8/2/7/clean_497138951.webp",
+        "website": "https://www.meetup.com/javascriptmeetup/events/305080451"
+    },
+    {
+        "title": "Azure Developer Day",
+        "date": "28-12-2024",
+        "time": "11:00 AM - 2:00 PM",
+        "location": "Microsoft Luxor North Tower, Mahadevapura, Bengaluru, Karnataka 560048, India",
+        "description": "Dive into the future of cloud development at Azure Developer Day! This event is specially crafted for developers and professionals.",
+        "image": "https://bit.ly/4gu1m1d",
+        "website": "https://reskilll.com/event/devdayblr"
+    },
+    {
+        "title": "TSOW x greytHR x SpringVerify HR Meetup",
+        "date": "21-12-2024",
+        "time": "4:00 PM - 7:00 PM",
+        "location": "Bloom Hotel, Sector 6, HSR Layout, Bengaluru, Karnataka 560102, India",
+        "description": "🎉 Hello Bangalore! 🎉 Are you ready for an exciting event of networking and growth? TSOW is thrilled to partner with greytHR and SpringVerify.",
+        "image": "https://bit.ly/3PkWkYB",
+        "website": "https://lu.ma/2kn4xmhz"
+    },
+    {
+        "title": "DevFest Bangalore Ext 2024",
+        "date": "21-12-2024",
+        "time": "10:00 AM - 1:30 PM",
+        "location": "AQUERALABS INDIA, 2nd Floor, Whitefield, Bengaluru, Karnataka 560066, India",
+        "description": "Closing out an incredible year, DevFest Bangalore Ext 2024 is here to bring the tech community together before we say Good Bye to 2024!",
+        "image": "https://res.cloudinary.com/startup-grind/image/upload/c_scale,w_2560/c_crop,h_640,w_2560,y_0.0_mul_h_sub_0.0_mul_640/c_crop,h_640,w_2560/c_fill,dpr_2.0,f_auto,g_center,q_auto:good/v1/gcs/platform-data-goog/event_banners/Banner_pxJs8fI.png",
+        "website": "https://gdg.community.dev/events/details/google-gdg-bangalore-presents-devfest-bangalore-ext-2024/"
+    },
+    {
+        "title": "Beyond the Resume: My Secrets to Career Growth",
+        "date": "20-12-2024",
+        "time": "6:00 PM - 8:00 PM",
+        "location": "Microsoft Reactor Bengaluru, Lavelle Rd, Bengaluru, Karnataka 560001, India",
+        "description": "Embark on a transformative journey as I share my personal experiences and strategies that turned me from a newbie to a seasoned professional.",
+        "image": "https://secure.meetupstatic.com/photos/event/c/b/8/c/600_525052108.webp?w=384",
+        "website": "https://www.meetup.com/microsoft-reactor-bengaluru/events/304949579"
+    },
+    {
+        "title": "MagicBall - AI Hacks: Decoding AI in Action",
+        "date": "16-12-2024",
+        "time": "6:00 PM - 8:00 PM",
+        "location": "Hasura Bangalore, Koramangala, Bengaluru, Karnataka 560034, India",
+        "description": "AI Engineers of Bangalore, Presenting: MagicBall - AI Hacks: Decoding AI in Action hosted by Grayscale Ventures in partnership with MagicBall.",
+        "image": "https://images.lumacdn.com/cdn-cgi/image/format=auto,fit=cover,dpr=2,background=white,quality=75,width=280,height=280/event-covers/ra/c0b60711-5aa2-4a9f-aabe-61c038feb79a",
+        "website": "https://lu.ma/afmcfm5g"
     },
     {
         "title": "38th Scrum Meetup Bangalore",
         "date": "14-12-2024",
         "time": "10:30am - 4:00pm",
-        "location": "DevOn Software, Lower Ground Floor, Block-2a Hibiscus, Devarabisanahalli, Uttarahalli Hobli, Bengaluru, Karnataka 560087, India",
-        "description": "We are very much delighted to ANNOUNCE our upcoming 38th Scrum Bangalore Meetup happening in our Devon Software",
+        "location": "DevOn Software, Devarabisanahalli, Bengaluru, Karnataka 560087, India",
+        "description": "We are very much delighted to announce our upcoming 38th Scrum Bangalore Meetup happening in our Devon Software.",
         "image": "https://secure.meetupstatic.com/photos/event/d/9/f/0/highres_524995792.webp",
         "website": "https://www.meetup.com/scrumdevon/events/304686055"
     },
     {
-        "title": "Supercharging Knowledge Graphs: RAG, Ontologies, & LLMs",
-        "date": "14-12-2024",
-        "time": "10:00am - 2:00pm",
-        "location": "Microsoft Reactor Bengaluru, Lavelle Rd, Bengaluru, Karnataka 560001, India",
-        "description": "Join us at Microsoft Reactor, Bengaluru, for an action-packed session diving into Generative AI, RAGs, Graph Databases, and LLMs!",
-        "image": "https://images.lumacdn.com/cdn-cgi/image/format=auto,fit=cover,dpr=2,background=white,quality=75,width=280,height=280/event-covers/nu/9b3e9d4b-9026-4bda-a127-9f2851b543ed",
-        "website": "https://lu.ma/jvbmuijh"
-    },
-    {
-        "title": "OpsVerse Social: Bengaluru '24",
+        "title": "OpsVerse Social",
         "date": "13-12-2024",
         "time": "6:30pm - 9:30pm",
         "location": "BLR Brewing Co, 450, 1st Floor, 17th Cross Rd, HSR Layout, Bengaluru, Karnataka 560102, India",
         "description": "Join us at OpsVerse Social: Bengaluru for an evening of great conversations, networking, and fun at The Bangalore Brewing Co.",
         "image": "https://images.lumacdn.com/cdn-cgi/image/format=auto,fit=cover,dpr=1,background=white,quality=75,width=400,height=400/event-covers/bm/f3ee6377-66e9-4624-8ad8-b8372e483e62",
         "website": "https://lu.ma/2j96ehjo"
-    },
-    {
-        "title": "InfoSec Meetup",
-        "date": "9-12-2024",
-        "time": "10:00am - 1:00pm",
-        "location": "Red Hat India Pvt. Ltd., Doddanekkundi, Bengaluru, Karnataka 560037, India",
-        "description": "Join us for an exciting InfoSec Meetup in Bengaluru! This in-person event will bring together InfoSec enthusiasts, professionals, and experts to discuss the latest challenges.",
-        "image": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F905897373%2F2511021458451%2F1%2Foriginal.20241125-130743?crop=focalpoint&fit=crop&w=940&auto=format%2Ccompress&q=75&sharp=10&fp-x=0.11553030303&fp-y=0.423507462687&s=c57c5310c5c0948acdfc60e3a59cfdf3",
-        "website": "https://www.eventbrite.com/e/infosec-meetup-tickets-1091120263079"
     },
     {
         "title": "Save The Date: Team on Tour Recap",
@@ -230,7 +320,7 @@
         "time": "3:30pm - 6:30pm",
         "location": "Google Bangalore, Old Madras Rd, Bennigana Halli, Bengaluru, Karnataka 560016, India",
         "description": "Join us for an insightful day filled with discussions, networking, and learning about the latest advancements.",
-        "image": "https://kommunity-app.s3.ap-south-1.amazonaws.com/a3gtpvs0sqbndajd45meo0z2bk00?response-content-disposition=inline%3B%20filename%3D%22BangaloreMeetup.png%22%3B%20filename%2A%3DUTF-8%27%27BangaloreMeetup.png&response-content-type=image%2Fpng&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAXUMQJEJBCK2EC566%2F20241211%2Fap-south-1%2Fs3%2Faws4_request&X-Amz-Date=20241211T174431Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=d4e6c39bba1e962edbc6570636c356b1e531c297528e68c56b71e7531461c9ef",
+        "image": "https://kommunity-app.s3.ap-south-1.amazonaws.com/a3gtpvs0sqbndajd45meo0z2bk00?response-content-disposition=inline%3B%20filename%3D%22BangaloreMeetup.png%22%3B%20filename%2A%3DUTF-8%27%27BangaloreMeetup.png&response-content-type=image%2Fpng&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAXUMQJEJBCK2EC566%2F20241228%2Fap-south-1%2Fs3%2Faws4_request&X-Amz-Date=20241228T170757Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=e50113ed7b870ee83c7be0e202982cd3295431428e5424430e32e88b50ef1e6d",
         "website": "https://www.commudle.com/communities/devrelsquad/events/meetup-zero-gen-ai-by-devrelsquad-and-google-for-developers"
     },
     {

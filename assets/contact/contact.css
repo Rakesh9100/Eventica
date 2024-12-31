@@ -37,18 +37,15 @@ textarea {
     border: 1px solid #e0e0e0;
     border-radius: 4px;
     font-size: 16px;
-    transition: 
-        border-color 0.3s ease,
-        transform 0.3s ease,
-        box-shadow 0.3s ease;
+    transition: border-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 input[type="text"]:hover,
 input[type="email"]:hover,
 textarea:hover {
     border-color: var(--primary-color);
-    transform: scale(1.02); /* Slightly scale up the input field */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Add a shadow for better highlighting */
+    transform: scale(1.02);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 input[type="text"]:focus,
@@ -56,8 +53,8 @@ input[type="email"]:focus,
 textarea:focus {
     outline: none;
     border-color: var(--primary-color);
-    transform: scale(1.03); /* Slightly more scale on focus */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Stronger shadow on focus */
+    transform: scale(1.03);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 textarea {
@@ -74,7 +71,7 @@ textarea {
     font-weight: 600;
     border-radius: 4px;
     cursor: pointer;
-    transition: 
+    transition:
         background-color 0.3s ease-in-out,
         opacity 0.3s ease-in-out,
         transform 0.3s ease-in-out,

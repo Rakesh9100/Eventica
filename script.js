@@ -228,6 +228,21 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 });
 
+// Mobile menu functionality
+const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+const navItems = document.querySelector('.nav-items');
+
+mobileMenuBtn.addEventListener('click', () => {
+    navItems.classList.toggle('active');
+});
+
+// Close mobile menu when clicking outside
+document.addEventListener('click', (e) => {
+    if (!navItems.contains(e.target) && !mobileMenuBtn.contains(e.target)) {
+        navItems.classList.remove('active');
+    }
+});
+
 // Scroll to top button
 document.addEventListener('DOMContentLoaded', () => {
     // Select the scroll-to-top button

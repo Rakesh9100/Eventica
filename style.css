@@ -15,37 +15,25 @@
 
 html {
     scroll-behavior: smooth;
-}
-
-.logo-container {
-    display: flex;
-    align-items: center;
-    text-decoration: none;
-    color: var(--primary-color);
-    font-size: 1.5rem;
-    font-weight: 600;
-}
-
-.logo {
-    width: 50px;
-    height: auto;
-}
-
-.logo-text {
-    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
 }
 
 body {
-    font-family: 'Poppins', sans-serif;
+    height: 100%;
     line-height: 1.6;
+    min-height: 100vh;
     color: var(--text-color);
+    font-family: 'Poppins', sans-serif;
     background-color: var(--background-color);
 }
 
 .container {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 20px;
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
 }
 
 /* Navbar Css */
@@ -59,6 +47,32 @@ body {
     right: 0;
     z-index: 1000;
     transition: background-color 0.3s ease;
+    height: 70px;
+    display: flex;
+    align-items: center;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: var(--primary-color);
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--primary-color);
+    text-decoration: none;
+    transition: color 0.3s ease;
+    width: 50px;
+    height: auto;
+}
+
+.logo-text {
+    font-family: 'Poppins', sans-serif;
 }
 
 .navbar-container {
@@ -68,23 +82,15 @@ body {
     padding: 1rem 0;
 }
 
-.logo {
-    font-size: 1.5rem;
-    font-weight: 600;
-    color: var(--primary-color);
-    text-decoration: none;
-    transition: color 0.3s ease;
-}
-
 .nav-items {
     display: flex;
     align-items: center;
+    gap: 1rem;
 }
 
 .nav-links {
     display: flex;
     list-style: none;
-    margin-right: 1rem;
 }
 
 .nav-links li {
@@ -246,7 +252,6 @@ body {
 /* Hero Section Css */
 
 .hero {
-    background-image: linear-gradient(135deg, rgba(74, 144, 226, 0.8), rgba(231, 76, 60, 0.8)), url('https://images.ctfassets.net/e5382hct74si/5SaFBHqd4zCxkxDNr0xLWl/e9437e7c0a8c6b8a7fc810d72b131370/tech-summit.jpg');
     background-size: cover;
     background-position: center;
     height: 100vh;
@@ -256,10 +261,11 @@ body {
     text-align: center;
     color: #fff;
     position: relative;
+    background: linear-gradient(135deg, rgba(74, 144, 226, 0.8), rgba(231, 76, 60, 0.8));
 }
 
 .hero-content {
-    max-width: 800px;
+    max-width: min(800px, 90%);
     padding: 2rem;
     background-color: rgba(0, 0, 0, 0.5);
     border-radius: 10px;
@@ -267,13 +273,13 @@ body {
 }
 
 .hero h1 {
-    font-size: 3.5rem;
+    font-size: clamp(2rem, 5vw, 3.5rem);
     margin-bottom: 1rem;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 .hero p {
-    font-size: 1.2rem;
+    font-size: clamp(1rem, 3vw, 1.2rem);
     max-width: 600px;
     margin: 0 auto 2rem;
 }
@@ -353,8 +359,9 @@ body {
 
 .event-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 2rem;
+    padding: 1rem;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
 }
 
 .event-card {
@@ -437,6 +444,15 @@ body {
     background-color: var(--text-color);
 }
 
+.mobile-menu-btn {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 1rem;
+    transform: scale(1.4);
+}
+
 /* Footer Css */
 
 .footer {
@@ -448,31 +464,50 @@ body {
 
 /* Media queries for responsiveness */
 
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
     .navbar-container {
-        flex-direction: column;
-        align-items: center;
+        padding: 0.8rem 0;
+    }
+
+    .mobile-menu-btn {
+        display: block;
     }
 
     .nav-items {
+        position: fixed;
+        top: 70px;
+        left: -100%;
+        width: 100%;
+        height: calc(100vh - 70px);
+        background-color: white;
         flex-direction: column;
-        align-items: center;
-        margin-top: 1rem;
+        padding: 2rem;
+        transition: left 0.3s ease;
+    }
+
+    .nav-items.active {
+        left: 0;
     }
 
     .nav-links {
         flex-direction: column;
         align-items: center;
+        width: 100%;
         margin-right: 0;
-        margin-bottom: 1rem;
     }
 
     .nav-links li {
-        margin: 0.5rem 0;
+        width: 100%;
+        text-align: center;
+        padding: 1rem 0;
+        border-bottom: 1px solid #eee;
+        margin-left: 0;
     }
+}
 
-    .theme-switcher {
-        margin-top: 1rem;
+@media (max-width: 768px) {
+    html {
+        font-size: 14px;
     }
 
     .theme-options {
@@ -483,17 +518,45 @@ body {
     .theme-options.active {
         transform: translateX(50%) translateY(0);
     }
+}
 
-    .hero h1 {
-        font-size: 2.5rem;
+@media (max-width: 480px) {
+    .container {
+        width: 95%;
+        padding: 0 0.5rem;
     }
 
-    .hero p {
-        font-size: 1rem;
+    .hero-content {
+        padding: 1.5rem;
     }
 
+    .event-card {
+        margin: 0 -1rem;
+    }
+
+    .to-top {
+        bottom: 1rem;
+        right: 1rem;
+    }
+}
+
+@media print {
+
+    .navbar,
+    .theme-switcher,
+    .to-top,
     .explore-button {
-        padding: 0.8rem 2rem;
+        display: none;
+    }
+
+    .hero {
+        height: auto;
+        min-height: auto;
+    }
+
+    .event-card {
+        break-inside: avoid;
+        page-break-inside: avoid;
     }
 }
 /* Dark mode styles */

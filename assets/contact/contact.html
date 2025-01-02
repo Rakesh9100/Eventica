@@ -18,9 +18,9 @@
             font-family: 'Poppins', sans-serif;
             background-color: #f7f8fa;
             color: #333;
-            
+            line-height: 1.6;
         }
-
+    
         /* Navbar Styles */
         .navbar {
             position: sticky;
@@ -30,59 +30,52 @@
             box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
             z-index: 1000;
         }
-
+    
         .navbar-container {
             display: flex;
             justify-content: space-between;
             align-items: center;
             padding: 10px 20px;
-            gap: 70px;
+            gap: 20px;
         }
-
+    
         .logo-container {
             display: flex;
             align-items: center;
             text-decoration: none;
         }
-
+    
         .logo {
             height: 40px;
             margin-right: 10px;
         }
-
+    
         .logo-text {
             font-size: 1.2em;
             font-weight: bold;
             color: #4a90e2;
-            margin-right: 100px;
         }
-
+    
         .nav-links {
             display: flex;
             list-style: none;
             padding: 0;
-            gap: 8px;
-            margin: auto;
-           margin-left: auto;
-            justify-content: center;
-            align-items: center;
+            gap: 40px;
+            margin: 0;
+            margin-right: 70px;
         }
-
-        .nav-links li {
-            margin: 0 20px;
-        }
-
-        .nav-links a {
+    
+        .nav-links li a {
             text-decoration: none;
             color: #333;
             font-size: 1em;
             transition: color 0.3s ease;
         }
-
-        .nav-links a:hover {
+    
+        .nav-links li a:hover {
             color: #4a90e2;
         }
-
+    
         .mobile-menu-btn {
             display: none;
             font-size: 1.5em;
@@ -90,46 +83,49 @@
             border: none;
             cursor: pointer;
         }
-
-        /* Container Styles */
+    
+        /* Main Container Styles */
         .container {
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
             align-items: center;
-            /* padding: 20px; */
-            min-height: calc(100vh - 120px); /* Adjust height dynamically */
+            padding: 20px;
+            min-height: calc(100vh - 120px);
+            gap: 20px;
         }
-
+    
         .illustration-section img {
-            max-width: 90%;
+            max-width: 100%;
+            width: 700px;
             height: auto;
-            max-height: 700px;
-            margin: 0 auto;
+            
         }
-
+    
         .form-section {
             flex: 1;
             max-width: 500px;
-            padding: 10px;
+            padding: 20px;
             text-align: center;
+            background-color: #fff;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
         }
-
+    
         .form-section h1 {
-            margin-bottom: 10px;
-            font-size: 2.7em;
+            font-size: 2em;
             color: #4a90e2;
+            margin-bottom: 10px;
         }
-
+    
         .form-section p {
+            font-size: 1.1em;
             margin-bottom: 20px;
-            font-size: 1.2em;
-            color: #333;
         }
-
+    
         .form-section input,
         .form-section textarea {
-            width: 100%;
+            width: 99%;
             padding: 10px;
             margin: 10px 0;
             border: 1px solid #ddd;
@@ -137,7 +133,7 @@
             border-radius: 8px;
             font-size: 1em;
         }
-
+    
         .form-section button {
             width: 100%;
             padding: 10px;
@@ -149,17 +145,16 @@
             cursor: pointer;
             transition: 0.3s ease;
         }
-
+    
         .form-section button:hover {
             background: #3a78c2;
             transform: scale(1.02);
         }
-
+    
         .social-links {
             margin-top: 20px;
-            text-align: center;
         }
-
+    
         .social-links a {
             margin: 0 10px;
             font-size: 1.5em;
@@ -167,34 +162,32 @@
             text-decoration: none;
             transition: color 0.3s ease;
         }
-
+    
         .social-links a:hover {
             color: #4a90e2;
         }
-
+    
+        /* Footer Styles */
         footer {
             text-align: center;
-            padding: 5px 20px;
+            padding: 15px 20px;
             background-color: #333;
             color: white;
-            margin-top: 0;
+            font-size: 1em;
         }
-
-        /* Responsive Styles */
+    
         @media (max-width: 768px) {
             .navbar-container {
                 flex-wrap: wrap;
-                justify-content: space-between;
             }
-
+    
             .mobile-menu-btn {
                 display: block;
             }
-
+    
             .nav-links {
                 display: none;
                 flex-direction: column;
-                align-items: flex-start;
                 width: 100%;
                 background-color: #fff;
                 position: absolute;
@@ -202,27 +195,37 @@
                 right: 0;
                 box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
             }
-
+    
             .nav-links li {
+                text-align: left;
                 margin: 10px 0;
             }
-
+    
             .mobile-menu-btn.active + .nav-links {
                 display: flex;
             }
-
-            .container {
-                flex-direction: column;
-                text-align: center;
-            }
-
+    
             .form-section {
-                padding: 20px 10px;
-                max-width: 90%;
-                margin: 0 auto;
+                padding: 20px;
+                max-width: 100%;
+            }
+        }
+    
+        @media (max-width: 480px) {
+            .form-section h1 {
+                font-size: 1.5em;
+            }
+    
+            .form-section p {
+                font-size: 0.9em;
+            }
+    
+            footer {
+                font-size: 0.9em;
             }
         }
     </style>
+    
 </head>
 
 <body>

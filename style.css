@@ -442,7 +442,7 @@ body {
 }
 
 .register-button:hover {
-    background-color: var(--text-color);
+    background-color: #686969;
 }
 
 .mobile-menu-btn {

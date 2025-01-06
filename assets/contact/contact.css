@@ -122,3 +122,23 @@ textarea {
 .submit-button:focus:not(:active) {
     transition: box-shadow 0.3s ease-in-out;
 }
+
+
+
+body{
+    display: flex;
+    flex-direction: column;
+    
+}
+footer{
+    margin-top: auto;
+}
+form h1{
+    text-align: center;
+}
+#error{
+    color: #e74c3c;
+}
+#success{
+    color: #4a90e2;
+}

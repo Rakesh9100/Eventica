@@ -456,11 +456,12 @@ body {
 
 /* Footer Css */
 
-.footer {
-    background-color: #333;
-    color: #fff;
+footer {
     text-align: center;
-    padding: 2rem 0;
+    padding: 15px 20px;
+    background-color: #333;
+    color: white;
+    font-size: 1em;
 }
 
 /* Dark mode Css */

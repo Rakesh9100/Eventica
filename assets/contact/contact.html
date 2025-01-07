@@ -6,231 +6,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/x-icon" href="../images/favicons/favicon1.png">
     <link rel="stylesheet" href="./contact.css">
-    <!-- <link rel="stylesheet" href="../../style.css"> -->
+    <link rel="stylesheet" href="../../style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap">
-    <title>Eventica | Contact Us</title>
-
-    <style>
-        /* General Styles */
-        body {
-            margin: 0;
-            font-family: 'Poppins', sans-serif;
-            background-color: #f7f8fa;
-            color: #333;
-            line-height: 1.6;
-        }
-    
-        /* Navbar Styles */
-        .navbar {
-            position: sticky;
-            top: 0;
-            width: 100%;
-            background-color: #fff;
-            box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
-            z-index: 1000;
-        }
-    
-        .navbar-container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 10px 20px;
-            gap: 20px;
-        }
-    
-        .logo-container {
-            display: flex;
-            align-items: center;
-            text-decoration: none;
-        }
-    
-        .logo {
-            height: 40px;
-            margin-right: 10px;
-        }
-    
-        .logo-text {
-            font-size: 1.2em;
-            font-weight: bold;
-            color: #4a90e2;
-        }
-    
-        .nav-links {
-            display: flex;
-            list-style: none;
-            padding: 0;
-            gap: 40px;
-            margin: 0;
-            margin-right: 70px;
-        }
-    
-        .nav-links li a {
-            text-decoration: none;
-            color: #333;
-            font-size: 1em;
-            transition: color 0.3s ease;
-        }
-    
-        .nav-links li a:hover {
-            color: #4a90e2;
-        }
-    
-        .mobile-menu-btn {
-            display: none;
-            font-size: 1.5em;
-            background: none;
-            border: none;
-            cursor: pointer;
-        }
-    
-        /* Main Container Styles */
-        .container {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            align-items: center;
-            padding: 20px;
-            min-height: calc(100vh - 120px);
-            gap: 20px;
-        }
-    
-        .illustration-section img {
-            max-width: 100%;
-            width: 700px;
-            height: auto;
-            
-        }
-    
-        .form-section {
-            flex: 1;
-            max-width: 500px;
-            padding: 20px;
-            text-align: center;
-            background-color: #fff;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-            border-radius: 8px;
-        }
-    
-        .form-section h1 {
-            font-size: 2em;
-            color: #4a90e2;
-            margin-bottom: 10px;
-        }
-    
-        .form-section p {
-            font-size: 1.1em;
-            margin-bottom: 20px;
-        }
-    
-        .form-section input,
-        .form-section textarea {
-            width: 99%;
-            padding: 10px;
-            margin: 10px 0;
-            border: 1px solid #ddd;
-            background-color: #e9eef5;
-            border-radius: 8px;
-            font-size: 1em;
-        }
-    
-        .form-section button {
-            width: 100%;
-            padding: 10px;
-            background: #4a90e2;
-            color: #fff;
-            border: none;
-            border-radius: 8px;
-            font-size: 1em;
-            cursor: pointer;
-            transition: 0.3s ease;
-        }
-    
-        .form-section button:hover {
-            background: #3a78c2;
-            transform: scale(1.02);
-        }
-    
-        .social-links {
-            margin-top: 20px;
-        }
-    
-        .social-links a {
-            margin: 0 10px;
-            font-size: 1.5em;
-            color: #333;
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
-    
-        .social-links a:hover {
-            color: #4a90e2;
-        }
-    
-        /* Footer Styles */
-        footer {
-            text-align: center;
-            padding: 15px 20px;
-            background-color: #333;
-            color: white;
-            font-size: 1em;
-        }
-    
-        @media (max-width: 768px) {
-            .navbar-container {
-                flex-wrap: wrap;
-            }
-    
-            .mobile-menu-btn {
-                display: block;
-            }
-    
-            .nav-links {
-                display: none;
-                flex-direction: column;
-                width: 100%;
-                background-color: #fff;
-                position: absolute;
-                top: 60px;
-                right: 0;
-                box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
-            }
-    
-            .nav-links li {
-                text-align: left;
-                margin: 10px 0;
-            }
-    
-            .mobile-menu-btn.active + .nav-links {
-                display: flex;
-            }
-    
-            .form-section {
-                padding: 20px;
-                max-width: 100%;
-            }
-        }
-    
-        @media (max-width: 480px) {
-            .form-section h1 {
-                font-size: 1.5em;
-            }
-    
-            .form-section p {
-                font-size: 0.9em;
-            }
-    
-            footer {
-                font-size: 0.9em;
-            }
-        }
-    </style>
-    
+    <title>Eventica | Contact Us</title>    
 </head>
 
 <body>
     <nav class="navbar">
-        <div class="navbar-container">
+        <div class="container navbar-container">
             <a href="../../index.html" class="logo-container">
                 <img src="../images/logos/logo1.png" alt="Logo" class="logo">
                 <span class="logo-text">Eventica</span>
@@ -238,54 +22,71 @@
             <button class="mobile-menu-btn" aria-label="Toggle mobile menu">
                 <i class="fas fa-bars"></i>
             </button>
-            <ul class="nav-links">
-                <li><a href="../../index.html"><i class="fas fa-house"></i> Home</a></li>
-                <li><a href="../about/about.html"><i class="fas fa-circle-info"></i> About</a></li>
-                <li><a href="../../index.html#events"><i class="fas fa-calendar-alt"></i> Events</a></li>
-                <li><a href="../pastevents/pastevents.html"><i class="fas fa-calendar-check"></i> Past Events</a></li>
-                <li><a href="#"><i class="fas fa-phone"></i> Contact</a></li>
-            </ul>
+            <div class="nav-items">
+                <ul class="nav-links">
+                    <li><a href="../../index.html"><i class="fas fa-house"></i> Home</a></li>
+                    <li><a href="../about/about.html"><i class="fas fa-circle-info"></i> About</a></li>
+                    <li><a href="../../index.html#events"><i class="fas fa-calendar-alt"></i> Upcoming Events</a></li>
+                    <li><a href="../pastevents/pastevents.html"><i class="fas fa-calendar-check"></i> Past Events</a></li>
+                    <li><a href="#"><i class="fas fa-phone"></i> Contact</a></li>
+                </ul>
+                <div class="theme-switcher">
+                    <button id="theme-toggle" aria-label="Change theme color">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="12" r="5"/>
+                            <path d="M12 1v2M12 21v2M4.2 4.2l1.4 1.4M18.4 18.4l1.4 1.4M1 12h2M21 12h2M4.2 19.8l1.4-1.4M18.4 5.6l1.4-1.4"/>
+                        </svg>
+                    </button>
+                    <div class="theme-options">
+                        <button class="theme-btn" data-color="blue" aria-label="Blue theme"></button>
+                        <button class="theme-btn" data-color="red" aria-label="Red theme"></button>
+                        <button class="theme-btn" data-color="yellow" aria-label="Yellow theme"></button>
+                        <button class="theme-btn" data-color="green" aria-label="Green theme"></button>
+                        <button class="theme-btn" data-color="purple" aria-label="Purple theme"></button>
+                    </div>
+                </div>
+            </div>
         </div>
     </nav>
 
     <main>
-        <div class="container">
+        <div class="contact-container">
             <div class="illustration-section">
-                <img src="image.png" alt="Contact Illustration">
+                <img src="../images/contact.png" alt="Contact Illustration">
             </div>
             <div class="form-section">
                 <h1>CONTACT US</h1>
                 <p>We would love to hear from you</p>
-                <form>
-                    <input type="text" name="name" placeholder="Your Name" required>
-                    <input type="email" name="email" placeholder="Your Email" required>
-                    <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+                <form name="Eventica Contact" autocomplete="off" netlify>
+                    <input type="text" id="name" name="name" placeholder="Your Name" required>
+                    <input type="email" id="name" name="email" placeholder="Your Email" required>
+                    <textarea id="message" name="message" rows="5" placeholder="Your Message" required></textarea>
+
                     <button type="submit">Send Message</button>
                 </form>
                 <div class="social-links">
-                    <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook"></i></a>
-                    <a href="https://twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
-                    <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
-                    <a href="https://linkedin.com" target="_blank"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://www.linkedin.com/in/rakesh-roshan-9100" target="_blank"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://www.facebook.com/rakesh6203" target="_blank"><i class="fab fa-facebook"></i></a>
+                    <a href="https://twitter.com/rakeshroshan73" target="_blank"><i class="fab fa-twitter"></i></a>
                 </div>
             </div>
         </div>
     </main>
 
+    <!-- Scroll to top button -->
+    <a href="#" class="to-top">
+        <i class="fas fa-chevron-up"></i>
+    </a>
+
     <footer>
-        <p>Created By Rakesh Roshan ❤️ | © <script>document.write(new Date().getFullYear());</script>: All Rights Reserved</p>
+        <p class="copyright">Created By Rakesh Roshan ❤️ | ©
+            <script>
+                document.write(new Date().getFullYear());
+            </script>: All Rights Reserved
+        </p>
     </footer>
 
-    <script>
-        const menuBtn = document.querySelector('.mobile-menu-btn');
-        const navLinks = document.querySelector('.nav-links');
-
-        menuBtn.addEventListener('click', () => {
-            menuBtn.classList.toggle('active');
-            navLinks.classList.toggle('active');
-        });
-    </script>
-     <script src="../../script.js"></script>
+    <script src="../../script.js"></script>
 </body>
 
 </html>

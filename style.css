@@ -295,22 +295,22 @@ body {
 /* Keyframes for background-image transitions */
 @keyframes changeBackground {
     0% {
-        background-image: url('https://i.ibb.co/v1qbSL4/Slide-16-9-1.png');
+        background-image: url('assets/images/changing_images/Slide\ 16_9\ -\ 1.png');
     }
     20% {
-        background-image: url('https://i.ibb.co/tbBD7dH/Slide-16-9-2.png');
+        background-image: url('assets/images/changing_images/Slide\ 16_9\ -\ 2.png');
     }
     40% {
-        background-image: url('https://i.ibb.co/L8v5tV5/Slide-16-9-3-1.png');
+        background-image: url('assets/images/changing_images/Slide\ 16_9\ -\ 3.png');
     }
     60% {
-        background-image: url('https://i.ibb.co/4THSqLS/Slide-16-9-4.png');
+        background-image: url('assets/images/changing_images/Slide\ 16_9\ -\ 4.png');
     }
     80% {
-        background-image: url('https://i.ibb.co/dj2GfJ6/Slide-16-9-5.png');
+        background-image: url('assets/images/changing_images/Slide\ 16_9\ -\ 5.png');
     }
     100% {
-        background-image: url('https://i.ibb.co/KDnMdKk/Slide-16-9-6.png');
+        background-image: url('assets/images/changing_images/Slide\ 16_9\ -\ 6.png');
     }
 }
 

@@ -11,6 +11,32 @@ body {
     color: var(--text-color);
 }
 
+/* Dark mode Css */
+
+body.dark-mode .past-events-section {
+    background-color: #1e1e1e;
+    color: #f4f4f4;
+}
+
+body.dark-mode .event-grid {
+    background-color: #282828;
+    color: #f4f4f4;
+}
+
+body.dark-mode .event-card {
+    background-color: #333;
+    color: #f4f4f4;
+}
+
+body.dark-mode .past-event-card {
+    background-color: #333;
+}
+
+body.dark-mode .past-event-date,
+.past-event-time {
+    color: var(--light-text-color);
+}
+
 .past-events-section {
     padding: 6rem 0;
 }

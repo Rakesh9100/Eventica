@@ -1,7 +1,7 @@
 # <p align="center">✨Eventica✨</p>
-<!-------------------------------------------------------------------------------------------------------------------------------------->
- <div align="center">
- <p>
+<!-------------------------------------------------->
+<div align="center">
+<p>
 
 [![Open Source Love svg1](https://badges.frapsoft.com/os/v1/open-source.svg?v=103)](https://github.com/ellerbrock/open-source-badges/)
 [![Netlify Status](https://api.netlify.com/api/v1/badges/a8c657fc-8eb7-4aa9-b56b-37219cb7bbf8/deploy-status)](https://app.netlify.com/sites/eventica/deploys)
@@ -17,10 +17,10 @@
 ![GitHub closed issues](https://img.shields.io/github/issues-closed-raw/Rakesh9100/Eventica)
 ![GitHub pull requests](https://img.shields.io/github/issues-pr/Rakesh9100/Eventica)
 ![GitHub closed pull requests](https://img.shields.io/github/issues-pr-closed/Rakesh9100/Eventica)
- </p>
- </div>
+</p>
+</div>
 
-<!-- --------------------------------------------------------------------------------------------------------------------------------------------------------- -->
+<!-------------------------------------------------->
 
 <div id="top"></div>
 
@@ -36,13 +36,13 @@
 - [Contributing is fun🧡](#contributing-is-fun)
 <br>
 
-<!-- --------------------------------------------------------------------------------------------------------------------------------------------------------- -->
+<!-------------------------------------------------->
 
 <h2>Introduction📌</h2>
 
 Welcome to Eventica, an ultimate guide to the dynamic and diverse events in Bangalore.<br>As the heart of India's tech and cultural hub, Eventica is dedicated to bridging the gap between event organizers and eager participants, creating a vibrant community.
 
-<!-- --------------------------------------------------------------------------------------------------------------------------------------------------------- -->
+<!-------------------------------------------------->
 
 <h2>Technology Used🚀</h2>
 
@@ -53,7 +53,7 @@ Welcome to Eventica, an ultimate guide to the dynamic and diverse events in Bang
 </p>
 <p align="right">(<a href="#top">back to top</a>)</p>
 
-<!-- --------------------------------------------------------------------------------------------------------------------------------------------------------- -->
+<!-------------------------------------------------->
 
 <h2>Overview⭐</h2>
 
@@ -78,8 +78,7 @@ Welcome to Eventica, an ultimate guide to the dynamic and diverse events in Bang
 <br><br>
 <p align="right">(<a href="#top">back to top</a>)</p>
 
-
-<!-- --------------------------------------------------------------------------------------------------------------------------------------------------------- -->
+<!-------------------------------------------------->
 
 <h2>Getting Started💥</h2>
 
@@ -125,25 +124,25 @@ git push origin <your_branch_name>
 - Celebrate 🥳 your success after your pull request is merged successfully.
 <p align="right">(<a href="#top">back to top</a>)</p>
 
-<!-- --------------------------------------------------------------------------------------------------------------------------------------------------------- -->
+<!-------------------------------------------------->
 
 <h2>Contributing Guidelines📑</h2>
 
 Read our [Contributing Guidelines](https://github.com/Rakesh9100/Eventica/blob/main/.github/CONTRIBUTING_GUIDELINES.md) to learn about our development process, how to propose bugfixes and improvements, and how to build to Eventica.
 
-<!-- --------------------------------------------------------------------------------------------------------------------------------------------------------- -->
+<!-------------------------------------------------->
 
 <h2>Code Of Conduct📑</h2>
 
 This project and everyone participating in it is governed by the [Code of Conduct](https://github.com/Rakesh9100/Eventica/blob/main/.github/CODE_OF_CONDUCT.md). By participating, you are expected to uphold this code.
 
-<!-- --------------------------------------------------------------------------------------------------------------------------------------------------------- -->
+<!-------------------------------------------------->
 
 <h2>This repo has been part of the following Open Source Programs🥳</h2>
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
-<!-- --------------------------------------------------------------------------------------------------------------------------------------------------------- -->
+<!-------------------------------------------------->
 
 <h2>Project Admin⚡</h2>
 
@@ -155,7 +154,7 @@ This project and everyone participating in it is governed by the [Code of Conduc
 </tr>
 </table>
 
-<!-- --------------------------------------------------------------------------------------------------------------------------------------------------------- -->
+<!-------------------------------------------------->
 
 <h2>Project Contributors🫂</h2>
 
@@ -163,7 +162,7 @@ This project and everyone participating in it is governed by the [Code of Conduc
   <img src="https://contrib.rocks/image?repo=rakesh9100/eventica" />
 </a>
 
-<!-- --------------------------------------------------------------------------------------------------------------------------------------------------------- -->
+<!-------------------------------------------------->
 
 <h2>Contributing is fun🧡</h2>
 

@@ -11,13 +11,13 @@ const submitAjaxForm = event => {
     })
         .then(response => {
             if (!response.ok) {
-                form.innerHTML = `<h1 id='error'>Oops! We Encountered An Error. <br>Please Try Again Later</h1>`
+                form.innerHTML = `<h1 id='error'>Oops! We encountered an error. <br>Please try again later.</h1>`
             } else {
-                form.innerHTML = `<h1 id='success'>Thank you for contacting us. <br> Our Team Will Get Back To You Shortly</h1>`
+                form.innerHTML = `<h1 id='success'>Thanks for reaching out! <br>I will get back to you shortly.</h1>`
             }
         })
         .catch(error => {
-            form.innerHTML = `<h1 id='error' >Oops! We Encountered An Error. <br>Please Try Again Later</h1>`
+            form.innerHTML = `<h1 id='error'>Oops! We encountered an error. <br>Please try again later.</h1>`
         })
 }
 

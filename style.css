@@ -31,8 +31,6 @@ body {
     max-width: 1200px;
     margin: 0 auto;
     width: 90%;
-    max-width: 1200px;
-    margin: 0 auto;
     padding: 0 1rem;
 }
 
@@ -251,104 +249,96 @@ body {
 }
 
 /* Hero Section Css */
-
 .hero {
-
     position: relative;
-    min-height: 100vh; 
-
+    min-height: 100vh;
     background-size: cover;
     background-position: center;
-    height: 100vh;
+    height: auto;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: center;
-    background-color: #f8f9fa;
+    background-color: rgba(243, 238, 238, 0.616);
     overflow: hidden;
+    padding: 20px;
+    width: 100%;
 }
 
 .hero-content {
-    max-width: 90%;
-    padding: 30px 10px; 
-}
-
-.hero h1 {
-    font-size: 48px;
-    font-weight: 600;
-    color: #000;
-    margin: 0;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+    max-width: 1200px; /* Increased to accommodate larger text */
+    width: 100%;
+    padding: 2rem;
+    border-radius: 10px;
+    backdrop-filter: blur(10px);
+    z-index: 2;
+    margin-top: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .highlight-text {
-    font-size: 12vw; 
-    font-weight: 700;
+    font-size: clamp(6rem, 12vw, 10rem);
+    font-weight: 800;
     color: transparent;
     background-clip: text;
     -webkit-background-clip: text;
-    background-size: 100% 100%;
+    background-size: cover; /* Changed from 100% 100% to cover */
     background-repeat: no-repeat;
     background-position: center;
-    margin: 20px auto;
-    white-space: nowrap; 
-    overflow: hidden; 
-    text-align: center; 
+    margin: 0 auto;
+    white-space: nowrap;
+    overflow: visible;
+    text-align: center;
     text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.3);
-    animation: changeBackground 10s infinite; 
-}
-
-/* Keyframes for background-image transitions */
-@keyframes changeBackground {
-    0% {
-        background-image: url('assets/images/changing_images/Slide\ 16_9\ -\ 1.png');
-    }
-    20% {
-        background-image: url('assets/images/changing_images/Slide\ 16_9\ -\ 2.png');
-    }
-    40% {
-        background-image: url('assets/images/changing_images/Slide\ 16_9\ -\ 3.png');
-    }
-    60% {
-        background-image: url('assets/images/changing_images/Slide\ 16_9\ -\ 4.png');
-    }
-    80% {
-        background-image: url('assets/images/changing_images/Slide\ 16_9\ -\ 5.png');
-    }
-    100% {
-        background-image: url('assets/images/changing_images/Slide\ 16_9\ -\ 6.png');
-    }
-}
-
-.hero p {
-    font-size: 18px;
-    font-weight: 500;
-    color: #333;
-    margin: 20px 0;
-=======
-    color: #fff;
+    line-height: 1.1;
+    animation: changeBackground 10s infinite;
     position: relative;
-    background: linear-gradient(135deg, rgba(74, 144, 226, 0.8), rgba(231, 76, 60, 0.8));
-}
-
-.hero-content {
-    max-width: min(800px, 90%);
-    padding: 2rem;
-    background-color: rgba(0, 0, 0, 0.5);
-    border-radius: 10px;
-    backdrop-filter: blur(10px);
+    z-index: 1;
+    padding: 0;
+    width: 100%; /* Set explicit width */
+    display: block; /* Ensure block-level display */
 }
 
 .hero h1 {
     font-size: clamp(2rem, 5vw, 3.5rem);
     margin-bottom: 1rem;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    white-space: nowrap;
+    width: 100%;
 }
 
 .hero p {
     font-size: clamp(1rem, 3vw, 1.2rem);
     max-width: 600px;
-    margin: 0 auto 2rem;
+    margin: 1rem auto;
+    color: #000;
+    text-shadow: none;
+    line-height: 1.5;
+    text-wrap: nowrap;
+}
+
+@keyframes changeBackground {
+    0%, 16.66% {
+        background-image: url('assets/images/changing_images/Slide\ 16_9\ -\ 1.png');
+    }
+    16.67%, 33.33% {
+        background-image: url('assets/images/changing_images/Slide\ 16_9\ -\ 2.png');
+    }
+    33.34%, 49.99% {
+        background-image: url('assets/images/changing_images/Slide\ 16_9\ -\ 3.png');
+    }
+    50%, 66.66% {
+        background-image: url('assets/images/changing_images/Slide\ 16_9\ -\ 4.png');
+    }
+    66.67%, 83.33% {
+        background-image: url('assets/images/changing_images/Slide\ 16_9\ -\ 5.png');
+    }
+    83.34%, 100% {
+        background-image: url('assets/images/changing_images/Slide\ 16_9\ -\ 6.png');
+    }
 }
 
 .explore-button {
@@ -682,8 +672,7 @@ body.dark-mode .event-date,
     .event-card {
         margin: 0 -1rem;
     }
-
-=======
+}
 
 @media (max-width: 480px) {
     .container {

@@ -12,6 +12,26 @@ body {
     height: 100%;
 }
 
+/* Dark mode Css*/
+
+body.dark-mode .about-section {
+    background-color: #1e1e1e;
+    color: #f4f4f4;
+}
+
+body.dark-mode .about-image {
+    filter: brightness(80%);
+}
+
+body.dark-mode .feature-item {
+    background-color: #282828;
+    color: #f4f4f4;
+}
+
+body.dark-mode .about-content {
+    background-color: rgba(40, 44, 52, 1);
+}
+
 .about-section {
     padding: 6rem 0 4rem;
     background: linear-gradient(135deg, #4a90e2, #e74c3c);

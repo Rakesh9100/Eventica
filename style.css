@@ -146,6 +146,7 @@ body {
     height: 40px;
     border-radius: 50%;
     display: flex;
+    margin-left: 1rem;
     align-items: center;
     justify-content: center;
     transition: background-color 0.3s ease;
@@ -252,8 +253,13 @@ body {
 /* Hero Section Css */
 
 .hero {
+
     position: relative;
     min-height: 100vh; 
+
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -319,6 +325,30 @@ body {
     font-weight: 500;
     color: #333;
     margin: 20px 0;
+=======
+    color: #fff;
+    position: relative;
+    background: linear-gradient(135deg, rgba(74, 144, 226, 0.8), rgba(231, 76, 60, 0.8));
+}
+
+.hero-content {
+    max-width: min(800px, 90%);
+    padding: 2rem;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    backdrop-filter: blur(10px);
+}
+
+.hero h1 {
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    margin-bottom: 1rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.hero p {
+    font-size: clamp(1rem, 3vw, 1.2rem);
+    max-width: 600px;
+    margin: 0 auto 2rem;
 }
 
 .explore-button {
@@ -479,7 +509,11 @@ body {
 }
 
 .register-button:hover {
+
     background-color: var(--text-color);
+
+    background-color: #686969;
+
 }
 
 .mobile-menu-btn {
@@ -493,11 +527,88 @@ body {
 
 /* Footer Css */
 
-.footer {
-    background-color: #333;
-    color: #fff;
+footer {
     text-align: center;
-    padding: 2rem 0;
+    padding: 15px 20px;
+    background-color: #333;
+    color: white;
+    font-size: 1em;
+}
+
+/* Dark mode Css */
+
+body.dark-mode {
+    --background-color: #181818;
+    --text-color: #f4f4f4;
+    --light-text-color: #bbbbbb;
+}
+
+body.dark-mode .navbar {
+    background-color: rgba(24, 24, 24, 0.9);
+}
+
+body.dark-mode .footer {
+    background-color: #181818;
+}
+
+/* Dark mode toggle button Css */
+
+#dark-mode-toggle {
+    background-color: var(--primary-color);
+    border: none;
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+#dark-mode-toggle:hover {
+    background-color: var(--secondary-color);
+}
+
+#dark-mode-toggle i {
+    color: #fff;
+    font-size: 20px;
+}
+
+
+/* Media queries for responsiveness */
+.dark-mode .events {
+    background-color: #2a2a2a;
+}
+
+.dark-mode .navbar {
+    background-color: #2a2a2a !important; /* Dark gray background */
+    transition: background-color 0.3s ease;
+}
+
+body.dark-mode .nav-links a {
+    color: #f4f4f4;
+}
+
+body.dark-mode .nav-links a:hover {
+    color: var(--primary-color);
+}
+
+.event-description {
+    font-size: 0.95rem;
+    margin-bottom: 1rem;
+    color: var(--text-color);
+}
+
+body.dark-mode .event-card {
+    background-color: #333;
+    color: #f4f4f4;
+}
+
+body.dark-mode .event-date,
+.event-time {
+    color: var(--light-text-color);
 }
 
 /* Media queries for responsiveness */
@@ -557,6 +668,22 @@ body {
         transform: translateX(50%) translateY(0);
     }
 }
+
+@media (max-width: 480px) {
+    .container {
+        width: 95%;
+        padding: 0 0.5rem;
+    }
+
+    .hero-content {
+        padding: 1.5rem;
+    }
+
+    .event-card {
+        margin: 0 -1rem;
+    }
+
+=======
 
 @media (max-width: 480px) {
     .container {

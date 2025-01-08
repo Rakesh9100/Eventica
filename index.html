@@ -12,13 +12,18 @@
     <link rel="icon" type="image/x-icon" href="./assets/images/favicons/favicon1.png">
     <link rel="stylesheet" href="./style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css">
+
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap">
     <link rel="stylesheet" href="./style.css">
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap">
+
     <script src="https://kit.fontawesome.com/4cf6385dfa.js" crossorigin="anonymous"></script>
     <title>Eventica</title>
 </head>
 
 <body>
+    <!-- Navigation bar section -->
     <nav class="navbar">
         <div class="container navbar-container">
             <a href="index.html" class="logo-container">
@@ -50,11 +55,19 @@
                         <button class="theme-btn" data-color="green" aria-label="Green theme"></button>
                         <button class="theme-btn" data-color="purple" aria-label="Purple theme"></button>
                     </div>
+
+                </div>
+                <div class="dark-mode-switcher">
+                    <button id="dark-mode-toggle" aria-label="Toggle dark mode">
+                        <i class="fas fa-moon"></i>
+                    </button>
+
                 </div>
             </div>
         </div>
     </nav>
 
+    <!-- Main section -->
     <header id="home" class="hero">
         <div class="hero-content">
             <h1>Discover Events & Meetups</h1>
@@ -75,10 +88,20 @@
         </section>
     </main>
 
+    <!-- Footer section -->
+    <footer>
+        <p class="copyright">Created By Rakesh Roshan ❤️ | ©
+            <script>
+                document.write(new Date().getFullYear());
+            </script>: All Rights Reserved
+        </p>
+    </footer>
+
     <!-- Scroll to top button -->
     <a href="#" class="to-top">
         <i class="fas fa-chevron-up"></i>
     </a>
+
 
     <footer class="footer">
         <div class="container">
@@ -89,6 +112,7 @@
             </p>
         </div>
     </footer>
+
     <script src="script.js"></script>
 </body>
 

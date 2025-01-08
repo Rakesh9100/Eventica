@@ -114,5 +114,5 @@ body.dark-mode .past-event-date,
 }
 
 .gallery-button:hover {
-    background-color: var(--text-color);
+    background-color: #686969;
 }

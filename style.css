@@ -127,6 +127,31 @@ body {
     width: 100%; /* Animate width to slide the underline */
 }
 
+.search-container {
+    display: flex;
+    align-items: center;
+}
+
+.search-input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-right: 10px;
+}
+
+.search-button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.search-button:hover {
+    background-color: #0056b3; /* Darker shade for hover effect */
+}
+
 /* Theme Switcher Css */
 
 .theme-switcher {

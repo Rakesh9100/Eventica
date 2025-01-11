@@ -8,6 +8,28 @@ body {
     font-family: 'Poppins', sans-serif;
     line-height: 1.6;
     color: var(--text-color);
+    min-height: 100vh;
+    height: 100%;
+}
+
+/* Dark mode Css*/
+
+body.dark-mode .about-section {
+    background-color: #1e1e1e;
+    color: #f4f4f4;
+}
+
+body.dark-mode .about-image {
+    filter: brightness(80%);
+}
+
+body.dark-mode .feature-item {
+    background-color: #282828;
+    color: #f4f4f4;
+}
+
+body.dark-mode .about-content {
+    background-color: rgba(40, 44, 52, 1);
 }
 
 .about-section {
@@ -118,5 +140,6 @@ body {
 
     .feature-grid {
         grid-template-columns: 1fr;
+        gap: 1.5rem;
     }
 }

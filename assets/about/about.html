@@ -4,20 +4,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="../images/favicons/favicon1.png">
     <link rel="stylesheet" href="./about.css">
     <link rel="stylesheet" href="../../style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap">
     <title>Eventica | About</title>
 </head>
 
 <body>
+    <!-- Navigation bar section -->
     <nav class="navbar">
         <div class="container navbar-container">
             <a href="../../index.html" class="logo-container">
-                <img src="" alt="Logo" class="logo">
+                <img src="../images/logos/logo1.png" alt="Logo" class="logo">
                 <span class="logo-text">Eventica</span>
             </a>
+            <button class="mobile-menu-btn" aria-label="Toggle mobile menu">
+                <i class="fas fa-bars"></i>
+            </button>
             <div class="nav-items">
                 <ul class="nav-links">
                     <li><a href="../../index.html"><i class="fas fa-house"></i> Home</a></li>
@@ -34,24 +39,30 @@
                         </svg>
                     </button>
                     <div class="theme-options">
-                        <button class="theme-btn" data-color="red" aria-label="Red theme"></button>
                         <button class="theme-btn" data-color="blue" aria-label="Blue theme"></button>
+                        <button class="theme-btn" data-color="red" aria-label="Red theme"></button>
                         <button class="theme-btn" data-color="yellow" aria-label="Yellow theme"></button>
                         <button class="theme-btn" data-color="green" aria-label="Green theme"></button>
                         <button class="theme-btn" data-color="purple" aria-label="Purple theme"></button>
                     </div>
                 </div>
+                <div class="dark-mode-switcher">
+                    <button id="dark-mode-toggle" aria-label="Toggle dark mode">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                </div>
             </div>
         </div>
     </nav>
 
+    <!-- About main section -->
     <main>
         <section class="about-section">
             <div class="container">
                 <div class="about-content">
                     <h1 class="section-title">About Us</h1>
                     <div class="image">
-                         <img src="../images/Events_Image.jpeg" alt="img not found">
+                        <img src="../images/about.jpeg" alt="Bangalore Cityscape">
                     </div>
                     <p class="about-text">
                         Welcome to Eventica, an ultimate guide to the dynamic and diverse events in Bangalore. As the heart of India's tech and cultural hub, Eventica is dedicated to bridging the gap between event organizers and eager participants, creating a vibrant community centered around knowledge-sharing, cultural exchange, and entertainment.
@@ -59,7 +70,7 @@
                     <p class="about-text">
                         From innovative tech conferences to insightful and engaging meetups, Eventica covers it all. We believe in the power of events to educate, inspire, and unite people, fostering unforgettable experiences and meaningful connections along the way.
                     </p>
-                    <a href="" class="readmore">Read More</a>
+
                     <div class="feature-grid">
                         <div class="feature-item">
                             <div class="feature-icon">🎭</div>
@@ -79,14 +90,25 @@
                     </div>
                 </div>
             </div>
-        </section>        
+        </section>
     </main>
 
+    <!-- Footer section -->
     <footer class="footer">
         <div class="container">
-            <p>Created By Rakesh Roshan ❤️ | &copy; 2024: All Rights Reserved</p>
+            <p class="copyright">Created By Rakesh Roshan ❤️ | ©
+                <script>
+                    document.write(new Date().getFullYear());
+                </script>: All Rights Reserved
+            </p>
         </div>
     </footer>
+
+    <!-- Scroll to top button -->
+    <a href="#" class="to-top">
+        <i class="fas fa-chevron-up"></i>
+    </a>
+
     <script src="../../script.js"></script>
 </body>
 

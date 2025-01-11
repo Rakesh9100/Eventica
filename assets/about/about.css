@@ -4,8 +4,6 @@
     box-sizing: border-box;
 }
 
-
-
 body {
     font-family: 'Poppins', sans-serif;
     line-height: 1.6;
@@ -26,38 +24,10 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    flex:1;
+    flex: 1;
     margin-left: 20px;
-    
-}
-.image{
-    flex:1;
-    margin-left: 50px;
-    overflow:hidden;
-    border-radius: 10px;
 }
 
-.image img{
-    width:100%;
-    transition: transform 0.3s ease;
-}
-
-.readmore{
-    margin-top: 20px;
-    display: inline-block;
-    padding: 10px 20px;
-    background-color: #4caf50;
-    font-size: 17px;
-    color: #fff;
-    text-decoration: none;
-    font-weight: bold;
-    border-radius: 10px;
-    transition: 0.3s ease;
-}
-
-.image:hover img{
-    transform:scale(1.1);
-}
 .section-title {
     color: #e74c3c;
     font-size: 2.5rem;
@@ -66,38 +36,36 @@ body {
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-.about-text {
-    font-size: 1.1rem;
-    color: var(--text-color);
-    line-height: 1.8;
-    max-width: 1000px;
-    text-align: left;
-    flex:1;
-    margin-left: 20px;
-
-    background-color: #fff;
+.image {
+    flex: 1;
+    overflow: hidden;
     border-radius: 10px;
-    padding: 1.5rem;
-    text-align: center;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-
-    
+    margin-bottom: 10px;
 }
 
-.about-image {
-    width: 100%;
-    max-width: 600px;
-    height: auto;
+.image img {
+    width: 70%;
     border-radius: 10px;
-    margin: 0 auto 2rem;
-    display: block;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease;
 }
 
-.about-image:hover {
+.image img:hover {
     transform: scale(1.02);
+}
+
+.about-text {
+    flex: 1;
+    padding: 1.5rem;
+    line-height: 1.8;
+    text-align: left;
+    font-size: 1.1rem;
+    max-width: 1000px;
+    text-align: center;
+    border-radius: 10px;
+    color: var(--text-color);
+    background-color: #fff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .feature-grid {
@@ -105,8 +73,7 @@ body {
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 2rem;
     margin-top: 3rem;
-    max-width: 1200px;
-    margin: 3rem auto;
+    width: 100%;
 }
 
 .feature-item {

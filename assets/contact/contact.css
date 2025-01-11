@@ -1,69 +1,181 @@
-.contact-section {
-    padding: 80px 0;
-    background-color: #f8f9fa;
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background-color: #f7f8fa;
+    color: #333;
+    line-height: 1.6;
 }
 
-.section-title {
-    font-size: 2.5rem;
-    margin-bottom: 40px;
+/* Dark mode Css */
+
+body.dark-mode .contact-section {
+    background-color: #1e1e1e;
+    color: #f4f4f4;
+}
+
+body.dark-mode .contact-form {
+    background-color: #282828;
+    color: #f4f4f4;
+}
+
+body.dark-mode .contact-form input,
+body.dark-mode .contact-form textarea {
+    background-color: #333;
+    color: #f4f4f4;
+}
+
+body.dark-mode .submit-button {
+    background-color: #444;
+    color: #f4f4f4;
+}
+
+/* Main container Css*/
+
+.contact-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    padding: 50px 20px 20px 20px;
+    min-height: calc(100vh - 120px);
+    gap: 100px;
+}
+
+.illustration-section img {
+    max-width: 100%;
+    width: 600px;
+    height: auto;
+}
+
+.form-section {
+    flex: 1;
+    max-width: 500px;
+    padding: 20px;
     text-align: center;
-}
-
-.contact-form {
-    max-width: 600px;
-    margin: 0 auto;
-    background-color: #ffffff;
-    padding: 40px;
+    background-color: #fff;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     border-radius: 8px;
+}
+
+.form-section h1 {
+    font-size: 2em;
+    color: #4a90e2;
+    margin-bottom: 10px;
+}
+
+.form-section p {
+    font-size: 1.1em;
+    margin-bottom: 20px;
+}
+
+.form-section input,
+.form-section textarea {
+    width: 99%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    background-color: #e9eef5;
+    border-radius: 8px;
+    font-size: 1em;
+    transition: border-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+input[type="text"]:hover,
+input[type="email"]:hover,
+textarea:hover {
+    border-color: var(--primary-color);
+    transform: scale(1.02);
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-.form-group {
-    margin-bottom: 24px;
-}
-
-label {
-    display: block;
-    margin-bottom: 8px;
-    font-weight: 600;
-    color: #555;
-}
-
-input[type="text"],
-input[type="email"],
-textarea {
-    width: 100%;
-    padding: 12px;
-    border: 1px solid #e0e0e0;
-    border-radius: 4px;
-    font-size: 16px;
-    transition: border-color 0.3s ease;
 }
 
 input[type="text"]:focus,
 input[type="email"]:focus,
 textarea:focus {
     outline: none;
-    border-color: #4a90e2;
+    border-color: var(--primary-color);
+    transform: scale(1.03);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 textarea {
-    height: 150px;
     resize: vertical;
 }
 
-.submit-button {
-    background-color: #4a90e2;
-    color: #ffffff;
+.form-section button {
+    width: 100%;
+    padding: 10px;
+    background: #4a90e2;
+    color: #fff;
     border: none;
-    padding: 12px 24px;
-    font-size: 16px;
-    font-weight: 600;
-    border-radius: 4px;
+    border-radius: 8px;
+    font-size: 1em;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    transition: 0.3s ease;
 }
 
-.submit-button:hover {
-    background-color: #3a7bc8;
+.form-section button:hover {
+    background: #3a78c2;
+    transform: scale(1.02);
+}
+
+.social-links {
+    margin-top: 20px;
+}
+
+.social-links a {
+    margin: 0 10px;
+    font-size: 1.5em;
+    color: #333;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+    color: #4a90e2;
+}
+
+#error {
+    color: #e74c3c;
+    font-size: 21px;
+}
+
+#success {
+    color: #4a90e2;
+    font-size: 21px;
+}
+
+/* Footer Css*/
+
+footer {
+    text-align: center;
+    padding: 15px 20px;
+    background-color: #333;
+    color: white;
+    font-size: 1em;
+}
+
+/* Media queries for responsiveness */
+
+@media (max-width: 768px) {
+    .contact-container {
+        gap: 10px;
+    }
+
+    .form-section {
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .form-section h1 {
+        font-size: 1.5em;
+    }
+
+    .form-section p {
+        font-size: 0.9em;
+    }
+
+    footer {
+        font-size: 0.9em;
+    }
 }

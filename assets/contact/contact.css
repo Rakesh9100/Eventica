@@ -87,16 +87,6 @@ body.dark-mode .form-section .icon:hover {
     margin-bottom: 20px;
 }
 
-
-input[type="text"],
-input[type="email"],
-textarea {
-    width: 100%;
-    padding: 12px;
-    border: 1px solid #e0e0e0;
-    border-radius: 4px;
-    font-size: 16px;
-
 .form-section input,
 .form-section textarea {
     width: 99%;
@@ -140,13 +130,7 @@ textarea {
     border-radius: 8px;
     font-size: 1em;
     cursor: pointer;
-    transition:
-        background-color 0.3s ease-in-out,
-        opacity 0.3s ease-in-out,
-        transform 0.3s ease-in-out,
-        box-shadow 0.3s ease-in-out;
-        transition: 0.3s ease;
-
+    transition: 0.3s ease;
 }
 
 .form-section button:hover {

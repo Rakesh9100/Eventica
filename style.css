@@ -274,38 +274,29 @@ body {
 }
 
 /* Hero Section Css */
+
 .hero {
     position: relative;
-    min-height: 100vh; /* Full viewport height */
+    height: 100vh;
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: center;
     background-size: cover;
     background-position: center;
-    background-color: #fbfbfb;
-    overflow: hidden;
-    padding: 20px;
-    width: 100%;
-    margin-top: -60px;
+    background: linear-gradient(135deg, rgba(95, 158, 231, 0.8), rgba(211, 104, 92, 0.8));
 }
 
 .hero-content {
-    max-width: 1000px; /* Reduced for smaller screens */
-    width: 90%; /* Allow content to fit better on small screens */
-    padding: 1rem; /* Adjust padding for mobile devices */
+    max-width: 1000px;
+    width: 90%;
+    padding: 1rem;
     border-radius: 10px;
     backdrop-filter: blur(10px);
-    z-index: 2;
-    margin-top: 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
 }
 
 .highlight-text {
-    font-size: clamp(6rem, 12vw, 10rem); /* Adjusted for smaller screens */
+    font-size: clamp(6rem, 12vw, 10rem);
     font-weight: 800;
     color: transparent;
     background-clip: text;
@@ -328,98 +319,76 @@ body {
 }
 
 @keyframes changeBackground {
-    0%, 16.66% {
-        background-image: url('assets/images/changing_images/Slide\ 16_9\ -\ 1.png');
+
+    0%,
+    16.66% {
+        background-image: url('assets/images/text-backgrounds/image1.png');
     }
-    16.67%, 33.33% {
-        background-image: url('assets/images/changing_images/Slide\ 16_9\ -\ 2.png');
+
+    16.67%,
+    33.33% {
+        background-image: url('assets/images/text-backgrounds/image2.png');
     }
-    33.34%, 49.99% {
-        background-image: url('assets/images/changing_images/Slide\ 16_9\ -\ 3.png');
+
+    33.34%,
+    49.99% {
+        background-image: url('assets/images/text-backgrounds/image3.png');
     }
-    50%, 66.66% {
-        background-image: url('assets/images/changing_images/Slide\ 16_9\ -\ 4.png');
+
+    50%,
+    66.66% {
+        background-image: url('assets/images/text-backgrounds/image4.png');
     }
-    66.67%, 83.33% {
-        background-image: url('assets/images/changing_images/Slide\ 16_9\ -\ 5.png');
+
+    66.67%,
+    83.33% {
+        background-image: url('assets/images/text-backgrounds/image5.png');
     }
-    83.34%, 100% {
-        background-image: url('assets/images/changing_images/Slide\ 16_9\ -\ 6.png');
+
+    83.34%,
+    100% {
+        background-image: url('assets/images/text-backgrounds/image6.png');
     }
 }
 
 .hero h1 {
-    font-size: clamp(1.5rem, 4vw, 3rem); /* Smaller heading size for mobile */
+    font-size: clamp(2rem, 5vw, 3.5rem);
     margin-bottom: 1rem;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-    white-space: nowrap;
-    width: 100%;
 }
 
 .hero p {
-    font-size: clamp(1rem, 2.5vw, 1.2rem); /* Responsive font size */
-    max-width: 800px; /* Constrain paragraph width */
-    margin: 0 auto; /* Center horizontally */
-    color: #000;
+    font-size: clamp(1rem, 3vw, 1.2rem);
+    max-width: 800px;
+    margin: 0 auto;
+    color: #000000;
+    font-weight: 600;
     text-shadow: none;
-    line-height: 1.3; /* Improve readability */
-    text-align: center; /* Center text alignment */
-    padding: 0 10px; /* Add padding to avoid touching edges on small screens */
+    line-height: 1.3;
     margin-top: 40px;
-    margin-bottom: 30px;
-}
-
-/* Media Query for Small Screens */
-@media (max-width: 768px) {
-    .hero p {
-        font-size: clamp(1.5rem, 2vw, 2.0rem); /* Adjust size for smaller screens */
-        max-width: 90%; /* Allow more room on mobile */
-        padding: 0 5px; /* Extra padding for smaller devices */
-    }
+    margin-bottom: 40px;
 }
 
 .explore-button {
     display: inline-block;
-    padding: 12px 25px; /* Reduced padding for smaller screens */
-    font-size: 16px; /* Smaller font size */
+    color: #fff;
+    padding: 1rem 2.5rem;
     font-weight: 600;
     color: #fff;
-    background-color: var(--secondary-color);
-    border: none;
+    background-color: var(--primary-color);
     border-radius: 50px;
     text-decoration: none;
-    transition: all 0.3s;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    margin-top: 20px; /* Reduced margin */
+    margin-top: 20px;
 }
 
 .explore-button:hover {
-    background-color: #0056b3;
+    background-color: #686969;
     transform: translateY(-2px);
-}
-
-/* Media Query for Mobile Screens */
-@media (max-width: 768px) {
-    .hero {
-        padding: 10px; /* Reduce padding */
-    }
-
-    .highlight-text {
-        font-size: clamp(2rem, 6vw, 4rem); /* Smaller text for smaller screens */
-    }
-
-    .hero h1 {
-        font-size: clamp(1.2rem, 3.5vw, 2.5rem); /* Adjust header font size */
-    }
-
-    .hero p {
-        font-size: clamp(0.8rem, 2vw, 1rem); /* Adjust paragraph font size */
-    }
-
-    .explore-button {
-        padding: 10px 20px; /* Smaller button size */
-        font-size: 14px; /* Smaller font for button text */
-    }
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .to-top {
@@ -560,11 +529,8 @@ body {
 }
 
 .register-button:hover {
-
     background-color: var(--text-color);
-
     background-color: #686969;
-
 }
 
 .mobile-menu-btn {
@@ -627,14 +593,12 @@ body.dark-mode .footer {
     font-size: 20px;
 }
 
-
-/* Media queries for responsiveness */
 .dark-mode .events {
     background-color: #2a2a2a;
 }
 
 .dark-mode .navbar {
-    background-color: #2a2a2a !important; /* Dark gray background */
+    background-color: #2a2a2a !important;
     transition: background-color 0.3s ease;
 }
 
@@ -718,20 +682,9 @@ body.dark-mode .event-date,
     .theme-options.active {
         transform: translateX(50%) translateY(0);
     }
-}
 
-@media (max-width: 480px) {
-    .container {
-        width: 95%;
-        padding: 0 0.5rem;
-    }
-
-    .hero-content {
-        padding: 1.5rem;
-    }
-
-    .event-card {
-        margin: 0 -1rem;
+    .highlight-text {
+        font-size: 11vw;
     }
 }
 

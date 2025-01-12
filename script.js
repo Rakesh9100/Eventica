@@ -298,3 +298,52 @@ document.querySelector('.search-button').addEventListener('click', function() {
         }
     });
 });
+document.addEventListener('DOMContentLoaded', function() {
+    // Theme toggling
+    const themeToggle = document.getElementById('theme-toggle');
+    const themeOptions = document.querySelector('.theme-options');
+    const themeButtons = document.querySelectorAll('.theme-btn');
+    
+    themeToggle.addEventListener('click', () => {
+        themeOptions.classList.toggle('active');
+    });
+
+    themeButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            document.documentElement.setAttribute('data-theme', button.dataset.color);
+            themeOptions.classList.remove('active');
+        });
+    });
+
+    // Dark mode toggle
+    const darkModeToggle = document.getElementById('dark-mode-toggle');
+    darkModeToggle.addEventListener('click', () => {
+        document.body.classList.toggle('dark-mode');
+        const icon = darkModeToggle.querySelector('i');
+        if (document.body.classList.contains('dark-mode')) {
+            icon.classList.remove('fa-moon');
+            icon.classList.add('fa-sun');
+        } else {
+            icon.classList.remove('fa-sun');
+            icon.classList.add('fa-moon');
+        }
+    });
+
+    // Scroll to top
+    const toTop = document.querySelector('.to-top');
+    window.addEventListener('scroll', () => {
+        if (window.pageYOffset > 100) {
+            toTop.classList.add('active');
+        } else {
+            toTop.classList.remove('active');
+        }
+    });
+
+    // Mobile menu
+    const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+    const navItems = document.querySelector('.nav-items');
+    
+    mobileMenuBtn.addEventListener('click', () => {
+        navItems.classList.toggle('active');
+    });
+});

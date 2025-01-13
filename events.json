@@ -1,12 +1,84 @@
 [
     {
+        "title": "ClickHouse Bangalore Meetup",
+        "date": "08-02-2025",
+        "time": "10:30 AM - 1:30 PM",
+        "location": "WeWork Prestige Tech Park, 4th Floor, Kadubeesanahalli, Bengaluru, Karnataka 560103, India",
+        "description": "Kick off 2025 with our very first Bangalore meetup of the year! We have a great lineup of speakers.",
+        "image": "https://secure.meetupstatic.com/photos/event/1/b/9/0/600_525607056.webp?w=384",
+        "website": "https://www.meetup.com/clickhouse-bangalore-user-group/events/305497951"
+    },
+    {
+        "title": "Reshaping Healthcare in 2025 with Next-Gen Tech",
+        "date": "08-02-2025",
+        "time": "10:00 AM - 2:00 PM",
+        "location": "Microsoft Reactor Bengaluru, Lavelle Rd, Bengaluru, Karnataka 560001, India",
+        "description": "Hello, Healthcare Enthusiasts! Let's push the boundaries of healthcare, shape the future, and create an unforgettable experience.",
+        "image": "https://secure.meetupstatic.com/photos/event/b/4/e/4/600_525646308.webp?w=384",
+        "website": "https://www.meetup.com/geekyants-events-meetup-group/events/305551783"
+    },
+    {
         "title": "Cloud-Native DevTools Day",
         "date": "01-02-2025",
         "time": "1:00 PM - 5:00 PM",
         "location": "Cloudera, 3rd Floor, Koramangala, Bengaluru, Karnataka 560034, India",
-        "description": "Join Us for the 'Cloud-Native DevTools Day' Meetup in Bangalore! We're thrilled to host Cloud-Native DevTools Day on February 1, 2025, at Cloudera's Bangalore office.",
+        "description": "Join Us for the 'Cloud-Native DevTools Day' Meetup in Bangalore! This action-packed event features top speakers, thought-provoking talks, and opportunities for networking.",
         "image": "https://secure.meetupstatic.com/photos/event/3/a/4/4/600_525134916.webp?w=384",
         "website": "https://www.meetup.com/docker-bangalore/events/304556104"
+    },
+    {
+        "title": "Extract Summit Local-Chapter India",
+        "date": "31-01-2025",
+        "time": "5:00 PM - 8:00 PM",
+        "location": "Microsoft Reactor Bengaluru, Lavelle Rd, Bengaluru, Karnataka 560001, India",
+        "description": "Join us for an engaging evening of learning and networking at the Extract Summit Local Chapter in India, which is an unique opportunity.",
+        "image": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F926024123%2F308014268092%2F1%2Foriginal.20250102-065340?w=940&auto=format%2Ccompress&q=75&sharp=10&rect=0%2C47%2C1482%2C741&s=8cd0b2cf843c6289beca09d6cc54cb3b",
+        "website": "https://www.eventbrite.ie/e/extract-summit-local-chapter-india-tickets-1130225517949"
+    },
+    {
+        "title": "Kubernetes Bangalore Meetup January 2025",
+        "date": "25-01-2025",
+        "time": "1:00 PM - 5:00 PM",
+        "location": "Bangalore India, Tara Apartments, Shivaji Nagar, Bengaluru, Karnataka 560001, India",
+        "description": "Join Kubernetes Bangalore (K8sBLR) for an insightful event focused on Cloud Native Platforms discussing their impact on Cloud Computing.",
+        "image": "https://secure.meetupstatic.com/photos/event/9/9/b/3/600_522159347.webp?w=384",
+        "website": "https://www.meetup.com/kubernetes-india-meetup/events/305496181"
+    },
+    {
+        "title": "Bangalore SRE Meetup",
+        "date": "25-01-2025",
+        "time": "10:00 AM - 1:00 PM",
+        "location": "Sattva Knowledge Court, EPIP Zone, Brookefield, Bengaluru, Karnataka 560048, India",
+        "description": "We are back with a new edition of Bangalore SRE Meetup in year 2025. Please join us for our very first event of the year this January.",
+        "image": "https://secure.meetupstatic.com/photos/event/d/d/d/1/600_515396785.webp?w=384",
+        "website": "https://www.meetup.com/sre-bangalore/events/305432177"
+    },
+    {
+        "title": "AWS re:Invent 2024 Recap",
+        "date": "25-01-2025",
+        "time": "9:30 AM - 12:30 PM",
+        "location": "Fair Isaac India Software Private Limited (FICO), Kodihalli, Bengaluru, Karnataka 560017, India",
+        "description": "AWS re:Invent 2024 was packed with exciting announcements, innovative services, and impactful updates hosted by AWS User Group Bengaluru.",
+        "image": "https://secure.meetupstatic.com/photos/event/a/9/3/d/600_525463325.webp?w=384",
+        "website": "https://www.meetup.com/awsugblr/events/305093315"
+    },
+    {
+        "title": "AI x Finance",
+        "date": "24-01-2025",
+        "time": "1:00 PM - 4:00 PM",
+        "location": "Intuit Campus 8, EcoSpace, Bellandur, Bengaluru, Karnataka 560103, India",
+        "description": "Join the city's brightest minds and innovators for an exclusive dive into the future of AI and finance. Register now before it's too late and join for an exciting day.",
+        "image": "https://secure.meetupstatic.com/photos/event/a/d/a/3/600_525524451.webp?w=384",
+        "website": "https://www.meetup.com/futuregpt/events/305413860"
+    },
+    {
+        "title": "DeCODE DevSecOps",
+        "date": "19-01-2025",
+        "time": "10:30 AM - 1:00 PM",
+        "location": "COWRKS Residency Road, Ashok Nagar, Bengaluru, Karnataka 560025, India",
+        "description": "Join us at the DeCODE DevSecOps - Bangalore Meetup by VivaOps for an exciting meetup for developers, DevOps enthusiasts, and tech professionals.",
+        "image": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F929379023%2F2303382243543%2F1%2Foriginal.20250107-093329?crop=focalpoint&fit=crop&w=940&auto=format%2Ccompress&q=75&sharp=10&fp-x=0.005&fp-y=0.005&s=b3e6742c03b821cfc8e77426117b97bc",
+        "website": "https://www.eventbrite.com/e/decode-devsecops-bangalore-tech-meetup-by-vivaops-tickets-1040690803207"
     },
     {
         "title": "IN PERSON! Apache Kafka® Meetup Bangalore",
@@ -36,20 +108,29 @@
         "website": "https://www.meetup.com/collabnix/events/304968647"
     },
     {
+        "title": "Build w/AI Demo Day Bangalore",
+        "date": "12-01-2025",
+        "time": "2:30 PM - 6:30 PM",
+        "location": "WeWork Vaishnavi Signature, Bellandur, Varthur, Bengaluru, Karnataka 560103, India",
+        "description": "Get ready for an unforgettable afternoon at the Build w/AI Demo Day in Bangalore.",
+        "image": "https://images.lumacdn.com/cdn-cgi/image/format=auto,fit=cover,dpr=2,background=white,quality=75,width=280,height=280/event-covers/om/4aba23b4-e0f7-42fd-8f79-e5926dfde641",
+        "website": "https://lu.ma/9uc34wiw"
+    },
+    {
         "title": "ReactPlay Bangalore Meetup",
         "date": "11-01-2025",
         "time": "9:30 AM - 2:00 PM",
         "location": "Microsoft Reactor Bengaluru, Lavelle Rd, Bengaluru, Karnataka 560001, India",
-        "description": "In this meetup, we will explore the talks on the latest features and technologies in tech. We will also have plenty of time for networking and Q&A. This meetup is open to all experience levels.",
+        "description": "In this meetup, we will explore the talks on the latest features and technologies in tech. This meetup is open to all experience levels, from beginners to experts.",
         "image": "https://secure.meetupstatic.com/photos/event/5/5/e/1/600_525321985.webp?w=384",
         "website": "https://www.meetup.com/reactplay-bengaluru/events/305195721"
     },
     {
-        "title": "AI Community Day - Bengaluru",
+        "title": "AI Community Day",
         "date": "08-01-2025",
         "time": "9:00 AM - 6:00 PM",
         "location": "Microsoft Reactor Bengaluru, Lavelle Rd, Bengaluru, Karnataka 560001, India",
-        "description": "Welcome to AI Community Day! A day where AI enthusiasts, developers, and innovators come together to geek out, connect, and share their knowledge around artificial intelligence!",
+        "description": "Welcome to AI Community Day! A day where AI enthusiasts, developers, and innovators come together to geek out, connect, and share knowledge around artificial intelligence!",
         "image": "https://secure.meetupstatic.com/photos/event/9/7/c/2/600_525278850.webp?w=384",
         "website": "https://www.meetup.com/microsoft-reactor-bengaluru/events/305142778"
     },
@@ -63,11 +144,11 @@
         "website": "https://aitour.microsoft.com/en-US/Bengaluru"
     },
     {
-        "title": "JS Meetup #95: Mastering web applications",
+        "title": "JS Meetup: Mastering web applications",
         "date": "04-01-2025",
         "time": "10:30 AM - 12:30 PM",
         "location": "Microsoft Reactor Bengaluru, Lavelle Rd, Bengaluru, Karnataka 560001, India",
-        "description": "Join the FREE meetup to learn and network. Talks are by experts in field of web application development. Special thanks to partner Microsoft Reactor.",
+        "description": "Join the FREE meetup to learn and network. Talks are by experts in field of web application development, so come and join us.",
         "image": "https://secure.meetupstatic.com/photos/event/9/8/2/7/clean_497138951.webp",
         "website": "https://www.meetup.com/javascriptmeetup/events/305080451"
     },
@@ -90,20 +171,20 @@
         "website": "https://lu.ma/2kn4xmhz"
     },
     {
-        "title": "DevFest Bangalore Ext 2024",
+        "title": "DevFest Bangalore Ext",
         "date": "21-12-2024",
         "time": "10:00 AM - 1:30 PM",
         "location": "AQUERALABS INDIA, 2nd Floor, Whitefield, Bengaluru, Karnataka 560066, India",
-        "description": "Closing out an incredible year, DevFest Bangalore Ext 2024 is here to bring the tech community together before we say Good Bye to 2024!",
+        "description": "Closing out an incredible year, DevFest Bangalore Ext 2024 is here to bring the tech community together before we say Good Bye to 2024! Join us for exciting day.",
         "image": "https://res.cloudinary.com/startup-grind/image/upload/c_scale,w_2560/c_crop,h_640,w_2560,y_0.0_mul_h_sub_0.0_mul_640/c_crop,h_640,w_2560/c_fill,dpr_2.0,f_auto,g_center,q_auto:good/v1/gcs/platform-data-goog/event_banners/Banner_pxJs8fI.png",
         "website": "https://gdg.community.dev/events/details/google-gdg-bangalore-presents-devfest-bangalore-ext-2024/"
     },
     {
-        "title": "Beyond the Resume: My Secrets to Career Growth",
+        "title": "Beyond the Resume",
         "date": "20-12-2024",
         "time": "6:00 PM - 8:00 PM",
         "location": "Microsoft Reactor Bengaluru, Lavelle Rd, Bengaluru, Karnataka 560001, India",
-        "description": "Embark on a transformative journey as I share my personal experiences and strategies that turned me from a newbie to a seasoned professional.",
+        "description": "Embark on a transformative journey as I share my personal experiences and strategies that turned me from a newbie to a seasoned professional, come and join us.",
         "image": "https://secure.meetupstatic.com/photos/event/c/b/8/c/600_525052108.webp?w=384",
         "website": "https://www.meetup.com/microsoft-reactor-bengaluru/events/304949579"
     },
@@ -153,7 +234,7 @@
         "website": "https://konfhub.com/sap-inside-track-bengaluru-december-2024-business-ai-edition"
     },
     {
-        "title": "The Gen AI Meetup, powered by DevRelSquad",
+        "title": "The Gen AI Meetup, by DevRelSquad",
         "date": "6-12-2024",
         "time": "4:00pm - 8:00pm",
         "location": "Microsoft Reactor Bengaluru, Lavelle Rd, Bengaluru, Karnataka 560001, India",
@@ -193,12 +274,12 @@
         "date": "22-11-2024",
         "time": "8:00am - 4:00pm",
         "location": "Bengaluru Marriott Hotel, Whitefield, Bengaluru, Karnataka 560066, India",
-        "description": "For over a decade, Thoughtworks XConf has been our flagship event—created by technologists for those passionate about technology.",
+        "description": "For over a decade, Thoughtworks XConf has been our flagship event—created by technologists for those passionate about technology and its impact on the world.",
         "image": "https://www.thoughtworks.com/content/dam/thoughtworks/images/photography/banner-image/about-us/events/ev_banner_xconf_2024_desktop.jpg",
         "website": "https://www.thoughtworks.com/en-in/about-us/events/xconf/2024/India"
     },
     {
-        "title": "Elevation Kickstarter: New Era",
+        "title": "Elevation Kickstarter",
         "date": "20-11-2024",
         "time": "7:00pm - 10:30pm",
         "location": "The Leela Palace Bengaluru, Kodihalli, Bengaluru, Karnataka 560008, India",
@@ -229,7 +310,7 @@
         "date": "13-11-2024",
         "time": "7:00pm - 9:00pm",
         "location": "IndiQube Garden, Koramangala, Bengaluru, Karnataka 560095, India",
-        "description": "Join us in the vibrant city of Bengaluru. Hosted by Plane, this event is a fantastic opportunity for community members to connect.",
+        "description": "Join us in the vibrant city of Bengaluru. Hosted by Plane, this event is a fantastic opportunity for community members to connect and share insights.",
         "image": "https://images.lumacdn.com/cdn-cgi/image/format=auto,fit=cover,dpr=2,background=white,quality=75,width=280,height=280/event-covers/rw/9ec1edd0-a887-4748-883d-fb953f6837b1",
         "website": "https://lu.ma/4d71e3x6"
     },
@@ -279,7 +360,7 @@
         "website": "https://lu.ma/x6cpbgvm"
     },
     {
-        "title": "RAG: Building LLM Powered apps",
+        "title": "RAG: Building LLM Powered apps using Elastic",
         "date": "21-9-2024",
         "time": "12:00pm - 3:00pm",
         "location": "Google Office, Kyoto West Bagmane, Doddanekkundi, Bengaluru, Karnataka 560048, India",
@@ -288,10 +369,10 @@
         "website": "https://www.meetup.com/elasticsearch-explorers/events/303257578"
     },
     {
-        "title": "Advanced Threat Detection & Investigation",
+        "title": "Advanced Threat Detection and Investigation",
         "date": "21-9-2024",
         "time": "10:30am - 12:30pm",
-        "location": "HOTEL THE SHACK, Ramamurthy Nagar, Bengaluru, Karnataka 560016, India",
+        "location": "HOTEL THE SHACK, Ramamurthy, Bengaluru, Karnataka 560016, India",
         "description": "Hello Atlassian Community, Join us for an insightful community event focused on Atlassian Guard Detect and the advanced threat detection.",
         "image": "https://res.cloudinary.com/startup-grind/image/upload/c_scale,w_2560/c_crop,h_640,w_2560,y_0.0_mul_h_sub_0.0_mul_640/c_crop,h_640,w_2560/c_fill,dpr_2.0,f_auto,g_center,q_auto:good/v1/gcs/platform-data-atlassian/event_banners/CSD-1081_Com_BevyBanner_General_1.jpg",
         "website": "https://ace.atlassian.com/events/details/atlassian-bangalore-presents-advanced-threat-detection-and-investigation-in-atlassian-guard/"
@@ -320,7 +401,7 @@
         "time": "3:30pm - 6:30pm",
         "location": "Google Bangalore, Old Madras Rd, Bennigana Halli, Bengaluru, Karnataka 560016, India",
         "description": "Join us for an insightful day filled with discussions, networking, and learning about the latest advancements.",
-        "image": "https://kommunity-app.s3.ap-south-1.amazonaws.com/a3gtpvs0sqbndajd45meo0z2bk00?response-content-disposition=inline%3B%20filename%3D%22BangaloreMeetup.png%22%3B%20filename%2A%3DUTF-8%27%27BangaloreMeetup.png&response-content-type=image%2Fpng&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAXUMQJEJBCK2EC566%2F20241228%2Fap-south-1%2Fs3%2Faws4_request&X-Amz-Date=20241228T170757Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=e50113ed7b870ee83c7be0e202982cd3295431428e5424430e32e88b50ef1e6d",
+        "image": "https://media.licdn.com/dms/image/v2/D5622AQGoJMaDNIuPkw/feedshare-shrink_2048_1536/feedshare-shrink_2048_1536/0/1725691316077?e=2147483647&v=beta&t=SS1ZPWbYe8wYr16RF6NSn_ZeXlpMaTSYUXVjx1C_iT4",
         "website": "https://www.commudle.com/communities/devrelsquad/events/meetup-zero-gen-ai-by-devrelsquad-and-google-for-developers"
     },
     {
@@ -328,7 +409,7 @@
         "date": "19-9-2024",
         "time": "8:00am - 5:30pm",
         "location": "Sheraton Grand Hotel, Whitefield, Bengaluru, Karnataka 560048, India",
-        "description": "The Snowflake World Tour is making 23 stops around the globe, so you can learn about the latest innovations in the AI Data Cloud at a venue near you.",
+        "description": "The Snowflake World Tour is making 23 stops around the globe, so you can learn about the latest innovations in the AI Data Cloud.",
         "image": "https://www.snowflake.com/wp-content/uploads/2024/06/SWT_24_Bangalore_Yoast.png",
         "website": "https://www.snowflake.com/events/snowflake-world-tour-bangalore/"
     },
@@ -337,7 +418,7 @@
         "date": "14-9-2024",
         "time": "3:00pm - 5:30pm",
         "location": "GeekyAnts, Bannerghatta Main Road, BTM Layout, Bengaluru, Karnataka 560076, India",
-        "description": "Hello, Design Lovers ! We are excited to announce the Design Meet-up around the theme \"Product Design and Market Fit: Creating Products People Love\".",
+        "description": "Hello, Design Lovers ! We are excited to announce the Design Meet-up around the theme \"Product Design and Market Fit\".",
         "image": "https://secure.meetupstatic.com/photos/event/d/3/e/2/600_523194242.webp?w=384",
         "website": "https://www.meetup.com/bangalore-design-meetup-group/events/302956621"
     },
@@ -355,7 +436,7 @@
         "date": "10-9-2024",
         "time": "8:00am - 5:00pm",
         "location": "Sheraton Grand Hotel, Whitefield, Bengaluru, Karnataka 560048, India",
-        "description": "At MongoDB.local Bengaluru, you'll learn technologies, tools, and best practices that make it easy to build data-driven applications without distraction.",
+        "description": "At MongoDB.local Bengaluru event, you'll learn technologies, tools, and best practices that make it easy to build data-driven applications without distraction.",
         "image": "https://s3.amazonaws.com/info-mongodb-com/_com_assets/cms/lvwow06v1ld58ng8r-1200x627%20-%20Landscape%20(4).png?auto=format%252Ccompress",
         "website": "https://www.mongodb.com/events/mongodb-local/bengaluru"
     },
@@ -396,7 +477,7 @@
         "website": "https://ace.atlassian.com/events/details/atlassian-bangalore-presents-atlassian-community-hybrid-event-advanced-jira-reporting-and-trello-integration"
     },
     {
-        "title": "SecurityBoat Community Monthly Meetup",
+        "title": "SecurityBoat Community Meetup",
         "date": "31-8-2024",
         "time": "10:00am - 2:00pm",
         "location": "PayU Bangalore Office, Challaghatta, Bengaluru, Karnataka 560071, India",
@@ -409,7 +490,7 @@
         "date": "31-8-2024",
         "time": "9:00am - 5:00pm",
         "location": "Microsoft, Prestige Ferns Galaxy, Bellandur, Bengaluru, Karnataka 560103, India",
-        "description": "We are back with another awesome Azure SQL Bangalore Meetup, and we can't wait to see you there!",
+        "description": "We are back with another awesome Azure SQL Bangalore Meetup, and we can't wait to see you there. Looking forward to your participation.",
         "image": "https://secure.meetupstatic.com/photos/event/6/b/9/3/600_513087539.webp?w=384",
         "website": "https://www.meetup.com/azure-sql-bangalore-user-group-meetup/events/302392874"
     },
@@ -418,7 +499,7 @@
         "date": "29-8-2024",
         "time": "6:00pm - 9:00pm",
         "location": "Garuda BHIVE Workspace, BTM Layout, Bengaluru, Karnataka 560068, India",
-        "description": "An event where we talk on Developer Experience, and Open Source. This isn't to say that open source is an unhealthy space rather, positive impact.",
+        "description": "An event where we talk on Developer Experience, and Open Source. This isn't to say that open source is an unhealthy space.",
         "image": "https://images.lumacdn.com/cdn-cgi/image/format=auto,fit=cover,dpr=2,background=white,quality=75,width=280,height=280/event-covers/xn/f39021bf-437a-4617-ab91-d5e801e1f51b",
         "website": "https://lu.ma/jl18fprb"
     },
@@ -436,7 +517,7 @@
         "date": "24-8-2024",
         "time": "10:30am - 2:30pm",
         "location": "Dongle Desk, 463, Indiranagar, Bengaluru, Karnataka 560038, India",
-        "description": "Join us for Novo Tech Meetup 1.0 in Bengaluru, where technology meets opportunity! This event is designed to connect with the brightest minds in tech.",
+        "description": "Join us for Novo Tech Meetup 1.0 in Bengaluru, where technology meets opportunity! This event is designed to connect with the brightest minds in tech field.",
         "image": "https://images.lumacdn.com/cdn-cgi/image/format=auto,fit=cover,dpr=2,background=white,quality=75,width=280,height=280/event-covers/uv/08eb3def-804e-4ad7-a564-fab05dc2b655",
         "website": "https://lu.ma/ktjderm7"
     },
@@ -490,7 +571,7 @@
         "date": "11-8-2024",
         "time": "9:30am - 6:00pm",
         "location": "Four Seasons Hotel Bengaluru at Embassy ONE, Bengaluru, Karnataka 560032, India",
-        "description": "Demo Day is the grand finale of Conquest, BITS Pilani. Conquest is India's largest student-run startup accelerator.",
+        "description": "Demo Day is the grand finale of Conquest, BITS Pilani. Conquest is India's largest student-run startup accelerator, exclusive event for the Bangalore ecosystem.",
         "image": "https://images.lumacdn.com/cdn-cgi/image/format=auto,fit=cover,dpr=2,background=white,quality=75,width=280,height=280/event-covers/o3/cdd575cd-bc7d-40f9-9ce9-c83cf51d6a6a",
         "website": "https://lu.ma/5kb9w481"
     },
@@ -589,7 +670,7 @@
         "date": "29-6-2024",
         "time": "8:00am - 6:00pm",
         "location": "Sheraton Grand Hotel, Whitefield, Bengaluru, Karnataka 560048, India",
-        "description": "DevStudio Con is an event for web developers, app creators and agencies hosted live in Bangalore, India. The conference is hosted by Wix Studio.",
+        "description": "DevStudio Con is an event for web developers, app creators and agencies hosted live in Bangalore, by Wix Studio.",
         "image": "https://static.wixstatic.com/media/0d6674_61afbd95a85a4c5db21ec77ac750161b~mv2.jpg/v1/fit/w_2500,h_1330,al_c/0d6674_61afbd95a85a4c5db21ec77ac750161b~mv2.jpg",
         "website": "https://www.devstudiocon.com/"
     },
@@ -598,7 +679,7 @@
         "date": "26-6-2024",
         "time": "9:00am - 6:00pm",
         "location": "The Ritz-Carlton, 99, Ashok Nagar, Bengaluru, Karnataka 560025, India",
-        "description": "The OpenSearch community continues to expand, always welcoming new individuals, organizations, and partners into the fold.",
+        "description": "The OpenSearch community continues to expand, always welcoming the new individuals, organizations, and partners into the fold.",
         "image": "https://opensearch.org/assets/media/opensearchcon/2024/OpenSearchCon_India_Banner.png",
         "website": "https://opensearch.org/events/opensearchcon/2024/india/index.html"
     },
@@ -616,7 +697,7 @@
         "date": "23-6-2024",
         "time": "9:30am - 3:00pm",
         "location": "Wissen Infotech, 176, Whitefield, Bengaluru, Karnataka 560066, India",
-        "description": "Join us for an exciting meetup, where industry leaders, innovators, and enthusiasts come together to explore the developments in Gen AI.",
+        "description": "Join us for an exciting meetup, where industry leaders, innovators, and enthusiasts come together to explore the developments in Gen AI and discuss use cases.",
         "image": "https://images.lumacdn.com/cdn-cgi/image/format=auto,fit=cover,dpr=2,background=white,quality=75,width=280,height=280/gallery-images/ah/3c3db379-bc3e-493e-8677-d2fb311882f8",
         "website": "https://lu.ma/9f7f70f4"
     },
@@ -679,7 +760,7 @@
         "date": "8-6-2024",
         "time": "11:00am - 4:00pm",
         "location": "Scaler School of Technology, Electronic City, Bengaluru, Karnataka 560100, India",
-        "description": "Join us for a fun-filled day where we will talk about everything related to products and product management.",
+        "description": "Join us for a fun-filled day where we will talk about everything related to products and product management with great speakers.",
         "image": "https://images.lumacdn.com/cdn-cgi/image/format=auto,fit=cover,dpr=2,background=white,quality=75,width=280,height=280/event-covers/vq/d57df988-6688-4b81-9e19-94633b1a07b9",
         "website": "https://lu.ma/pu45xf7i"
     },
@@ -724,7 +805,7 @@
         "date": "18-5-2024",
         "time": "10:00am - 1:00pm",
         "location": "GeekyAnts, BTM Layout, Bengaluru, Karnataka 560076, India",
-        "description": "This event theme is Developer productivity using Al tools. This covers many developer activities like learning languages, coding, and testing.",
+        "description": "This event theme is Developer productivity using Al tools. This covers many developer activities like coding, and testing.",
         "image": "https://media.konfhub.com/event_poster/2024/April/28/1714320568416-1714320568416-c705b89e-3a02-4099-a0aa-73c091bf890c.png",
         "website": "https://konfhub.com/jsmeetup90"
     },
@@ -759,7 +840,7 @@
         "title": "Festival of Indian Languages Conference",
         "date": "17-5-2024",
         "time": "10:00am - 5:00pm",
-        "location": "Welcomhotel by ITC Hotels, Richmond Rd, Bengaluru, Karnataka 560025, India",
+        "location": "Welcomhotel by ITC Hotels, Richmond, Bengaluru, Karnataka 560025, India",
         "description": "Festival of Indian Languages (FOIL) is a conference that will try to paint the linguistic patchwork that keeps together the magical idea of India!",
         "image": "https://img-cdn.thepublive.com/fit-in/1280x960/filters:format(webp)/afaqs/media/post_attachments/79459b2c539056ea5026c1fb0c0158bbff39d8c48d29381930121f6e794c54f6.jpg",
         "website": "https://events.afaqs.com/festival-of-indian-languages"
@@ -769,7 +850,7 @@
         "date": "16-5-2024",
         "time": "10:00am - 5:30pm",
         "location": "Sheraton Grand Hotel, Whitefield, Bengaluru, Karnataka 560048, India",
-        "description": "Join us for the technical edition of AWS Summit Bengaluru 2024. The event is designed to help builders learn to build, launch, and scale infrastructure.",
+        "description": "Join us for the technical edition of AWS Summit Bengaluru 2024. The event is designed to help builders learn to build, and launch.",
         "image": "https://images.yourstory.com/cs/2/21ccd920843c11ec88170b5512a0f9d5/Bannerforarticle-1715699278995.png?mode=crop&crop=faces&ar=2%3A1&format=auto&w=1200&q=75",
         "website": "https://aws.amazon.com/events/summits/bengaluru/technical-edition"
     },
@@ -778,7 +859,7 @@
         "date": "11-5-2024",
         "time": "1:50pm - 4:00pm",
         "location": "Red Hat India Pvt. Ltd., Doddanekkundi, Bengaluru, Karnataka 560037, India",
-        "description": "Join Kubernetes Bangalore (K8sBLR) for an insightful event. We will delve into Kubernetes, Cloud Native solutions and discussing Cloud Computing.",
+        "description": "Join Kubernetes Bangalore (K8sBLR) for an insightful event. We will delve into Kubernetes and Cloud Native solutions.",
         "image": "https://secure.meetupstatic.com/photos/event/d/a/7/0/600_517795920.webp?w=384",
         "website": "https://www.meetup.com/kubernetes-india-meetup/events/300323857"
     },
@@ -786,8 +867,8 @@
         "title": "25th Dot Net Bangalore Meetup",
         "date": "11-5-2024",
         "time": "10:30am - 4:00pm",
-        "location": "DevOn Software, Lower Ground Floor, Block-2a Hibiscus, Devarabisanahalli, Uttarahalli Hobli, Bengaluru, Karnataka 560087, India",
-        "description": "Hello All, this is a free meetup. Everyone is welcome. Spread the word.",
+        "location": "DevOn Software, Devarabisanahalli, Bengaluru, Karnataka 560087, India",
+        "description": "Hello All, this is a free meetup. Everyone is welcome. Spread the word. We have amazing speakers and topics",
         "image": "https://secure.meetupstatic.com/photos/event/c/7/0/9/600_519710953.webp?w=384",
         "website": "https://www.meetup.com/dotnetblr/events/299729859"
     },
@@ -796,7 +877,7 @@
         "date": "4-5-2024",
         "time": "4:00pm - 8:30pm",
         "location": "Hustlehub Tech Park, 36/5, HSR Layout, Bengaluru, Karnataka 560102, India",
-        "description": "The NoCode Tour India 2024 by Zeroic is making waves and this time, it's Bangalore's turn to get in on the action, that too, in partnership with Bubble.",
+        "description": "The NoCode Tour India 2024 by Zeroic is making waves and this time, it's Bangalore's turn to get in on the action.",
         "image": "https://images.lumacdn.com/cdn-cgi/image/format=auto,fit=cover,dpr=2,background=white,quality=75,width=280,height=280/event-covers/67/faf69fea-c267-4c68-98f3-42ff4b2a4b15",
         "website": "https://lu.ma/nct-bengaluru"
     },
@@ -814,7 +895,7 @@
         "date": "4-5-2024",
         "time": "11:00am - 2:00pm",
         "location": "Microsoft Reactor Bengaluru, Lavelle Rd, Bengaluru, Karnataka 560001, India",
-        "description": "Are you interested in learning more about open-source data technologies? Then join us for a meetup co-hosted by Aiven and Decodable.",
+        "description": "Are you interested in learning more about open-source data technologies? Then join us for a meetup.",
         "image": "https://secure.meetupstatic.com/photos/event/1/6/f/a/600_520445882.webp?w=384",
         "website": "https://www.meetup.com/india-open-source-data-infrastructure-meetup/events/297883098"
     },
@@ -823,7 +904,7 @@
         "date": "3-5-2024",
         "time": "3:30pm - 8:00pm",
         "location": "Nutanix Technologies, Bellandur, Bengaluru, Karnataka 560103, India",
-        "description": "We invite you to Data Streams x ML, taking place the day after the Kafka Summit. Join us to discover and connect!.",
+        "description": "We invite you to Data Streams x ML, taking place the day after the Kafka Summit. Join us to discover, connect and we promise engaging discussions!.",
         "image": "https://images.lumacdn.com/cdn-cgi/image/format=auto,fit=cover,dpr=2,background=white,quality=75,width=280,height=280/event-covers/nd/0d420a59-5711-4951-9fa3-62d1176d6461",
         "website": "https://lu.ma/datastreamsxml"
     },
@@ -868,7 +949,7 @@
         "date": "28-4-2024",
         "time": "10:00am - 2:00pm",
         "location": "CloudSEK, 16/1, Jogupalya, Bengaluru, Karnataka 560008, India",
-        "description": "The Hackers Meetup X HackerOne Club South India, Bangalore, Application Security special edition, are having amazing Topics & Speakers.",
+        "description": "The Hackers Meetup X HackerOne Club South India, Bangalore, Application Security special edition, are having amazing topics.",
         "image": "https://images.lumacdn.com/cdn-cgi/image/format=auto,fit=cover,dpr=2,background=white,quality=75,width=280,height=280/event-covers/8a/8b16f318-048f-44fd-8985-f98f99d106d5",
         "website": "https://lu.ma/0pgq3ae2"
     },
@@ -886,7 +967,7 @@
         "date": "27-4-2024",
         "time": "2:30pm - 5:30pm",
         "location": "Razorpay, Adugodi, Bengaluru, Karnataka 560030, India",
-        "description": "Get ready to block your calendars because we are having the first ever - the Data Interest Group Meetup! 🎉 Join us in the morning.",
+        "description": "Get ready to block your calendars because we are having the first ever - the Data Interest Group Meetup! 🎉 Join us in the morning brimming with data-driven excitement.",
         "image": "https://images.lumacdn.com/cdn-cgi/image/format=auto,fit=cover,dpr=2,background=white,quality=75,width=280,height=280/event-covers/b4/32b124df-b28c-40ab-b263-e99b31ed3725",
         "website": "https://lu.ma/2ue0887y"
     },
@@ -904,7 +985,7 @@
         "date": "27-4-2024",
         "time": "10:30am - 1:30pm",
         "location": "Microsoft Reactor Bengaluru, Lavelle Rd, Bengaluru, Karnataka 560001, India",
-        "description": "In an age where Large Language Models (LLM) are evolving, understanding how to evaluate the output of such models is crucial.",
+        "description": "In an age where LLMs are evolving at a rapid pace, understanding how to effectively evaluate the output of such models is crucial.",
         "image": "https://images.lumacdn.com/cdn-cgi/image/format=auto,fit=cover,dpr=2,background=white,quality=75,width=280,height=280/event-covers/tw/ca68ef35-16a3-4d74-a16e-6e40bfa7d85d",
         "website": "https://lu.ma/pkw9m7fy"
     },
@@ -931,7 +1012,7 @@
         "date": "20-4-2024",
         "time": "10:30am - 3:30pm",
         "location": "DevOn Software, Devarabisanahalli, Bengaluru, Karnataka 560087, India",
-        "description": "Hello all, Are you prepared to be part of the DevOps evolution? If the answer is yes, then get ready for the exciting news! Our upcoming DevOps meet-up event is to learn from industry experts.",
+        "description": "Hello all, Are you prepared to be part of the DevOps evolution? If the answer is yes, then get ready for the exciting news and to learn from the industry experts.",
         "image": "https://secure.meetupstatic.com/photos/event/4/5/8/5/600_520037797.webp?w=384",
         "website": "https://www.meetup.com/cloudops-meetup-bangalore/events/299311996"
     },
@@ -949,7 +1030,7 @@
         "date": "20-4-2024",
         "time": "10:00am - 1:00pm",
         "location": "Google Office, Kyoto West, BAGMANE CONSTELLATION BUSINESS PARK, Bengaluru, Karnataka 560048, India",
-        "description": "This event is sponsored by Google for Developers and free of cost. Exact venue to be disclosed only to confirmed attendees. We will send a mail to all who are confirmed.",
+        "description": "This event is sponsored by Google for Developers and free of cost. Exact venue to be disclosed only to confirmed attendees.",
         "image": "https://secure.meetupstatic.com/photos/event/7/8/d/6/600_520290934.webp?w=384",
         "website": "https://www.meetup.com/bangpypers/events/298623908"
     },
@@ -972,7 +1053,7 @@
         "website": "https://lu.ma/crewsphere-blr"
     },
     {
-        "title": "Designing For Impact: Web3",
+        "title": "Designing For Impact: Web3 for real world problem",
         "date": "13-4-2024",
         "time": "10:00am - 5:00pm",
         "location": "Hashed Haus, 231, Indiranagar, Bengaluru, Karnataka 560038, India",
@@ -1003,7 +1084,7 @@
         "date": "9-12-2023",
         "time": "10:00am - 7:00pm",
         "location": "Bengaluru Marriott Hotel Whitefield, Bengaluru, Karnataka 560066, India",
-        "description": "Re:Invent is India's First Web3 Infrastructure Conference that will be held on December 9, 2023, in Bangalore, India, during ETHIndia'23.",
+        "description": "Re:Invent is India's First Web3 Infrastructure Conference during ETHIndia'23. The conference is an open, unbiased, and democratic platform for everyone.",
         "image": "https://images.lumacdn.com/cdn-cgi/image/format=auto,fit=cover,dpr=2,background=white,quality=75,width=620,height=310/event-covers/yn/3f9fe64d-00ef-49fe-b158-25a4f167b635",
         "website": "https://lu.ma/web3reinvent"
     }

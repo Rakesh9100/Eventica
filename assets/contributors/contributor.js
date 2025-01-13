@@ -17,8 +17,12 @@ async function fetchContributors() {
     if (!response.ok) throw new Error("Failed to fetch contributors");
 
     const contributors = await response.json();
+    // Filter out the repository owner
+     const filteredContributors = contributors.filter(
+      (contributor) => contributor.login !== REPO_OWNER
+    );
 
-    contributors.forEach((contributor) => {
+    filteredContributors.forEach((contributor) => {
       // Create a card for each contributor
       const card = document.createElement("div");
       card.className = "contributor-card";

@@ -65,8 +65,10 @@
                 <h1>CONTACT US</h1>
                 <p>We would love to hear from you</p>
                 <form name="Eventica Contact" autocomplete="off" netlify>
-                    <input type="text" id="name" name="name" placeholder="Your Name" required>
-                    <input type="email" id="name" name="email" placeholder="Your Email" required>
+                    <input type="text" id="name" name="name" placeholder="Your Name" required pattern="^[a-zA-Z\s]{2,}$"
+                    title="Name must contain only letters, spaces and must be at least 2 characters long.">
+                    <input type="email" id="name" name="email" placeholder="Your Email" required pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$"
+                    title="Please enter a valid Email address.">
                     <textarea id="message" name="message" rows="5" placeholder="Your Message" required></textarea>
 
                     <button type="submit">Send Message</button>

@@ -80,14 +80,14 @@ body.dark-mode .past-event-date,
 }
 
 .past-event-title {
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     margin-bottom: 0.5rem;
     color: var(--primary-color);
 }
 
 .past-event-date,
 .past-event-location {
-    font-size: 1rem;
+    font-size: 0.9rem;
     color: var(--light-text-color);
     margin-bottom: 0.5rem;
 }

@@ -18,15 +18,34 @@ body.dark-mode .contact-form {
     color: #f4f4f4;
 }
 
-body.dark-mode .contact-form input,
-body.dark-mode .contact-form textarea {
-    background-color: #333;
+body.dark-mode .form-section input,
+body.dark-mode .form-section textarea {
+    background-color: #181818;
     color: #f4f4f4;
+    border: 2px solid white;
+    font-weight: 700;
 }
 
 body.dark-mode .submit-button {
     background-color: #444;
     color: #f4f4f4;
+}
+
+body.dark-mode .form-section {
+    background-color: #000000a1;
+}
+
+body.dark-mode .form-section input::placeholder,
+body.dark-mode .form-section textarea::placeholder {
+    color: #b89f9fc2;
+}
+
+body.dark-mode .form-section .icon {
+    color: white;
+}
+
+body.dark-mode .form-section .icon:hover {
+    color: #1da1f2;
 }
 
 /* Main container Css*/
@@ -78,6 +97,7 @@ body.dark-mode .submit-button {
     border-radius: 8px;
     font-size: 1em;
     transition: border-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    font-weight: 700;
 }
 
 input[type="text"]:hover,

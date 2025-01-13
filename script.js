@@ -283,3 +283,18 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 });
+
+// Search bar
+document.querySelector('.search-button').addEventListener('click', function() {
+    const query = document.querySelector('.search-input').value.toLowerCase();
+    const events = document.querySelectorAll('.event-card'); // Ensure this selector matches your event cards
+
+    events.forEach(event => {
+        const title = event.querySelector('.event-title').textContent.toLowerCase(); // Ensure this selector matches your event title
+        if (title.includes(query)) {
+            event.style.display = 'block'; // Show matching event
+        } else {
+            event.style.display = 'none'; // Hide non-matching event
+        }
+    });
+});

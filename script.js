@@ -105,22 +105,22 @@ function populateEventGrids(events) {
     const upcomingEventGrid = document.getElementById('upcoming-events');
     if (upcomingEventGrid) {
         upcomingEventGrid.innerHTML = upcomingEvents.map(event => createEventCard(event)).join('');
+    } else {
+        console.log('Upcoming events grid not found');
     }
 
     // Populate past events grid
     const pastEventGrid = document.getElementById('past-events');
     if (pastEventGrid) {
         pastEventGrid.innerHTML = pastEvents.map(event => createEventCard(event, true)).join('');
+    } else {
+        console.log('Past events grid not found');
     }
-    // console.log(`Populated ${upcomingEvents.length} upcoming events and ${pastEvents.length} past events.`);
+    console.log(`Populated ${upcomingEvents.length} upcoming events and ${pastEvents.length} past events.`);
 }
 
-// Fetch and display events on DOM load if on the relevant page
-document.addEventListener('DOMContentLoaded', () => {
-    if (window.location.pathname.includes('index.html') || window.location.pathname === '/' || window.location.pathname.includes('pastevents')) {
-        fetchEventData();
-    }
-});
+// Fetch and display events on DOM load
+document.addEventListener('DOMContentLoaded', fetchEventData);
 
 // Smooth scrolling for navigation links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -285,35 +285,25 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 // Search bar
-const searchButton = document.querySelector('.search-button');
-const searchInput = document.querySelector('.search-input');
+document.querySelector('.search-button').addEventListener('click', function() {
+    const query = document.querySelector('.search-input').value.toLowerCase();
+    const events = document.querySelectorAll('.event-card'); // Ensure this selector matches your event cards
 
-if (searchButton && searchInput) {
-    const handleSearch = () => {
-        const query = searchInput.value.toLowerCase();
-        let events;
-
-        // Determine which page we are on and select the appropriate event cards
-        if (window.location.pathname.includes('pastevents')) {
-            events = document.querySelectorAll('.past-event-card');
+    events.forEach(event => {
+        const title = event.querySelector('.event-title').textContent.toLowerCase(); // Ensure this selector matches your event title
+        if (title.includes(query)) {
+            event.style.display = 'block'; // Show matching event
         } else {
-            events = document.querySelectorAll('.event-card');
+            event.style.display = 'none'; // Hide non-matching event
         }
     });
 });
-document.addEventListener('DOMContentLoaded', function () {
+document.addEventListener('DOMContentLoaded', function() {
     // Theme toggling
     const themeToggle = document.getElementById('theme-toggle');
     const themeOptions = document.querySelector('.theme-options');
     const themeButtons = document.querySelectorAll('.theme-btn');
-    const darkModeToggle = document.getElementById('dark-mode-toggle');
-    const toTop = document.querySelector('.to-top');
-    const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
-    const navItems = document.querySelector('.nav-items');
-    const searchButton = document.querySelector('.search-button');
-    const searchInput = document.querySelector('.search-input');
-
-    // Handle theme toggling
+    
     themeToggle.addEventListener('click', () => {
         themeOptions.classList.toggle('active');
     });
@@ -326,6 +316,7 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
     // Dark mode toggle
+    const darkModeToggle = document.getElementById('dark-mode-toggle');
     darkModeToggle.addEventListener('click', () => {
         document.body.classList.toggle('dark-mode');
         const icon = darkModeToggle.querySelector('i');
@@ -338,7 +329,8 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     });
 
-    // Scroll to top functionality
+    // Scroll to top
+    const toTop = document.querySelector('.to-top');
     window.addEventListener('scroll', () => {
         if (window.pageYOffset > 100) {
             toTop.classList.add('active');
@@ -347,47 +339,30 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     });
 
-    toTop.addEventListener('click', (e) => {
-        e.preventDefault();
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-    });
-
-    // Mobile menu toggle
+    // Mobile menu
+    const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+    const navItems = document.querySelector('.nav-items');
+    
     mobileMenuBtn.addEventListener('click', () => {
         navItems.classList.toggle('active');
     });
+});
 
-    document.addEventListener('click', (e) => {
-        if (!navItems.contains(e.target) && !mobileMenuBtn.contains(e.target)) {
-            navItems.classList.remove('active');
+// Testimonials expansion functionality
+
+document.addEventListener("DOMContentLoaded", () => {
+    const seeMoreBtn = document.getElementById("see-more-btn");
+    const extraTestimonials = document.querySelector(".extra-testimonials");
+
+    seeMoreBtn.addEventListener("click", () => {
+        // Toggle the "hidden" class
+        extraTestimonials.classList.toggle("hidden");
+
+        // Update button text and icon
+        if (extraTestimonials.classList.contains("hidden")) {
+            seeMoreBtn.innerHTML = 'See More <i class="fas fa-chevron-down"></i>';
+        } else {
+            seeMoreBtn.innerHTML = 'See Less <i class="fas fa-chevron-up"></i>';
         }
     });
-
-    // Search functionality
-    if (searchButton && searchInput) {
-        const handleSearch = () => {
-            const query = searchInput.value.toLowerCase();
-            let events;
-
-            if (window.location.pathname.includes('pastevents')) {
-                events = document.querySelectorAll('.past-event-card');
-            } else {
-                events = document.querySelectorAll('.event-card');
-            }
-
-            events.forEach(event => {
-                const title = event.querySelector('.event-title, .past-event-title').textContent.toLowerCase();
-                const description = event.querySelector('.event-description, .past-event-description').textContent.toLowerCase();
-
-                if (query === '' || title.includes(query) || description.includes(query)) {
-                    event.style.display = 'block';
-                } else {
-                    event.style.display = 'none';
-                }
-            });
-        };
-
-        searchButton.addEventListener('click', handleSearch);
-        searchInput.addEventListener('input', handleSearch);
-    }
 });

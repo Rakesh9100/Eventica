@@ -6,10 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/x-icon" href="../images/favicons/favicon1.png">
     <link rel="stylesheet" href="../../style.css">
-    <link rel="stylesheet" href="./pastevents.css">
+    <link rel="stylesheet" href="./contributor.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap">
-    <title>Eventica | Past Events</title>
+    <title>Eventica | Contributors</title>
 </head>
 
 <body>
@@ -24,18 +24,12 @@
                 <i class="fas fa-bars"></i>
             </button>
             <div class="nav-items">
-                <div class="search-container">
-                    <input type="text" placeholder="Search events..." aria-label="Search events" class="search-input" name="search-events">
-                    <button class="search-button" aria-label="Search">
-                        <i class="fas fa-search"></i>
-                    </button>
-                </div>
                 <ul class="nav-links">
                     <li><a href="../../index.html"><i class="fas fa-house"></i> Home</a></li>
                     <li><a href="../about/about.html"><i class="fas fa-circle-info"></i> About</a></li>
                     <li><a href="../../index.html#events"><i class="fas fa-calendar-alt"></i> Upcoming Events</a></li>
-                    <li><a href="#"><i class="fas fa-calendar-check"></i> Past Events</a></li>
-                    <li><a href="../contributors/contributor.html"><i class="fa-solid fa-users"></i>Contributors</a></li>
+                    <li><a href="../pastevents/pastevents.html"><i class="fas fa-calendar-check"></i> Past Events</a></li>
+                    <li><a href="#"><i class="fa-solid fa-users"></i>Contributors</a></li>
                     <li><a href="../contact/contact.html"><i class="fas fa-phone"></i> Contact</a></li>
                 </ul>
                 <div class="theme-switcher">
@@ -62,27 +56,19 @@
         </div>
     </nav>
 
-    <!-- Past events main section -->
-    <main>
-        <section class="past-events-section">
-            <div class="container">
-                <h1 class="section-title">Past Events</h1>
-                <div class="event-grid" id="past-events">
-                    <!-- Past event cards will be dynamically inserted here -->
-                </div>
-            </div>
-        </section>
-    </main>
+    <!-- Contributors main section -->
+    <div class="ctnr">
+        <h1>Meet Our Contributors</h1>
+        <div id="contributors" class="contributors-grid"></div>
+    </div>
 
     <!-- Footer section -->
-    <footer class="footer">
-        <div class="container">
-            <p class="copyright">Created By Rakesh Roshan ❤️ | ©
-                <script>
-                    document.write(new Date().getFullYear());
-                </script>: All Rights Reserved
-            </p>
-        </div>
+    <footer>
+        <p class="copyright">Created By Rakesh Roshan ❤️ | ©
+            <script>
+                document.write(new Date().getFullYear());
+            </script>: All Rights Reserved
+        </p>
     </footer>
 
     <!-- Scroll to top button -->
@@ -91,6 +77,7 @@
     </a>
 
     <script src="../../script.js"></script>
+    <script src="./contributor.js"></script>
 </body>
 
 </html>

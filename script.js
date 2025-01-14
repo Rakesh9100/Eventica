@@ -105,22 +105,22 @@ function populateEventGrids(events) {
     const upcomingEventGrid = document.getElementById('upcoming-events');
     if (upcomingEventGrid) {
         upcomingEventGrid.innerHTML = upcomingEvents.map(event => createEventCard(event)).join('');
-    } else {
-        console.log('Upcoming events grid not found');
     }
 
     // Populate past events grid
     const pastEventGrid = document.getElementById('past-events');
     if (pastEventGrid) {
         pastEventGrid.innerHTML = pastEvents.map(event => createEventCard(event, true)).join('');
-    } else {
-        console.log('Past events grid not found');
     }
-    console.log(`Populated ${upcomingEvents.length} upcoming events and ${pastEvents.length} past events.`);
+    // console.log(`Populated ${upcomingEvents.length} upcoming events and ${pastEvents.length} past events.`);
 }
 
-// Fetch and display events on DOM load
-document.addEventListener('DOMContentLoaded', fetchEventData);
+// Fetch and display events on DOM load if on the relevant page
+document.addEventListener('DOMContentLoaded', () => {
+    if (window.location.pathname.includes('index.html') || window.location.pathname === '/' || window.location.pathname.includes('pastevents')) {
+        fetchEventData();
+    }
+});
 
 // Smooth scrolling for navigation links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -285,16 +285,32 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 // Search bar
-document.querySelector('.search-button').addEventListener('click', function() {
-    const query = document.querySelector('.search-input').value.toLowerCase();
-    const events = document.querySelectorAll('.event-card'); // Ensure this selector matches your event cards
+const searchButton = document.querySelector('.search-button');
+const searchInput = document.querySelector('.search-input');
 
-    events.forEach(event => {
-        const title = event.querySelector('.event-title').textContent.toLowerCase(); // Ensure this selector matches your event title
-        if (title.includes(query)) {
-            event.style.display = 'block'; // Show matching event
+if (searchButton && searchInput) {
+    const handleSearch = () => {
+        const query = searchInput.value.toLowerCase();
+        let events;
+
+        // Determine which page we are on and select the appropriate event cards
+        if (window.location.pathname.includes('pastevents')) {
+            events = document.querySelectorAll('.past-event-card');
         } else {
-            event.style.display = 'none'; // Hide non-matching event
+            events = document.querySelectorAll('.event-card');
         }
-    });
-});
+
+        events.forEach(event => {
+            const title = event.querySelector('.event-title, .past-event-title').textContent.toLowerCase();
+            const description = event.querySelector('.event-description, .past-event-description').textContent.toLowerCase();
+            if (query === '' || title.includes(query) || description.includes(query)) {
+                event.style.display = 'block'; // Show matching event or all events if query is empty
+            } else {
+                event.style.display = 'none'; // Hide non-matching event
+            }
+        });
+    };
+
+    searchButton.addEventListener('click', handleSearch);
+    searchInput.addEventListener('input', handleSearch);
+}

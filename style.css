@@ -90,6 +90,24 @@ body.dark-mode .event-date,
     color: var(--light-text-color) !important;
 }
 
+body.dark-mode .testimonial-card {
+    background-color: #000000;
+    color: #f4f4f4;
+}
+
+body.dark-mode .profile-info h4 {
+    color: #f4f4f4;
+}
+
+body.dark-mode .profile-info .role,
+body.dark-mode .social-links a {
+    color: #bbbbbb;
+}
+
+body.dark-mode .profile {
+    border-top-color: #444444;
+}
+
 body.dark-mode footer {
     background-color: #000000;
 }
@@ -606,16 +624,20 @@ body.dark-mode footer {
     transform: scale(1.4);
 }
 
+/* Testimonials Section Css */
+
 .testimonials {
-    background-color: #f9f9f9;
     padding: 50px 20px;
-    text-align: center;
+}
+
+.testimonial-container {
+    margin: 0 auto;
+    width: 90%;
 }
 
 .testimonials .section-title {
     font-size: 2rem;
     margin-bottom: 30px;
-    color: #333;
 }
 
 .testimonial-grid {
@@ -625,23 +647,111 @@ body.dark-mode footer {
 }
 
 .testimonial-card {
-    background: #fff;
-    padding: 20px;
+    padding: 25px;
+    margin-top: 25px;
+    position: relative;
+    background: #ffffff;
     border-radius: 10px;
+    transition: all 0.3s ease;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-.testimonial-text {
-    font-style: italic;
-    color: #555;
+.testimonial-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.testimonial-card.blue {
+    border-bottom: 4px solid #3498db;
+}
+
+.testimonial-card.red {
+    border-bottom: 4px solid #e74c3c;
+}
+
+.testimonial-card.green {
+    border-bottom: 4px solid #1abc9c;
+}
+
+.testimonial-card.purple {
+    border-bottom: 4px solid #9b59b6;
+}
+
+.rating {
     margin-bottom: 15px;
+    text-align: center;
 }
 
-.testimonial-author {
-    font-weight: bold;
-    color: #333;
+.testimonial-text {
+    margin-bottom: 25px;
+    color: var(--light-text-color);
 }
 
+.profile {
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid #eeeeee;
+}
+
+.profile-img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 15px;
+    border: 3px solid #ffffff;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+}
+
+.profile-info h4 {
+    color: #333333;
+    font-size: 18px;
+    margin-bottom: 5px;
+}
+
+.profile-info .role {
+    color: #666666;
+    font-size: 14px;
+    margin-bottom: 8px;
+}
+
+.hidden {
+    display: none;
+}
+
+.see-more-btn {
+    display: block;
+    align-items: center;
+    justify-content: center;
+    margin: 25px auto;
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #ffffff;
+    border: none;
+    cursor: pointer;
+    border-radius: 30px;
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+    background: linear-gradient(90deg, #6a11cb 0%, #2575fc 100%);
+}
+
+.see-more-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.2);
+    background: linear-gradient(90deg, #2575fc 0%, #6a11cb 100%);
+}
+
+.see-more-btn i {
+    transition: transform 0.3s ease;
+}
+
+.see-more-btn:active {
+    transform: translateY(1px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
 
 /* Footer Css */
 
@@ -757,136 +867,4 @@ footer {
         break-inside: avoid;
         page-break-inside: avoid;
     }
-}
-
-.hidden {
-    display: none;
-}
-
-
-.testimonial-card {
-    background: #fff;
-    border-radius: 15px;
-    padding: 30px;
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
-    transition: all 0.3s ease;
-    position: relative;
-}
-
-.testimonial-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
-}
-
-.testimonial-card.green { border-bottom: 4px solid #2ecc71; }
-.testimonial-card.purple { border-bottom: 4px solid #9b59b6; }
-.testimonial-card.blue { border-bottom: 4px solid #3498db; }
-.testimonial-card.orange { border-bottom: 4px solid #e67e22; }
-.testimonial-card.red { border-bottom: 4px solid #e74c3c; }
-.testimonial-card.teal { border-bottom: 4px solid #1abc9c; }
-
-.rating {
-    color: #ffd700;
-    margin-bottom: 15px;
-}
-
-.profile {
-    display: flex;
-    align-items: center;
-    margin-top: 20px;
-    padding-top: 20px;
-    border-top: 1px solid #eee;
-}
-
-.profile-img {
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
-    object-fit: cover;
-    margin-right: 15px;
-    border: 3px solid #fff;
-    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
-}
-
-.profile-info h4 {
-    color: #333;
-    font-size: 18px;
-    margin-bottom: 5px;
-}
-
-.profile-info .role {
-    color: #666;
-    font-size: 14px;
-    margin-bottom: 8px;
-}
-
-.social-links {
-    margin-top: 10px;
-}
-
-.social-links a {
-    color: #666;
-    text-decoration: none;
-    margin-right: 12px;
-    font-size: 14px;
-    transition: color 0.3s ease;
-}
-
-.social-links a:hover {
-    text-decoration: underline;
-}
-
-/* Dark mode support */
-body.dark-mode .testimonial-card {
-    background-color: #333;
-    color: #f4f4f4;
-}
-
-body.dark-mode .profile-info h4 {
-    color: #f4f4f4;
-}
-
-body.dark-mode .profile-info .role,
-body.dark-mode .social-links a {
-    color: #bbbbbb;
-}
-
-body.dark-mode .profile {
-    border-top-color: #444;
-}
-
-.see-more-btn {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: 0.5rem;
-    padding: 0.75rem 1.5rem;
-    font-size: 1rem;
-    font-weight: 600;
-    color: #fff;
-    background: linear-gradient(90deg, #6a11cb 0%, #2575fc 100%);
-    border: none;
-    border-radius: 30px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
-}
-
-.see-more-btn i {
-    transition: transform 0.3s ease;
-}
-
-.see-more-btn:hover {
-    background: linear-gradient(90deg, #2575fc 0%, #6a11cb 100%);
-    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.2);
-    transform: translateY(-3px);
-}
-
-.see-more-btn:hover i {
-    transform: translateY(2px) rotate(180deg);
-}
-
-.see-more-btn:active {
-    transform: translateY(1px);
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }

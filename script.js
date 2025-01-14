@@ -316,7 +316,6 @@ if (searchButton && searchInput) {
 }
 
 // Testimonials expansion functionality
-
 document.addEventListener("DOMContentLoaded", () => {
     const seeMoreBtn = document.getElementById("see-more-btn");
     const extraTestimonials = document.querySelector(".extra-testimonials");

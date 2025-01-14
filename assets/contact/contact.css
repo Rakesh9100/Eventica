@@ -1,21 +1,23 @@
-body {
+* {
     margin: 0;
-    font-family: 'Poppins', sans-serif;
-    background-color: #f7f8fa;
-    color: #333;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
     line-height: 1.6;
+    min-height: 100vh;
+    color: var(--text-color);
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--background-color);
 }
 
 /* Dark mode Css */
 
-body.dark-mode .contact-section {
-    background-color: #1e1e1e;
-    color: #f4f4f4;
-}
-
-body.dark-mode .contact-form {
-    background-color: #282828;
-    color: #f4f4f4;
+body.dark-mode .form-section {
+    background-color: #000000;
 }
 
 body.dark-mode .form-section input,
@@ -24,15 +26,6 @@ body.dark-mode .form-section textarea {
     color: #f4f4f4;
     border: 2px solid white;
     font-weight: 700;
-}
-
-body.dark-mode .submit-button {
-    background-color: #444;
-    color: #f4f4f4;
-}
-
-body.dark-mode .form-section {
-    background-color: #000000a1;
 }
 
 body.dark-mode .form-section input::placeholder,
@@ -48,7 +41,12 @@ body.dark-mode .form-section .icon:hover {
     color: #1da1f2;
 }
 
-/* Main container Css*/
+main {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
 .contact-container {
     display: flex;
@@ -71,7 +69,7 @@ body.dark-mode .form-section .icon:hover {
     max-width: 500px;
     padding: 20px;
     text-align: center;
-    background-color: #fff;
+    background-color: #ffffff;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     border-radius: 8px;
 }
@@ -92,7 +90,7 @@ body.dark-mode .form-section .icon:hover {
     width: 99%;
     padding: 10px;
     margin: 10px 0;
-    border: 1px solid #ddd;
+    border: 1px solid #dddddd;
     background-color: #e9eef5;
     border-radius: 8px;
     font-size: 1em;
@@ -125,7 +123,7 @@ textarea {
     width: 100%;
     padding: 10px;
     background: #4a90e2;
-    color: #fff;
+    color: #ffffff;
     border: none;
     border-radius: 8px;
     font-size: 1em;
@@ -145,7 +143,7 @@ textarea {
 .social-links a {
     margin: 0 10px;
     font-size: 1.5em;
-    color: #333;
+    color: #333333;
     text-decoration: none;
     transition: color 0.3s ease;
 }
@@ -162,16 +160,6 @@ textarea {
 #success {
     color: #4a90e2;
     font-size: 21px;
-}
-
-/* Footer Css*/
-
-footer {
-    text-align: center;
-    padding: 15px 20px;
-    background-color: #333;
-    color: white;
-    font-size: 1em;
 }
 
 /* Media queries for responsiveness */
@@ -192,10 +180,6 @@ footer {
     }
 
     .form-section p {
-        font-size: 0.9em;
-    }
-
-    footer {
         font-size: 0.9em;
     }
 }

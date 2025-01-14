@@ -20,7 +20,7 @@
 <body>
     <!-- Navigation bar section -->
     <nav class="navbar">
-        <div class="container navbar-container">
+        <div class="navbar-container">
             <a href="index.html" class="logo-container">
                 <img src="./assets/images/logos/logo1.png" alt="Logo" class="logo">
                 <span class="logo-text">Eventica</span>
@@ -30,7 +30,7 @@
             </button>
             <div class="nav-items">
                 <div class="search-container">
-                    <input type="text" placeholder="Search events..." aria-label="Search events" class="search-input">
+                    <input type="text" placeholder="Search events..." aria-label="Search events" class="search-input" name="search-events">
                     <button class="search-button" aria-label="Search">
                         <i class="fas fa-search"></i>
                     </button>
@@ -40,6 +40,7 @@
                     <li><a href="./assets/about/about.html"><i class="fas fa-circle-info"></i> About</a></li>
                     <li><a href="./index.html#events"><i class="fas fa-calendar-alt"></i> Upcoming Events</a></li>
                     <li><a href="./assets/pastevents/pastevents.html"><i class="fas fa-calendar-check"></i> Past Events</a></li>
+                    <li><a href="assets/contributors/contributor.html"><i class="fa-solid fa-users"></i>Contributors</a></li>
                     <li><a href="./assets/contact/contact.html"><i class="fas fa-phone"></i> Contact</a></li>
                 </ul>
                 <div class="theme-switcher">
@@ -79,13 +80,124 @@
     <main>
         <section id="events" class="events">
             <div class="container">
-                <h2 class="section-title">Upcoming Events</h2>
+                <h1 class="section-title">Upcoming Events</h1>
                 <div class="event-grid" id="upcoming-events">
                     <!-- Upcoming event cards will be dynamically inserted here -->
                 </div>
             </div>
         </section>
     </main>
+
+    <!-- Testimonials section -->
+    <section id="testimonials" class="testimonials">
+        <div class="testimonial-container">
+            <h1 class="section-title">What People Are Saying</h1>
+            <div class="testimonial-grid initial-testimonials">
+                <div class="testimonial-card blue">
+                    <div class="rating">⭐⭐⭐⭐⭐</div>
+                    <p class="testimonial-text">Eventica is my go-to platform for discovering tech meetups and cultural events in Bangalore. The interface is so intuitive!</p>
+                    <div class="profile">
+                        <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Ananya Sharma" class="profile-img">
+                        <div class="profile-info">
+                            <h4>Ananya Sharma</h4>
+                            <div class="role">Tech Enthusiast</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card red">
+                    <div class="rating">⭐⭐⭐⭐⭐</div>
+                    <p class="testimonial-text">I love how organized Eventica is! I never miss out on exciting events happening in the city.</p>
+                    <div class="profile">
+                        <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Karthik Raj" class="profile-img">
+                        <div class="profile-info">
+                            <h4>Karthik Raj</h4>
+                            <div class="role">Event Attendee</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card green">
+                    <div class="rating">⭐⭐⭐⭐⭐</div>
+                    <p class="testimonial-text">As an event organizer, Eventica has helped me reach a larger audience. Highly recommend it to everyone!</p>
+                    <div class="profile">
+                        <img src="https://randomuser.me/api/portraits/women/45.jpg" alt="Priya Reddy" class="profile-img">
+                        <div class="profile-info">
+                            <h4>Priya Reddy</h4>
+                            <div class="role">Event Organizer</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card purple">
+                    <div class="rating">⭐⭐⭐⭐⭐</div>
+                    <p class="testimonial-text">Bangalore's dynamic culture is perfectly captured here. Thanks to Eventica, I always have something to look forward to.</p>
+                    <div class="profile">
+                        <img src="https://randomuser.me/api/portraits/men/67.jpg" alt="Ravi Kumar" class="profile-img">
+                        <div class="profile-info">
+                            <h4>Ravi Kumar</h4>
+                            <div class="role">Regular Attendee</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="testimonial-grid hidden extra-testimonials">
+                <!-- Additional testimonials from your second page -->
+                <div class="testimonial-card blue">
+                    <div class="rating">⭐⭐⭐⭐⭐</div>
+                    <p class="testimonial-text">Working with Eventica was an absolute pleasure. Their attention to detail and professional service made our corporate conference truly memorable.</p>
+                    <div class="profile">
+                        <img src="https://randomuser.me/api/portraits/men/22.jpg" alt="Lance Jarvis" class="profile-img">
+                        <div class="profile-info">
+                            <h4>Lance Jarvis</h4>
+                            <div class="role">Marketing Director</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card red">
+                    <div class="rating">⭐⭐⭐⭐⭐</div>
+                    <p class="testimonial-text">The team at Eventica went above and beyond our expectations. They created an unforgettable experience that our guests are still talking about.</p>
+                    <div class="profile">
+                        <img src="https://randomuser.me/api/portraits/women/65.jpg" alt="Sarah Chen" class="profile-img">
+                        <div class="profile-info">
+                            <h4>Sarah Chen</h4>
+                            <div class="role">Non-profit Director</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card green">
+                    <div class="rating">⭐⭐⭐⭐⭐</div>
+                    <p class="testimonial-text">The team at Eventica went above and beyond our expectations. They created an unforgettable experience that our guests are still talking about.</p>
+                    <div class="profile">
+                        <img src="https://randomuser.me/api/portraits/men/46.jpg" alt="Sarah Chen" class="profile-img">
+                        <div class="profile-info">
+                            <h4>Tim Wilson</h4>
+                            <div class="role">Director</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card purple">
+                    <div class="rating">⭐⭐⭐⭐⭐</div>
+                    <p class="testimonial-text">The team at Eventica went above and beyond our expectations. They created an unforgettable experience that our guests are still talking about.</p>
+                    <div class="profile">
+                        <img src="https://randomuser.me/api/portraits/men/21.jpg" alt="Sarah Chen" class="profile-img">
+                        <div class="profile-info">
+                            <h4>Michael Angolo</h4>
+                            <div class="role">Event Coordinator</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <button id="see-more-btn" class="see-more-btn">
+                See More <i class="fas fa-chevron-down"></i>
+            </button>
+        </div>
+    </section>
 
     <!-- Footer section -->
     <footer>

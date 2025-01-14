@@ -8,15 +8,16 @@
     <link rel="stylesheet" href="./contact.css">
     <link rel="stylesheet" href="../../style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap">
-    <link rel="stylesheet" href="../../cursor.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap">
+<link rel="stylesheet" href="../../cursor.css">
+
     <title>Eventica | Contact Us</title>
 </head>
 
 <body>
     <!-- Navigation bar section -->
     <nav class="navbar">
-        <div class="container navbar-container">
+        <div class="navbar-container">
             <a href="../../index.html" class="logo-container">
                 <img src="../images/logos/logo1.png" alt="Logo" class="logo">
                 <span class="logo-text">Eventica</span>
@@ -30,6 +31,7 @@
                     <li><a href="../about/about.html"><i class="fas fa-circle-info"></i> About</a></li>
                     <li><a href="../../index.html#events"><i class="fas fa-calendar-alt"></i> Upcoming Events</a></li>
                     <li><a href="../pastevents/pastevents.html"><i class="fas fa-calendar-check"></i> Past Events</a></li>
+                    <li><a href="../contributors/contributor.html"><i class="fa-solid fa-users"></i>Contributors</a></li>
                     <li><a href="#"><i class="fas fa-phone"></i> Contact</a></li>
                 </ul>
                 <div class="theme-switcher">
@@ -66,8 +68,8 @@
                 <h1>CONTACT US</h1>
                 <p>We would love to hear from you</p>
                 <form name="Eventica Contact" autocomplete="off" netlify>
-                    <input type="text" id="name" name="name" placeholder="Your Name" required>
-                    <input type="email" id="name" name="email" placeholder="Your Email" required>
+                    <input type="text" id="name" name="name" placeholder="Your Name" autocomplete="name" required>
+                    <input type="email" id="email" name="email" placeholder="Your Email" autocomplete="email" required>
                     <textarea id="message" name="message" rows="5" placeholder="Your Message" required></textarea>
 
                     <button type="submit">Send Message</button>

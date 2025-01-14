@@ -27,13 +27,6 @@ body {
     background-color: var(--background-color);
 }
 
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    width: 90%;
-    padding: 0 1rem;
-}
-
 /* Navbar Css */
 
 .navbar {
@@ -77,7 +70,9 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1rem 0;
+    padding: 1rem 2rem;
+    width: 100%;
+    margin: 0 auto;
 }
 
 .nav-items {
@@ -107,6 +102,7 @@ body {
 }
 
 .nav-links a {
+    font-size: 1vw;
     text-decoration: none;
     position: relative;
     color: #000;
@@ -290,6 +286,7 @@ body {
     width: 90%;
     padding: 1rem;
     border-radius: 10px;
+    -webkit-backdrop-filter: blur(10px);
     backdrop-filter: blur(10px);
 }
 
@@ -297,8 +294,8 @@ body {
     font-size: clamp(6rem, 12vw, 10rem);
     font-weight: 800;
     color: transparent;
-    background-clip: text;
     -webkit-background-clip: text;
+    background-clip: text;
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -422,6 +419,13 @@ body {
 
 .events {
     padding: 6rem 0;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 90%;
+    padding: 0 1rem;
 }
 
 .section-title {
@@ -559,6 +563,10 @@ body.dark-mode .navbar {
     background-color: rgba(24, 24, 24, 0.9);
 }
 
+body.dark-mode .fa-bars {
+    color: white;
+}
+
 /* Dark mode toggle button Css */
 
 #dark-mode-toggle {
@@ -610,8 +618,8 @@ body.dark-mode .event-date,
 /* Media queries for responsiveness */
 
 @media (max-width: 1024px) {
-    .navbar-container {
-        padding: 0.8rem 0;
+    .nav-links a {
+        font-size: 16px;
     }
 
     .mobile-menu-btn {
@@ -647,6 +655,10 @@ body.dark-mode .event-date,
         padding: 1rem 0;
         border-bottom: 1px solid #eee;
         margin-left: 0;
+    }
+
+    body.dark-mode .nav-links a {
+        color: #2a2a2a;
     }
 }
 

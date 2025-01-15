@@ -5,31 +5,19 @@
 }
 
 body {
-    font-family: 'Poppins', sans-serif;
+    display: flex;
+    flex-direction: column;
     line-height: 1.6;
-    background-color: rgba(243, 238, 238, 0.616);
+    min-height: 100vh;
     color: var(--text-color);
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--background-color);
 }
 
 /* Dark mode Css */
 
-body.dark-mode .past-events-section {
-    background-color: #1e1e1e;
-    color: #f4f4f4;
-}
-
-body.dark-mode .event-grid {
-    background-color: #282828;
-    color: #f4f4f4;
-}
-
-body.dark-mode .event-card {
-    background-color: #333;
-    color: #f4f4f4;
-}
-
 body.dark-mode .past-event-card {
-    background-color: #333;
+    background-color: #000000;
 }
 
 body.dark-mode .past-event-date,
@@ -101,7 +89,7 @@ body.dark-mode .past-event-date,
     width: 60%;
     border-radius: 1rem;
     border: none;
-    color: #fff !important;
+    color: #ffffff !important;
     background-color: var(--primary-color);
     font-size: 1rem;
     padding: 0.5rem 1rem;

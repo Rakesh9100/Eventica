@@ -225,3 +225,46 @@ body{
 .container.active .toggle-right{
     transform: translateX(200%);
 }
+/* Container for Login Form */
+.container {
+    width: 100%;
+    max-width: 600px;
+    margin: 2rem auto;
+    padding: 2rem;
+    /* background-color: #fff; */
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Login Form Inputs */
+.login-form input {
+    padding: 1rem;
+    font-size: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    width: 100%;
+}
+
+/* Login Form Button */
+.login-form button {
+    padding: 1rem;
+    font-size: 1.1rem;
+    border: none;
+    background-color: var(--primary-color);
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.login-form button:hover {
+    background-color: var(--secondary-color);
+}
+
+/* Link Styling */
+.login-form a {
+    text-align: center;
+    color: var(--primary-color);
+    text-decoration: none;
+    font-size: 0.9rem;
+}

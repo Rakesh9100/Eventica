@@ -229,9 +229,22 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 // Dark mode toggle
+// Immediately apply the stored dark mode preference
+(function() {
+    const darkModeStatus = localStorage.getItem('darkMode');
+    
+    if (darkModeStatus === 'enabled') {
+        document.body.classList.add('dark-mode');
+    }
+})();
+
+// Toggle dark mode and save the preference
 document.getElementById('dark-mode-toggle').addEventListener('click', () => {
-    document.body.classList.toggle('dark-mode');
+    const isDarkMode = document.body.classList.toggle('dark-mode');
+    
+    localStorage.setItem('darkMode', isDarkMode ? 'enabled' : 'disabled');
 });
+
 
 // Mobile menu functionality
 const mobileMenuBtn = document.querySelector('.mobile-menu-btn');

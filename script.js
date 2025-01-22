@@ -228,23 +228,24 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 });
 
-// Dark mode toggle
-// Immediately apply the stored dark mode preference
-(function() {
+// Dark mode toggle based on preference
+function applyDarkModePreference() {
     const darkModeStatus = localStorage.getItem('darkMode');
-    
     if (darkModeStatus === 'enabled') {
         document.body.classList.add('dark-mode');
+    } else {
+        document.body.classList.remove('dark-mode');
     }
-})();
+}
+
+// Immediately apply the stored dark mode preference
+applyDarkModePreference();
 
 // Toggle dark mode and save the preference
 document.getElementById('dark-mode-toggle').addEventListener('click', () => {
     const isDarkMode = document.body.classList.toggle('dark-mode');
-    
     localStorage.setItem('darkMode', isDarkMode ? 'enabled' : 'disabled');
 });
-
 
 // Mobile menu functionality
 const mobileMenuBtn = document.querySelector('.mobile-menu-btn');

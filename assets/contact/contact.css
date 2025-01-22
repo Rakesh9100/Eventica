@@ -94,6 +94,7 @@ main {
     background-color: #e9eef5;
     border-radius: 8px;
     font-size: 1em;
+    font-family: 'Poppins', sans-serif;
     transition: border-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
     font-weight: 700;
 }
@@ -115,8 +116,12 @@ textarea:focus {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-textarea {
+.form-section textarea {
     resize: vertical;
+    height: 150px; 
+    min-height: 100px; 
+    max-height: 300px;
+    overflow-y: auto;
 }
 
 .form-section button {

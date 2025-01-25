@@ -899,7 +899,13 @@ footer {
     border-radius: 4px;
     box-sizing: border-box;
     font-size: 16px;
-    font-family: 'Poppins', sans-serif;
+    font-family: sans-serif;
+    transition: transform 0.3s ease;
+}
+
+.send-message input:hover,
+.send-message textarea:hover {
+    transform: scale(1.02);
 }
 
 .send-message textarea {
@@ -922,11 +928,13 @@ footer {
     cursor: pointer;
     font-size: 16px;
     font-weight: bold;
+    transition: transform 0.3s ease;
 }
 
 .send-message button:hover {
     background: -webkit-linear-gradient(to right, #5568e0, #89b9e8);
     background: linear-gradient(to right, #5568e0, #89b9e8);
+    transform: scale(1.02);
 }
 
 .social {

@@ -94,6 +94,20 @@ main {
     text-decoration: none;
 }
 
+ button{
+    font-size: 12px;
+    padding: 7px 10px;
+    display: flex;
+    margin-left: 33%;
+    background-color: #1da1f2; 
+    color: #fff;
+    margin-top: 10px;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
 @media (min-width: 768px) {
     .contributors-grid {
         gap: calc(10px + 1.5vw);

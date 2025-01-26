@@ -139,7 +139,7 @@ async function fetchContributors() {
 
                 // Certificate content
                 ctx.font = "35px Arial";
-                const content = `This certificate is proudly presented to ${username} for their valuable contribution to planetoid. Keep contributing. Best wishes for their future endeavors.`;
+                const content = `This certificate is proudly presented to ${username} for his/her valuable contribution to Eventica. Keep contributing. Best wishes for your future endeavors.`;
 
                 // Call the wrapText function to render wrapped text
                 const contentX = canvas.width / 2;
@@ -197,11 +197,11 @@ async function fetchContributors() {
             };
         }
     } catch (error) {
-        console.error("Error fetching contributors:", error);
+        console.error("Error fetching the contributors:", error);
 
         // Show error message on the page
         const errorMessage = document.createElement("p");
-        errorMessage.textContent = "Failed to load contributors. Please try again.";
+        errorMessage.textContent = "Failed to load the contributors. Please try again.";
         contributorsContainer.appendChild(errorMessage);
     }
 }

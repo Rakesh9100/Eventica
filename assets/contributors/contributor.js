@@ -48,6 +48,7 @@ async function fetchContributors() {
 
             // Generate Certificate Button
             const button = document.createElement("button");
+            button.className = "certificate-button";
             button.textContent = "Certificate";
             button.addEventListener("click", () => {
                 generateCertificate(contributor.login, contributor.avatar_url);
@@ -76,8 +77,11 @@ async function fetchContributors() {
             ctx.fillStyle = gradient;
             ctx.fillRect(0, 0, canvas.width, canvas.height);
 
+            // Get the value of the CSS variable
+            const primaryColor = getComputedStyle(document.documentElement).getPropertyValue('--primary-color').trim();
+
             // Decorative border
-            ctx.strokeStyle = "#1da1f2";
+            ctx.strokeStyle = primaryColor;
             ctx.lineWidth = 20;
             ctx.strokeRect(50, 50, canvas.width - 100, canvas.height - 100);
 
@@ -113,12 +117,39 @@ async function fetchContributors() {
                 ctx.fillStyle = "white";
                 ctx.fillText(username, canvas.width / 2, 500);
 
+                // Function to wrap text
+                function wrapText(ctx, text, x, y, maxWidth, lineHeight) {
+                    const words = text.split(" ");
+                    let line = "";
+                    for (let i = 0; i < words.length; i++) {
+                        const testLine = line + words[i] + " ";
+                        const metrics = ctx.measureText(testLine);
+                        const testWidth = metrics.width;
+
+                        if (testWidth > maxWidth && i > 0) {
+                            ctx.fillText(line, x, y);
+                            line = words[i] + " ";
+                            y += lineHeight;
+                        } else {
+                            line = testLine;
+                        }
+                    }
+                    ctx.fillText(line, x, y);
+                }
+
                 // Certificate content
                 ctx.font = "35px Arial";
                 const content = `This certificate is proudly presented to ${username} for their valuable contribution to planetoid. Keep contributing. Best wishes for their future endeavors.`;
-                content.split("\n").forEach((line, index) => {
-                    ctx.fillText(line.trim(), canvas.width / 2, 600 + index * 40);
-                });
+
+                // Call the wrapText function to render wrapped text
+                const contentX = canvas.width / 2;
+                const contentY = 600;
+                const maxWidth = canvas.width - 500;
+                const lineHeight = 40;
+
+                ctx.textAlign = "center";
+                wrapText(ctx, content, contentX, contentY, maxWidth, lineHeight);
+
 
                 // Signature with decorative underline
                 ctx.font = "italic 30px Georgia";

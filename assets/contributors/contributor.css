@@ -94,7 +94,7 @@ main {
     text-decoration: none;
 }
 
-button {
+.certificate-button {
     font-size: 13px;
     padding: 7px 10px;
     display: flex;

@@ -94,18 +94,18 @@ main {
     text-decoration: none;
 }
 
- button{
-    font-size: 12px;
+button {
+    font-size: 13px;
     padding: 7px 10px;
     display: flex;
     margin-left: 33%;
-    background-color: #1da1f2; 
-    color: #fff;
+    color: #ffffff;
     margin-top: 10px;
     border: none;
     border-radius: 20px;
     cursor: pointer;
     font-weight: bold;
+    background-color: var(--primary-color);
 }
 
 @media (min-width: 768px) {

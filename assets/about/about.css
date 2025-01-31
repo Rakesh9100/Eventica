@@ -65,7 +65,7 @@ body.dark-mode .feature-item {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 2rem;
-    padding: 3rem 3rem;
+    padding: 3rem 10rem;
     width: 100%;
 }
 
@@ -103,12 +103,15 @@ body.dark-mode .feature-item {
 @media (max-width: 768px) {
     .feature-grid {
         grid-template-columns: 1fr;
+        padding: 3rem 3rem;
         gap: 1.5rem;
     }
+
     .about-container {
         gap: 10px;
     }
-    .about-container{
+
+    .about-container {
         padding-top: 85px;
     }
 

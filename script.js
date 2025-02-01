@@ -65,6 +65,9 @@ function createEventCard(event, isPastEvent = false) {
 
     return `
         <div class="${isPastEvent ? 'past-event-card' : 'event-card'}">
+            <div class="event-background">
+                <img src="${event.image}" alt="Background" class="blurred-image">
+            </div>
             <a href="${event.website || '#'}" target="_blank" rel="noopener noreferrer" class="${isPastEvent ? 'past-card-link' : 'card-link'}">
                 <img src="${event.image}" alt="${event.title}" class="${isPastEvent ? 'past-event-image' : 'event-image'}">
                 <div class="${isPastEvent ? 'past-event-details' : 'event-details'}">

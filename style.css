@@ -540,12 +540,12 @@ body.dark-mode footer {
     border-radius: 10px;
     overflow: hidden;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    transition: all 0.3s ease;
+    transition: all 0.05s ease; 
     margin-bottom: 2rem;
     border: 2px solid #c3c6ce;
-    transition: 0.5s ease-out;
     position: relative;
 }
+
 .event-background {
     position: absolute;
     top: 0;
@@ -565,13 +565,18 @@ body.dark-mode footer {
     filter: blur(15px);
     transform: scale(1.2);
     opacity: 0.4;
+    transition: opacity 0.05s ease, filter 0.05s ease
 }
 
 .event-card:hover {
     transform: translateY(-5px);
     box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15);
     border-color: var(--primary-color);
-    box-shadow: 0 4px 18px 0 rgba(0, 0, 0, 0.25);
+}
+
+.event-card:hover .blurred-image {
+    opacity: 0.6; 
+    filter: blur(10px); 
 }
 
 .event-image {

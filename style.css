@@ -540,7 +540,7 @@ body.dark-mode footer {
     border-radius: 10px;
     overflow: hidden;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    transition: all 0.3s ease; 
+    transition: all 0.5s ease;
     margin-bottom: 2rem;
     border: 2px solid #c3c6ce;
     position: relative;
@@ -583,8 +583,8 @@ body.dark-mode footer {
 }
 
 .event-card:hover .blurred-image {
-    opacity: 0.6; 
-    filter: blur(10px); 
+    opacity: 0.6;
+    filter: blur(10px);
 }
 
 .event-image {
@@ -943,10 +943,10 @@ footer {
 
 .send-message textarea {
     resize: vertical;
-    height: 50px; 
-    min-height: 50px; 
+    height: 50px;
+    min-height: 50px;
     max-height: 100px;
-    overflow-y: auto; 
+    overflow-y: auto;
     color: black;
 }
 
@@ -1222,7 +1222,6 @@ footer {
 @media (max-width: 380px) {
     .event-grid {
         display: block;
-        
     }
 
     .event-card {

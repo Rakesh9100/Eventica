@@ -14,7 +14,8 @@ body {
     background-color: var(--background-color);
 }
 
-/* Dark mode CSS */
+/* Dark mode Css */
+
 body.dark-mode .past-event-card {
     background-color: #000000;
 }
@@ -36,7 +37,7 @@ body.dark-mode .past-event-date,
     margin-bottom: 2rem;
     border: 2px solid #c3c6ce;
     position: relative;
-    transition: all 0.3s ease;
+    transition: all 0.5s ease;
 }
 
 .past-event-card:not(:hover) {
@@ -66,7 +67,7 @@ body.dark-mode .past-event-date,
 }
 
 .blurred-image:not(:hover) {
-    transition: opacity 0.1s ease, filter 0.1s ease; 
+    transition: opacity 0.1s ease, filter 0.1s ease;
 }
 
 .past-event-card a {
@@ -81,8 +82,8 @@ body.dark-mode .past-event-date,
 }
 
 .past-event-card:hover .blurred-image {
-    opacity: 0.6; 
-    filter: blur(10px); 
+    opacity: 0.6;
+    filter: blur(10px);
 }
 
 .past-event-image {

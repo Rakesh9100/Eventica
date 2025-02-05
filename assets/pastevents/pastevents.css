@@ -33,10 +33,14 @@ body.dark-mode .past-event-date,
     border-radius: 10px;
     overflow: hidden;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    transition: all 0.05s ease;
     margin-bottom: 2rem;
     border: 2px solid #c3c6ce;
     position: relative;
+    transition: all 0.3s ease;
+}
+
+.past-event-card:not(:hover) {
+    transition: all 0.1s ease;
 }
 
 .event-background {
@@ -58,7 +62,11 @@ body.dark-mode .past-event-date,
     filter: blur(15px);
     transform: scale(1.2);
     opacity: 0.4;
-    transition: opacity 0.05s ease, filter 0.05s ease;
+    transition: opacity 0.3s ease, filter 0.3s ease;
+}
+
+.blurred-image:not(:hover) {
+    transition: opacity 0.1s ease, filter 0.1s ease; 
 }
 
 .past-event-card a {
@@ -74,7 +82,7 @@ body.dark-mode .past-event-date,
 
 .past-event-card:hover .blurred-image {
     opacity: 0.6; 
-    filter: blur(10px);
+    filter: blur(10px); 
 }
 
 .past-event-image {
@@ -121,7 +129,7 @@ body.dark-mode .past-event-date,
     left: 30%;
     bottom: 0;
     text-decoration: none;
-    transition: background-color 0.05s ease;
+    transition: background-color 0.3s ease;
 }
 
 .gallery-button:hover {

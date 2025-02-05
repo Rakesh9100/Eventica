@@ -547,7 +547,7 @@ body.dark-mode footer {
 }
 
 .event-card:not(:hover) {
-    transition: all 0.1s ease; 
+    transition: all 0.1s ease;
 }
 
 .event-background {
@@ -569,11 +569,12 @@ body.dark-mode footer {
     filter: blur(15px);
     transform: scale(1.2);
     opacity: 0.4;
-    transition: opacity 0.3s ease, filter 0.3s ease; 
+    transition: opacity 0.3s ease, filter 0.3s ease;
 }
 
 .blurred-image:not(:hover) {
-    transition: opacity 0.1s ease, filter 0.1s ease; 
+    transition: opacity 0.1s ease, filter 0.1s ease;
+}
 
 .event-card:hover {
     transform: translateY(-5px);

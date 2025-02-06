@@ -94,6 +94,20 @@ main {
     text-decoration: none;
 }
 
+.certificate-button {
+    font-size: 13px;
+    padding: 7px 10px;
+    display: flex;
+    margin-left: 33%;
+    color: #ffffff;
+    margin-top: 10px;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: bold;
+    background-color: var(--primary-color);
+}
+
 @media (min-width: 768px) {
     .contributors-grid {
         gap: calc(10px + 1.5vw);

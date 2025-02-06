@@ -34,11 +34,14 @@ body.dark-mode .past-event-date,
     border-radius: 10px;
     overflow: hidden;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    transition: all 0.3s ease;
     margin-bottom: 2rem;
     border: 2px solid #c3c6ce;
-    transition: 0.5s ease-out;
     position: relative;
+    transition: all 0.5s ease;
+}
+
+.past-event-card:not(:hover) {
+    transition: all 0.1s ease;
 }
 
 .past-event-card a {
@@ -50,7 +53,11 @@ body.dark-mode .past-event-date,
     transform: translateY(-5px);
     box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15);
     border-color: var(--primary-color);
-    box-shadow: 0 4px 18px 0 rgba(0, 0, 0, 0.25);
+}
+
+.past-event-card:hover .blurred-image {
+    opacity: 0.6;
+    filter: blur(10px);
 }
 
 .past-event-image {
@@ -58,7 +65,7 @@ body.dark-mode .past-event-date,
     padding: 1rem;
     width: 100%;
     height: 250px;
-    object-fit: cover;
+    object-fit: scale-down;
     border-radius: 10px;
 }
 
@@ -96,7 +103,6 @@ body.dark-mode .past-event-date,
     position: relative;
     left: 30%;
     bottom: 0;
-    text-decoration: none;
     text-decoration: none;
     transition: background-color 0.3s ease;
 }

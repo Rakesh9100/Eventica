@@ -1050,6 +1050,14 @@ footer {
 .social a.discord:hover {
     color: #5865f2;
 }
+.switcher{
+    display: flex;
+    gap: 12px;
+}
+.theme-hamburger{
+    display: flex;
+    gap: 12px;
+}
 
 /* Media queries for responsiveness */
 

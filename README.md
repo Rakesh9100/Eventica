@@ -140,6 +140,24 @@ This project and everyone participating in it is governed by the [Code of Conduc
 
 <h2>This repo has been part of the following Open Source Programs🥳</h2>
 
+<table>
+
+<tr>
+<td align="center">
+<a href="https://iwoc3.live/"><img src="https://github.com/user-attachments/assets/31929aa2-68c1-4621-9a25-85cd2b5a9616" height="140px" width="140px" alt="IWOC2025"></a><br><sub><b>IWOC 2k25</b></sub>
+</td>
+<td align="center">
+<a href="https://www.socialwinterofcode.com/"><img src="https://github.com/user-attachments/assets/5b1d76c0-2345-4425-b90c-3c85cbd9f80d" height="140px" width="180px" alt="SWOC2025"></a><br><sub><b>SWOC 2k25</b></sub>
+</td>
+</tr>
+
+<tr>
+<td align="center">
+<a href="https://kwoc.kossiitkgp.org/"><img src="https://github.com/user-attachments/assets/cb303f6e-e912-4618-9f5b-7f36c1b8b3a6" height="140px" width="140px" alt="KWOC2024"></a><br><sub><b>KWOC 2k24</b></sub>
+</td>
+</tr>
+
+</table>
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 <!-------------------------------------------------->

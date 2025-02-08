@@ -17,10 +17,19 @@ const userSchema = new mongoose.Schema({
         type: String,
         required: true,
     },
-    isOrganiser: {
-        type: Boolean,
-        default: false,
-        required: true
+    role: {
+        type: String,
+        enum: ['user', 'organiser', 'admin'],
+        default: 'user'
+    },    
+    location:{
+        type: String
+    },
+    dob:{
+        type: Date
+    },
+    picture:{
+        type: String
     }
 
 }, { timestamps: true })

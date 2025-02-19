@@ -1198,37 +1198,3 @@ footer {
         page-break-inside: avoid;
     }
 }
-
-/* Media Queries for Responsiveness */
-
-/* For screen sizes up to 1024px */
-@media (max-width: 1024px) {
-    body {
-        font-size: 14px;
-    }
-
-    .navbar-container {
-        padding: 1rem;
-    }
-
-    .container {
-        padding: 1.5rem;
-    }
-
-    .login-form input,
-    .login-form button {
-        font-size: 1rem;
-    }
-}
-
-/* For screen sizes up to 768px */
-@media (max-width: 768px) {
-    .login-form input,
-    .login-form button {
-        font-size: 0.9rem;
-    }
-
-    .container {
-        padding: 1rem;
-    }
-}

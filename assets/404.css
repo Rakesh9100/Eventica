@@ -32,7 +32,7 @@
 
 .error-subtitle {
     font-size: 3rem;
-    color: var(--secondary-color);
+    color: var(--primary-color);;
     margin-bottom: 1rem;
 }
 
@@ -67,7 +67,7 @@
 }
 
 .error-actions .btn-secondary {
-    background-color: var(--accent-color);
+    background-color: var(--primary-color);
 }
 
 .error-actions .btn-secondary:hover {

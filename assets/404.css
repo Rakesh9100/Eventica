@@ -1,0 +1,116 @@
+.error-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 4rem 2rem;
+    min-height: 100vh;
+    background-color: var(--background-color);
+    color: var(--text-color);
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1200px;
+    width: 100%;
+    gap: 2rem;
+}
+
+.error-content {
+    flex: 1;
+    padding: 2rem;
+    border-radius: 10px;
+    text-align: left;
+}
+
+.error-title {
+    font-size: 8rem;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+.error-subtitle {
+    font-size: 3rem;
+    color: var(--primary-color);;
+    margin-bottom: 1rem;
+}
+
+.error-text {
+    font-size: 1.5rem;
+    color: var(--light-text-color);
+    margin-bottom: 2rem;
+}
+
+.error-actions {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.error-actions .btn {
+    display: inline-block;
+    padding: 1rem 2rem;
+    font-size: 1.2rem;
+    color: #ffffff;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.error-actions .btn-primary {
+    background-color: var(--primary-color);
+}
+
+.error-actions .btn-primary:hover {
+    background-color: var(--secondary-color);
+}
+
+.error-actions .btn-secondary {
+    background-color: var(--primary-color);
+}
+
+.error-actions .btn-secondary:hover {
+    background-color: var(--secondary-color);
+}
+
+.error-image {
+    flex: 1;
+}
+
+.error-image img {
+    max-width: 100%;
+    height: auto;
+}
+
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .error-content {
+        text-align: center;
+    }
+
+    .error-title {
+        font-size: 4rem;
+    }
+
+    .error-subtitle {
+        font-size: 1.5rem;
+    }
+
+    .error-text {
+        font-size: 1rem;
+    }
+
+    .error-actions {
+        justify-content: center;
+    }
+
+    .error-actions .btn {
+        padding: 0.5rem 1rem;
+        font-size: 1rem;
+    }
+}

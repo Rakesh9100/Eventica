@@ -234,6 +234,12 @@ body.dark-mode footer {
 
 /* Theme Switcher Css */
 
+.theme-hamburger,
+.switcher {
+    display: flex;
+    gap: 12px;
+}
+
 .theme-switcher {
     position: relative;
     display: flex;

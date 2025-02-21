@@ -149,9 +149,9 @@ MONGO_URI="mongodb+srv://<your_mongo_db_url>.mongodb.net/?retryWrites=true&w=maj
 SECRET_KEY="THIS_IS_A_JWT_SECRET"
 ```
 
-5. Start the backend server:
+5. Start the backend server using nodemon:
 ```
-npm run dev
+nodemon api/index.js
 ```
 
 This will start the server in development mode. By default, it will run on http://localhost:3000.

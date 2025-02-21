@@ -19,9 +19,10 @@ app.use(express.urlencoded({ extended: true, limit: '16kb' }));
 //import roouter
 import { authRouter } from "../routes/auth.routes.js"
 import { profileRouter } from "../routes/profile.routes.js"
-
+import { eventRouter } from "../routes/event.routes.js"
 
 //use router
 app.use("/api/v1/auth", authRouter)
 app.use('/api/v1/profile', profileRouter)
+app.use('/api/v1/event', eventRouter)
 export {app}

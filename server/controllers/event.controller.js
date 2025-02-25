@@ -2,8 +2,11 @@ import { Event } from "../model/event.model.js";
 import { User } from "../model/user.model.js";
 import jwt from "jsonwebtoken";
 
-const secretKey = process.env.JWT_SECRET; // Ensure you have your secret key set in env
-
+const secretKey = process.env.SECRET_KEY; // Ensure you have your secret key set in env
+if (!secretKey) {
+  console.error("JWT secret key not set. Exiting...");
+  process.exit(1);
+}
 // Add a new event
 const addEvent = async (req, res) => {
   try {
@@ -22,7 +25,7 @@ const addEvent = async (req, res) => {
       return res.status(401).json({ error: "Invalid or expired token." });
     }
 
-    const organizerId = decoded.userId;
+    const organizerId = decoded.id;
     const organizer = await User.findById(organizerId);
     if (!organizer) {
       return res.status(404).json({ error: "Organizer not found." });
@@ -31,8 +34,8 @@ const addEvent = async (req, res) => {
     if (!title || !description || !date) {
       return res.status(400).json({ message: "All fields are required." });
     }
-
-    const event = new Event({ title, description, date, organizer: organizerId });
+    console.log(date,description,title, organizerId)
+    const event = new Event({ title:title, description:description, organizer: organizerId });
     await event.save();
 
     res.status(201).json({ message: "Event created successfully.", event });

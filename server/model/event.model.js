@@ -5,15 +5,15 @@ const eventSchema = new mongoose.Schema({
         type: String,
         required: true
     },
-    desc: {
+    description: {
         type: String,
         required: true
     },
     eventDate: {
         type: Date,
-        required: true
+        // required: true
     },
-    organiser: {
+    organizer: {
         type: mongoose.Schema.Types.ObjectId,
         ref:"User",
         required: true

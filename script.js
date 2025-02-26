@@ -258,11 +258,19 @@ mobileMenuBtn.addEventListener('click', () => {
     mobileMenuBtn.classList.toggle('active');
     navItems.classList.toggle('active');
 
+    // Toggle body scrolling
+    if (navItems.classList.contains('active')) {
+        document.body.style.overflow = 'hidden';
+    } else {
+        document.body.style.overflow = 'auto';
+    }
+
     // Update accessibility attributes
     const isOpen = navItems.classList.contains('active');
     mobileMenuBtn.setAttribute('aria-expanded', isOpen);
     mobileMenuBtn.setAttribute('aria-label', isOpen ? 'Close mobile menu' : 'Open mobile menu');
 });
+
 
 // Close mobile menu when clicking outside
 document.addEventListener('click', (e) => {
@@ -271,6 +279,7 @@ document.addEventListener('click', (e) => {
         navItems.classList.remove('active');
         mobileMenuBtn.setAttribute('aria-expanded', 'false');
         mobileMenuBtn.setAttribute('aria-label', 'Open mobile menu');
+        document.body.style.overflow = 'auto';
     }
 });
 
@@ -281,6 +290,7 @@ window.addEventListener('resize', () => {
         navItems.classList.remove('active');
         mobileMenuBtn.setAttribute('aria-expanded', 'false');
         mobileMenuBtn.setAttribute('aria-label', 'Open mobile menu');
+        document.body.style.overflow = 'auto';
     }
 });
 

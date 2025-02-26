@@ -63,20 +63,21 @@ Welcome to Eventica, an ultimate guide to the dynamic and diverse events in Bang
 
 <h3>Home/Main Page :-</h3>
 
-![image](https://github.com/user-attachments/assets/13a42ec3-2f4e-4d46-b21a-84a91336bebd)<br><br>
+![image](https://github.com/user-attachments/assets/e62f056c-726e-4cde-bd73-997cdc0cf37c)<br><br>
 <h3>About Page :-</h3>
 
-![image](https://github.com/user-attachments/assets/7d6838a2-9179-4379-9433-00f7a764a2eb)<br><br>
+![image](https://github.com/user-attachments/assets/0174c61d-50fe-406f-8990-5a9a2bf706ff)<br><br>
 <h3>Upcoming Events Page :-</h3>
 
-![image](https://github.com/user-attachments/assets/72d4eb24-d88e-4132-b905-ca328c930ee5)<br><br>
+![image](https://github.com/user-attachments/assets/c8f22365-d5b6-4325-8d2c-3936601e4d40)<br><br>
 
 <h3>Past Events Page :-</h3>
 
-![image](https://github.com/user-attachments/assets/753e82ee-d9d8-4906-af8c-27853afae0cc)<br><br>
+![image](https://github.com/user-attachments/assets/67f5f2e0-e2bb-455d-83d3-ef2e346d9f2e)<br><br>
 <h3>Contact Page :-</h3>
 
-![image](https://github.com/user-attachments/assets/83c206de-77cb-4d61-a3b8-f6cf7180034f)
+![image](https://github.com/user-attachments/assets/81fdedea-4a46-4b18-9e8d-bda86d4dfed0)
+
 <br><br>
 <p align="right">(<a href="#top">back to top</a>)</p>
 

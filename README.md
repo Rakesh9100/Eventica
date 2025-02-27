@@ -158,6 +158,16 @@ This will start the server in development mode. By default, it will run on http:
 
 Test the API endpoints using tools like Postman or Thunder Client.
 
+Now for vercel Deployment:
+1. Login into vercel account
+2. Click on add project
+3. select `server` as root directory
+4. add this add env vars
+```
+MONGO_URI="mongodb+srv://<your_mongo_db_url>.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
+SECRET_KEY="THIS_IS_A_JWT_SECRET"
+```
+And server will deployed on vercel
 
 <!-------------------------------------------------->
 

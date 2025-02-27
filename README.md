@@ -66,7 +66,7 @@ Welcome to Eventica, an ultimate guide to the dynamic and diverse events in Bang
 ![image](https://github.com/user-attachments/assets/e62f056c-726e-4cde-bd73-997cdc0cf37c)<br><br>
 <h3>About Page :-</h3>
 
-![image](https://github.com/user-attachments/assets/0174c61d-50fe-406f-8990-5a9a2bf706ff)<br><br>
+![image](https://github.com/user-attachments/assets/ec038029-7f7f-496f-a093-8c8e552aeefa)<br><br>
 <h3>Upcoming Events Page :-</h3>
 
 ![image](https://github.com/user-attachments/assets/c8f22365-d5b6-4325-8d2c-3936601e4d40)<br><br>
@@ -77,7 +77,6 @@ Welcome to Eventica, an ultimate guide to the dynamic and diverse events in Bang
 <h3>Contact Page :-</h3>
 
 ![image](https://github.com/user-attachments/assets/81fdedea-4a46-4b18-9e8d-bda86d4dfed0)
-
 <br><br>
 <p align="right">(<a href="#top">back to top</a>)</p>
 

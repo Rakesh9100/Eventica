@@ -258,7 +258,7 @@ mobileMenuBtn.addEventListener('click', () => {
     mobileMenuBtn.classList.toggle('active');
     navItems.classList.toggle('active');
 
-    // Toggle body scrolling
+    // Toggle body scrolling for small devices
     if (navItems.classList.contains('active')) {
         document.body.style.overflow = 'hidden';
     } else {
@@ -270,7 +270,6 @@ mobileMenuBtn.addEventListener('click', () => {
     mobileMenuBtn.setAttribute('aria-expanded', isOpen);
     mobileMenuBtn.setAttribute('aria-label', isOpen ? 'Close mobile menu' : 'Open mobile menu');
 });
-
 
 // Close mobile menu when clicking outside
 document.addEventListener('click', (e) => {

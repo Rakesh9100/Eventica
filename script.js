@@ -150,39 +150,29 @@ document.addEventListener('DOMContentLoaded', function () {
     const themeToggle = document.getElementById('theme-toggle');
     const themeOptions = document.querySelector('.theme-options');
     const themeButtons = document.querySelectorAll('.theme-btn');
-    const logoImage = document.querySelector('.logo');
+    const logoImage = document.querySelector('.logo'); // Logo image element
     const savedTheme = localStorage.getItem('theme');
 
     const themeAssets = {
         blue: {
             logo: '/assets/images/logos/logo1.png',
-            favicon: '/assets/images/favicons/favicon1.png',
-            scrollbarColor: '#1E90FF',
-            scrollbarHoverColor: '#1C86EE'
+            favicon: '/assets/images/favicons/favicon1.png'
         },
         red: {
             logo: '/assets/images/logos/logo2.png',
-            favicon: '/assets/images/favicons/favicon2.png',
-            scrollbarColor: '#FF6347',
-            scrollbarHoverColor: '#FF4500'
+            favicon: '/assets/images/favicons/favicon2.png'
         },
         yellow: {
             logo: '/assets/images/logos/logo3.png',
-            favicon: '/assets/images/favicons/favicon3.png',
-            scrollbarColor: '#FFD700',
-            scrollbarHoverColor: '#FFCC00'
+            favicon: '/assets/images/favicons/favicon3.png'
         },
         green: {
             logo: '/assets/images/logos/logo4.png',
-            favicon: '/assets/images/favicons/favicon4.png',
-            scrollbarColor: '#32CD32',
-            scrollbarHoverColor: '#228B22'
+            favicon: '/assets/images/favicons/favicon4.png'
         },
         purple: {
             logo: '/assets/images/logos/logo5.png',
-            favicon: '/assets/images/favicons/favicon5.png',
-            scrollbarColor: '#800080',
-            scrollbarHoverColor: '#6A006A'
+            favicon: '/assets/images/favicons/favicon5.png'
         },
     };
 
@@ -197,12 +187,15 @@ document.addEventListener('DOMContentLoaded', function () {
         faviconElement.href = faviconPath;
     };
 
+    // Set initial theme, logo, and favicon based on localStorage
     if (savedTheme && themeAssets[savedTheme]) {
-        const { logo, favicon, scrollbarColor, scrollbarHoverColor } = themeAssets[savedTheme];
+        const {
+            logo,
+            favicon
+        } = themeAssets[savedTheme];
         document.documentElement.setAttribute('data-theme', savedTheme);
         logoImage.src = logo;
         updateFavicon(favicon);
-        setScrollbarColor(scrollbarColor, scrollbarHoverColor);
     }
 
     themeToggle.addEventListener('click', function () {
@@ -215,18 +208,21 @@ document.addEventListener('DOMContentLoaded', function () {
         button.addEventListener('click', function () {
             const color = this.getAttribute('data-color');
             if (themeAssets[color]) {
-                const { logo, favicon, scrollbarColor, scrollbarHoverColor } = themeAssets[color];
+                const {
+                    logo,
+                    favicon
+                } = themeAssets[color];
                 document.documentElement.setAttribute('data-theme', color);
                 localStorage.setItem('theme', color);
                 logoImage.src = logo;
                 updateFavicon(favicon);
-                setScrollbarColor(scrollbarColor, scrollbarHoverColor);
                 themeOptions.classList.remove('active');
                 themeToggle.setAttribute('aria-expanded', 'false');
             }
         });
     });
 
+    // Close theme options when clicking outside
     document.addEventListener('click', function (event) {
         if (!themeToggle.contains(event.target) && !themeOptions.contains(event.target)) {
             themeOptions.classList.remove('active');
@@ -234,13 +230,6 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     });
 });
-
-function setScrollbarColor(color, hoverColor) {
-    const style = document.documentElement.style;
-    style.setProperty('--scrollbar-thumb-color', color);
-    style.setProperty('--scrollbar-thumb-color-hover', hoverColor);
-}
-
 
 // Dark mode toggle based on preference
 function applyDarkModePreference() {

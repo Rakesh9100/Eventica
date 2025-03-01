@@ -76,12 +76,62 @@ function createEventCard(event, isPastEvent = false) {
                     <p class="${isPastEvent ? 'past-event-time' : 'event-time'}">${event.time || 'Time not specified'}</p>
                     <p class="${isPastEvent ? 'past-event-location' : 'event-location'}">${event.location || 'Location not specified'}</p>
                     <p class="${isPastEvent ? 'past-event-description' : 'event-description'}">${event.description || 'No description available'}</p>
-                    <a href="${event.website || '#'}" target="_blank" rel="noopener noreferrer" class="${buttonClass}">${buttonText}</a>
+                    <div class="button-container">
+                        <a href="${event.website || '#'}" target="_blank" rel="noopener noreferrer" class="${buttonClass}">${buttonText}</a>
+                        <a href="#" class="${buttonClass}" onclick="toggleSharePopup(event, '${event.title}', '${event.website || '#'}'); return false;">Share</a>
+                    </div>
+                    <div class="share-popup" id="share-popup-${event.title.replace(/\s+/g, '-').toLowerCase()}">
+    <button class="close-btn" onclick="toggleSharePopup(event, '${event.title}')">
+        <i class="fas fa-times"></i>
+    </button>
+    <button onclick="copyLink('${event.website || '#'}')">
+        <i class="fas fa-link"></i> Copy Link
+    </button>
+    <button onclick="window.open('https://wa.me/?text=${encodeURIComponent(event.title + ' ' + event.website)}', '_blank')">
+        <i class="fab fa-whatsapp" style="color: #25D366;"></i> WhatsApp
+    </button>
+    <button onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(event.website)}', '_blank')">
+        <i class="fab fa-facebook" style="color: #1877F2;"></i> Facebook
+    </button>
+    <button onclick="window.open('https://twitter.com/intent/tweet?url=${encodeURIComponent(event.website)}&text=${encodeURIComponent(event.title)}', '_blank')">
+        <i class="fab fa-x-twitter" style="color: #000;"></i> X (Twitter)
+    </button>
+    <button onclick="window.open('mailto:?subject=${encodeURIComponent(event.title)}&body=${encodeURIComponent(event.website)}')">
+        <i class="fas fa-envelope" style="color: #D44638;"></i> Email
+    </button>
+</div>
+>
                 </div>
             </a>
         </div>
     `;
 }
+
+function toggleSharePopup(event, title) {
+    event.preventDefault();
+    const popup = document.getElementById(`share-popup-${title.replace(/\s+/g, '-').toLowerCase()}`);
+
+    if (popup.classList.contains('show')) {
+        popup.classList.remove('show');
+        popup.classList.add('hide');
+        setTimeout(() => popup.style.display = 'none', 300);
+    } else {
+        popup.style.display = 'block';
+        setTimeout(() => {
+            popup.classList.remove('hide');
+            popup.classList.add('show');
+        }, 10);
+    }
+}
+
+function copyLink(url) {
+    navigator.clipboard.writeText(url).then(() => {
+        alert('Link copied to clipboard!');
+    }).catch(err => {
+        console.error('Failed to copy: ', err);
+    });
+}
+
 
 // Function to populate event grids
 function populateEventGrids(events) {

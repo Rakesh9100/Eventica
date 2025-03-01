@@ -636,19 +636,20 @@ body.dark-mode footer {
 }
 
 .register-button {
-    width: 60%;
+    width: auto; /* Adjust width dynamically */
     border-radius: 1rem;
     border: none;
     color: #ffffff !important;
     background-color: var(--primary-color);
     font-size: 1rem;
-    padding: 0.5rem 1rem;
-    position: relative;
-    left: 30%;
-    bottom: 0;
+    padding: 0.5rem 1.5rem; /* Increased padding for better spacing */
     text-decoration: none;
     transition: background-color 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
+
 
 .register-button:hover {
     background-color: #686969;
@@ -1252,5 +1253,97 @@ footer {
     .event-card {
         break-inside: avoid;
         page-break-inside: avoid;
+    }
+}
+
+
+/* Button container to align buttons side by side */
+.button-container {
+    display: flex;
+    gap: 12px;
+    justify-content: center; /* Center align buttons */
+    margin-top: 12px;
+}
+
+
+/* Modern Share Popup */
+.share-popup {
+    display: none;
+    position: absolute;
+    background: rgba(255, 255, 255, 0.95);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    border-radius: 12px;
+    padding: 16px;
+    top: 50px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 100;
+    min-width: 220px;
+    backdrop-filter: blur(8px);
+    transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+/* Show popup with fade-in effect */
+.share-popup.show {
+    display: block;
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+}
+
+/* Hide popup */
+.share-popup.hide {
+    opacity: 0;
+    transform: translateX(-50%) translateY(-10px);
+}
+
+/* Styling for share buttons inside popup */
+.share-popup button {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    width: 100%;
+    padding: 10px 14px;
+    border: none;
+    background: #f9f9f9;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 500;
+    border-radius: 8px;
+    transition: background 0.3s ease-in-out;
+    color: #333;
+}
+
+.share-popup button:hover {
+    background: #e0e0e0;
+}
+
+/* Icons */
+.share-popup button i {
+    font-size: 18px;
+    color: #007bff;
+}
+
+/* Close button */
+.share-popup .close-btn {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    background: transparent;
+    border: none;
+    font-size: 18px;
+    cursor: pointer;
+    color: #666;
+}
+
+.share-popup .close-btn:hover {
+    color: #000;
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+    .share-popup {
+        width: 90%;
+        left: 5%;
+        transform: none;
     }
 }

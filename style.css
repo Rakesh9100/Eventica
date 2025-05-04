@@ -597,6 +597,10 @@ body.dark-mode footer {
     margin-bottom: 2rem;
     border: 2px solid #c3c6ce;
     position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-bottom: 1.5rem;
 }
 
 .event-card:not(:hover) {
@@ -683,7 +687,7 @@ body.dark-mode footer {
 }
 
 .register-button {
-    width: 60%;
+    width: 8rem;
     border-radius: 1rem;
     border: none;
     color: #ffffff !important;
@@ -691,7 +695,12 @@ body.dark-mode footer {
     font-size: 1rem;
     padding: 0.5rem 1rem;
     position: relative;
-    left: 30%;
+    /* left: 32vw; */
+    left: 49%;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
     bottom: 0;
     text-decoration: none;
     transition: background-color 0.3s ease;

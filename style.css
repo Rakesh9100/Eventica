@@ -600,7 +600,6 @@ body.dark-mode footer {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    padding-bottom: 1.5rem;
 }
 
 .event-card:not(:hover) {
@@ -687,22 +686,21 @@ body.dark-mode footer {
 }
 
 .register-button {
-    width: 8rem;
+    width: 7rem;
     border-radius: 1rem;
     border: none;
     color: #ffffff !important;
     background-color: var(--primary-color);
     font-size: 1rem;
-    padding: 0.5rem 1rem;
+    padding: 0.5rem;
     position: relative;
-    /* left: 32vw; */
-    left: 49%;
-    transform: translateX(-50%);
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    left: 50%;
     bottom: 0;
+    display: flex;
+    align-items: center;
     text-decoration: none;
+    justify-content: center;
+    transform: translateX(-50%);
     transition: background-color 0.3s ease;
 }
 

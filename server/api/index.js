@@ -5,16 +5,23 @@ import { app } from './app.js';
 // Load environment variables
 dotenv.config();
 
-console.log('Starting app. MONGO_URI:', process.env.MONGO_URI);
+console.log('Starting Eventica backend...');
+console.log('Environment check - MONGO_URI exists:', !!process.env.MONGO_URI);
+console.log('Environment check - SECRET_KEY exists:', !!process.env.SECRET_KEY);
 
-// Connect to the database and start the server
-dbConnect()
-  .then(() => {
-    const PORT = process.env.PORT || 3000;
-    app.listen(PORT, () => {
-      console.log(`App is running on port ${PORT} and DB connected`);
+// For Vercel serverless functions, we need to handle this differently
+export default async function handler(req, res) {
+  try {
+    // Connect to database on each request (serverless pattern)
+    await dbConnect();
+    
+    // Handle the request with Express app
+    return app(req, res);
+  } catch (error) {
+    console.error('Handler error:', error);
+    return res.status(500).json({ 
+      error: 'Internal server error', 
+      message: error.message 
     });
-  })
-  .catch((err) => {
-    console.error('Database connection failed:', err);
-  });
+  }
+}

@@ -43,11 +43,11 @@ class AdminDashboard {
         });
     }
 
-    checkAuthentication() {
+    async checkAuthentication() {
         if (!this.token) {
             // Redirect to login page or show login modal
-            this.showLoginModal();
-            return false;
+            await this.showLoginModal();
+            return !!this.token;
         }
         return true;
     }
@@ -161,25 +161,32 @@ class AdminDashboard {
             website: formData.get('website')
         };
 
+        console.log('Event data:', eventData);
+        console.log('Token:', this.token);
+
         this.showLoading(true);
 
         try {
-            const response = await fetch(`${this.apiBaseUrl}/event/add`, {
+            const response = await fetch(`${this.apiBaseUrl}/event/test-add`, {
                 method: 'POST',
                 headers: {
-                    'Content-Type': 'application/json',
-                    'Authorization': `Bearer ${this.token}`
+                    'Content-Type': 'application/json'
                 },
                 body: JSON.stringify(eventData)
             });
 
+            console.log('Response status:', response.status);
+            
             if (response.ok) {
+                const result = await response.json();
+                console.log('Success result:', result);
                 this.showMessage('Event created successfully!', 'success');
                 this.toggleEventForm(false);
                 this.loadEvents();
             } else {
                 const error = await response.json();
-                this.showMessage(error.message || 'Failed to create event', 'error');
+                console.log('Error response:', error);
+                this.showMessage(error.message || error.error || 'Failed to create event', 'error');
             }
         } catch (error) {
             console.error('Error creating event:', error);
@@ -292,7 +299,7 @@ class AdminDashboard {
     }
 
     async loadDashboardData() {
-        if (this.checkAuthentication()) {
+        if (await this.checkAuthentication()) {
             this.loadEvents();
             this.loadAnalytics();
         }

@@ -1,20 +1,85 @@
 // Function to fetch event data
 async function fetchEventData() {
     try {
-        let eventsJsonPath = 'events.json';
-        // Check if we're on the past events page
-        if (window.location.pathname.includes('pastevents')) {
-            eventsJsonPath = '../../events.json';
+        let eventsSource;
+
+        // Try to fetch from backend API first
+        try {
+            const apiUrl = API_CONFIG.BASE_URL + API_CONFIG.ENDPOINTS.EVENTS;
+            const apiResponse = await fetch(apiUrl);
+
+            if (apiResponse.ok) {
+                const apiEvents = await apiResponse.json();
+                // Convert backend events to frontend format
+                eventsSource = apiEvents.map(event => ({
+                    title: event.title,
+                    date: formatDateFromBackend(event.eventDate || event.date),
+                    time: event.time || 'Time TBD',
+                    location: event.location || 'Location TBD',
+                    description: event.description,
+                    image: event.image || 'https://via.placeholder.com/400x200?text=Event+Image',
+                    website: event.website || '#'
+                }));
+                console.log('Events loaded from backend API');
+            } else {
+                throw new Error('Backend API not available');
+            }
+        } catch (apiError) {
+            console.log('Backend API not available, falling back to local events.json');
+
+            // Fallback to local events.json
+            let eventsJsonPath = 'events.json';
+            if (window.location.pathname.includes('pastevents')) {
+                eventsJsonPath = '../../events.json';
+            }
+            const response = await fetch(eventsJsonPath);
+            if (!response.ok) {
+                throw new Error(`HTTP error! status: ${response.status}`);
+            }
+            eventsSource = await response.json();
         }
-        const response = await fetch(eventsJsonPath);
-        if (!response.ok) {
-            throw new Error(`HTTP error! status: ${response.status}`);
-        }
-        const events = await response.json();
-        populateEventGrids(events);
-    } catch (error) {
+
+        populateEventGrids(eventsSource);
+	} catch (error) {
         console.error('Error fetching event data:', error);
+		showErrorMessage('Failed to load events. Please try again later.');
     }
+}
+
+// Helper function to format date from backend
+function formatDateFromBackend(dateString) {
+    if (!dateString) return new Date().toISOString().split('T')[0];
+
+    const date = new Date(dateString);
+    const day = date.getDate().toString().padStart(2, '0');
+    const month = (date.getMonth() + 1).toString().padStart(2, '0');
+    const year = date.getFullYear();
+
+    return `${day}-${month}-${year}`;
+}
+
+// Helper function to show error messages
+function showErrorMessage(message) {
+    const errorDiv = document.createElement('div');
+    errorDiv.className = 'error-message';
+    errorDiv.style.cssText = `
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        background: #e74c3c;
+        color: white;
+        padding: 1rem;
+        border-radius: 5px;
+        z-index: 1000;
+        animation: slideIn 0.3s ease;
+    `;
+    errorDiv.textContent = message;
+
+    document.body.appendChild(errorDiv);
+
+    setTimeout(() => {
+        errorDiv.remove();
+    }, 5000);
 }
 
 // Function to check if an event is in the past

@@ -11,6 +11,9 @@ yarn-error.log*
 # Netlify functions build
 .netlify/functions/
 
+# Vercel deployment files
+.vercel/
+
 # VSCode settings (if applicable)
 .vscode/
 

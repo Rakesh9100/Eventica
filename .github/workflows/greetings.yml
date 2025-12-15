@@ -19,5 +19,5 @@ jobs:
             Thanks for opening an issue! 🙌 Please wait for the issue to be assigned. Happy Coding!! ✨
           pr-message: |
             Hey @${{ github.actor }}, Welcome to the project Eventica! 🎊
-            Thanks for your contribution! Your effort makes this project better. Keep it up! 🙌 
+            Thanks for your contribution! Your effort makes this project better. Keep it up! 🙌
             Please wait for the PR to be reviewed. Happy Coding!! ✨

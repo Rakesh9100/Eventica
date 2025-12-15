@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eventica Admin Dashboard</title>
+    <link rel="stylesheet" href="admin.css">
+    <link rel="stylesheet" href="../../style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="admin-nav">
+        <div class="nav-container">
+            <h1><i class="fas fa-cog"></i> Eventica Admin</h1>
+            <div class="nav-actions">
+                <span id="admin-user">Welcome, Admin</span>
+                <button id="logout-btn" class="logout-btn">
+                    <i class="fas fa-sign-out-alt"></i> Logout
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Dashboard -->
+    <div class="dashboard-container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <ul class="sidebar-menu">
+                <li class="menu-item active" data-section="events">
+                    <i class="fas fa-calendar"></i> Manage Events
+                </li>
+                <li class="menu-item" data-section="users">
+                    <i class="fas fa-users"></i> Users
+                </li>
+                <li class="menu-item" data-section="analytics">
+                    <i class="fas fa-chart-bar"></i> Analytics
+                </li>
+            </ul>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Events Section -->
+            <section id="events-section" class="content-section active">
+                <div class="section-header">
+                    <h2>Event Management</h2>
+                    <button id="add-event-btn" class="btn btn-primary">
+                        <i class="fas fa-plus"></i> Add New Event
+                    </button>
+                </div>
+
+                <!-- Add Event Form -->
+                <div id="add-event-form" class="form-container hidden">
+                    <h3>Add New Event</h3>
+                    <form id="event-form">
+                        <div class="form-group">
+                            <label for="event-title">Event Title</label>
+                            <input type="text" id="event-title" name="title" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="event-date">Event Date</label>
+                            <input type="date" id="event-date" name="date" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="event-time">Event Time</label>
+                            <input type="time" id="event-time" name="time" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="event-location">Location</label>
+                            <input type="text" id="event-location" name="location" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="event-image">Image URL</label>
+                            <input type="url" id="event-image" name="image" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="event-website">Website URL</label>
+                            <input type="url" id="event-website" name="website">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="event-description">Description</label>
+                            <textarea id="event-description" name="description" rows="4" required></textarea>
+                        </div>
+
+                        <div class="form-actions">
+                            <button type="submit" class="btn btn-success">
+                                <i class="fas fa-save"></i> Save Event
+                            </button>
+                            <button type="button" id="cancel-form" class="btn btn-secondary">
+                                <i class="fas fa-times"></i> Cancel
+                            </button>
+                        </div>
+                    </form>
+                </div>
+
+                <!-- Events List -->
+                <div class="events-list">
+                    <h3>All Events</h3>
+                    <div id="events-table-container">
+                        <table class="events-table">
+                            <thead>
+                                <tr>
+                                    <th>Title</th>
+                                    <th>Date</th>
+                                    <th>Location</th>
+                                    <th>Status</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody id="events-table-body">
+                                <!-- Events will be loaded here -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Users Section -->
+            <section id="users-section" class="content-section">
+                <h2>User Management</h2>
+                <div id="users-list">
+                    <!-- Users will be loaded here -->
+                </div>
+            </section>
+
+            <!-- Analytics Section -->
+            <section id="analytics-section" class="content-section">
+                <h2>Analytics Dashboard</h2>
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <i class="fas fa-calendar-alt"></i>
+                        <div class="stat-info">
+                            <h3 id="total-events">0</h3>
+                            <p>Total Events</p>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <i class="fas fa-users"></i>
+                        <div class="stat-info">
+                            <h3 id="total-users">0</h3>
+                            <p>Total Users</p>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <i class="fas fa-calendar-check"></i>
+                        <div class="stat-info">
+                            <h3 id="upcoming-events">0</h3>
+                            <p>Upcoming Events</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- Loading Overlay -->
+    <div id="loading-overlay" class="loading-overlay hidden">
+        <div class="spinner"></div>
+        <p>Loading...</p>
+    </div>
+
+    <!-- Success/Error Messages -->
+    <div id="message-container" class="message-container"></div>
+
+    <script src="admin.js"></script>
+</body>
+</html>

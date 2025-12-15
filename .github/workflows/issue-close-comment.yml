@@ -6,11 +6,11 @@ on:
 
 permissions:
   issues: write
-      
+
 jobs:
   greet-on-close:
     runs-on: ubuntu-latest
-    
+
     steps:
       - name: Greet User
         uses: actions/github-script@v5

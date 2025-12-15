@@ -52,16 +52,60 @@ class AdminDashboard {
         return true;
     }
 
-    showLoginModal() {
+    async showLoginModal() {
         // Simple login for demo - in production, use proper authentication
         const username = prompt('Enter admin username:');
         const password = prompt('Enter admin password:');
 
         if (username === 'admin' && password === 'admin123') {
-            // In production, validate with backend
-            this.token = 'demo-admin-token';
-            localStorage.setItem('adminToken', this.token);
-            this.showMessage('Login successful!', 'success');
+            // For now, create a demo user and get a real token
+            try {
+                // Try to login first
+                const loginResponse = await fetch(`${this.apiBaseUrl}/auth/login`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        email: 'admin@eventica.com',
+                        password: 'admin123'
+                    })
+                });
+
+                if (loginResponse.ok) {
+                    const loginResult = await loginResponse.json();
+                    this.token = loginResult.token;
+                } else {
+                    // User doesn't exist, create it
+                    const signupResponse = await fetch(`${this.apiBaseUrl}/auth/signup`, {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                        },
+                        body: JSON.stringify({
+                            username: 'admin',
+                            email: 'admin@eventica.com',
+                            password: 'admin123'
+                        })
+                    });
+
+                    if (signupResponse.ok) {
+                        const signupResult = await signupResponse.json();
+                        this.token = signupResult.token;
+                    } else {
+                        throw new Error('Authentication failed');
+                    }
+                }
+
+                localStorage.setItem('adminToken', this.token);
+                this.showMessage('Login successful!', 'success');
+            } catch (error) {
+                console.error('Auth error:', error);
+                // Fallback to demo token for testing
+                this.token = 'demo-admin-token';
+                localStorage.setItem('adminToken', this.token);
+                this.showMessage('Login successful! (Demo mode)', 'warning');
+            }
         } else {
             this.showMessage('Invalid credentials!', 'error');
             window.location.href = '../../index.html';

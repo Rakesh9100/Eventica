@@ -3,7 +3,7 @@ const sign_up_btn = document.querySelector("#sign-up-btn");
 const container = document.querySelector(".container");
 
 // API Configuration
-const API_BASE_URL = 'https://eventica-backend-qbd4cvy27-rakesh9100s-projects.vercel.app/api/v1'; // Your deployed backend URL
+const API_BASE_URL = 'https://eventica-backend.vercel.app/api/v1'; // Your deployed backend URL
 
 sign_up_btn.addEventListener("click", () => {
     container.classList.add("sign-up-mode");

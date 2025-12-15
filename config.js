@@ -1,7 +1,7 @@
 // API Configuration
 const API_CONFIG = {
     // Your deployed Vercel backend URL
-    BASE_URL: 'https://eventica-backend-qbd4cvy27-rakesh9100s-projects.vercel.app/api/v1',
+    BASE_URL: 'https://eventica-backend.vercel.app/api/v1',
 
     // For local development, uncomment the line below
     // BASE_URL: 'http://localhost:3000/api/v1',

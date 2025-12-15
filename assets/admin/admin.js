@@ -1,7 +1,7 @@
 // Admin Dashboard JavaScript
 class AdminDashboard {
     constructor() {
-        this.apiBaseUrl = 'https://eventica-backend-qbd4cvy27-rakesh9100s-projects.vercel.app/api/v1'; // Your deployed backend URL
+        this.apiBaseUrl = 'https://eventica-backend.vercel.app/api/v1'; // Your deployed backend URL
         this.token = localStorage.getItem('adminToken');
         this.init();
     }

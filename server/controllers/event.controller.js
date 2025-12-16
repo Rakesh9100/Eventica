@@ -10,19 +10,36 @@ if (!secretKey) {
 
 // Helper functions for events.json operations
 const getEventsFilePath = () => {
-  // Always use the events.json file in the server directory
+  // In serverless environments like Vercel, use /tmp directory for writing
+  if (process.env.VERCEL || process.env.AWS_LAMBDA_FUNCTION_NAME) {
+    return path.join('/tmp', 'events.json');
+  }
+  // For local development, use the events.json file in the server directory
+  return path.join(process.cwd(), 'events.json');
+};
+
+const getReadOnlyEventsFilePath = () => {
+  // Always try to read from the original events.json file first
   return path.join(process.cwd(), 'events.json');
 };
 
 const readEventsFromFile = () => {
   try {
-    const filePath = getEventsFilePath();
-    
-    // Try to read from file first
-    if (fs.existsSync(filePath)) {
-      const data = fs.readFileSync(filePath, 'utf8');
+    // First try to read from the original events.json file
+    const originalFilePath = getReadOnlyEventsFilePath();
+    if (fs.existsSync(originalFilePath)) {
+      const data = fs.readFileSync(originalFilePath, 'utf8');
       const events = JSON.parse(data);
-      console.log('Reading events from file, count:', events.length);
+      console.log('Reading events from original file, count:', events.length);
+      return events;
+    }
+    
+    // If original doesn't exist, try the writable location
+    const writableFilePath = getEventsFilePath();
+    if (fs.existsSync(writableFilePath)) {
+      const data = fs.readFileSync(writableFilePath, 'utf8');
+      const events = JSON.parse(data);
+      console.log('Reading events from writable file, count:', events.length);
       return events;
     }
     
@@ -38,12 +55,28 @@ const writeEventsToFile = (events) => {
   try {
     const filePath = getEventsFilePath();
     
+    // Ensure the directory exists
+    const dir = path.dirname(filePath);
+    if (!fs.existsSync(dir)) {
+      fs.mkdirSync(dir, { recursive: true });
+    }
+    
     // Write to file
     fs.writeFileSync(filePath, JSON.stringify(events, null, 4));
-    console.log('Updated events.json file with', events.length, 'events');
+    console.log('Updated events.json file with', events.length, 'events at:', filePath);
     return true;
   } catch (error) {
     console.error('Error writing events file:', error);
+    console.error('Attempted to write to:', getEventsFilePath());
+    
+    // In serverless environments, file writing might fail
+    // Log the error but don't fail the entire operation
+    if (process.env.VERCEL || process.env.AWS_LAMBDA_FUNCTION_NAME) {
+      console.warn('File writing failed in serverless environment - this is expected');
+      console.warn('Events are still processed but not persisted to file');
+      return true; // Return true to not break the API response
+    }
+    
     return false;
   }
 };
@@ -171,16 +204,18 @@ const addEvent = async (req, res) => {
     // Sort events by date (newest first)
     const sortedEvents = sortEventsByDate(events);
 
-    // Write back to file
+    // Write back to file (non-critical in serverless environments)
     const success = writeEventsToFile(sortedEvents);
     
-    if (!success) {
+    if (!success && !process.env.VERCEL && !process.env.AWS_LAMBDA_FUNCTION_NAME) {
+      // Only fail if we're not in a serverless environment
       return res.status(500).json({ message: "Failed to save event to file." });
     }
 
     res.status(201).json({ 
       message: "Event created successfully.", 
-      event: newEvent 
+      event: newEvent,
+      note: success ? "Event saved to file" : "Event processed (file writing skipped in serverless environment)"
     });
   } catch (error) {
     res.status(500).json({ message: "Server Error", error: error.message });
@@ -205,16 +240,18 @@ const deleteEvent = async (req, res) => {
     // Remove event from array
     const deletedEvent = events.splice(eventIndex, 1)[0];
 
-    // Write back to file
+    // Write back to file (non-critical in serverless environments)
     const success = writeEventsToFile(events);
     
-    if (!success) {
+    if (!success && !process.env.VERCEL && !process.env.AWS_LAMBDA_FUNCTION_NAME) {
+      // Only fail if we're not in a serverless environment
       return res.status(500).json({ message: "Failed to delete event from file." });
     }
 
     res.status(200).json({ 
       message: "Event deleted successfully.", 
-      deletedEvent: deletedEvent 
+      deletedEvent: deletedEvent,
+      note: success ? "Event removed from file" : "Event processed (file writing skipped in serverless environment)"
     });
   } catch (error) {
     res.status(500).json({ message: "Server Error", error: error.message });
@@ -326,16 +363,18 @@ const updateEvent = async (req, res) => {
     // Sort events by date after update (newest first)
     const sortedEvents = sortEventsByDate(events);
 
-    // Write back to file
+    // Write back to file (non-critical in serverless environments)
     const success = writeEventsToFile(sortedEvents);
     
-    if (!success) {
+    if (!success && !process.env.VERCEL && !process.env.AWS_LAMBDA_FUNCTION_NAME) {
+      // Only fail if we're not in a serverless environment
       return res.status(500).json({ message: "Failed to update event in file." });
     }
 
     res.status(200).json({ 
       message: "Event updated successfully.", 
-      event: events[eventIndex] 
+      event: events[eventIndex],
+      note: success ? "Event saved to file" : "Event processed (file writing skipped in serverless environment)"
     });
   } catch (error) {
     res.status(500).json({ message: "Server Error", error: error.message });

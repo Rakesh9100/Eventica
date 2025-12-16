@@ -171,6 +171,52 @@ eventRouter.post('/sync', async (req, res) => {
 // Health check endpoint
 eventRouter.get('/health', healthCheck);
 
+// Migration endpoint (temporary)
+eventRouter.post('/migrate', async (req, res) => {
+  try {
+    const { events } = req.body;
+    
+    if (!Array.isArray(events)) {
+      return res.status(400).json({ message: "Events must be an array." });
+    }
+
+    console.log(`🚀 Starting migration of ${events.length} events...`);
+    
+    // Import the event service
+    const { default: eventService } = await import('../services/eventService.js');
+    
+    // Clear existing events
+    const mongodb = (await import('../config/mongodb.js')).default;
+    const collection = await mongodb.getCollection('events');
+    await collection.deleteMany({});
+    
+    // Prepare events with proper IDs and metadata
+    const eventsWithMetadata = events.map((event, index) => ({
+      ...event,
+      id: event.id || (index + 1).toString(),
+      createdAt: new Date(),
+      updatedAt: new Date()
+    }));
+    
+    // Insert all events
+    const result = await collection.insertMany(eventsWithMetadata);
+    
+    console.log(`✅ Successfully migrated ${result.insertedCount} events!`);
+    
+    res.status(200).json({
+      message: "Events migrated successfully",
+      count: result.insertedCount,
+      timestamp: new Date().toISOString()
+    });
+  } catch (error) {
+    console.error('❌ Migration error:', error);
+    res.status(500).json({
+      message: "Migration failed",
+      error: error.message
+    });
+  }
+});
+
 // Event CRUD endpoints
 eventRouter.post('/add', addEvent);
 eventRouter.put('/update/:id', updateEvent);

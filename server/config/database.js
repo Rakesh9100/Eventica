@@ -9,7 +9,7 @@ const connectDB = async () => {
       return db; // Return existing connection
     }
 
-    const uri = process.env.MONGODB_URI;
+    const uri = process.env.MONGODB_URI || 'mongodb+srv://eventica:password123@eventica-cluster.pydjzb6.mongodb.net/eventica?retryWrites=true&w=majority';
     if (!uri) {
       throw new Error('MONGODB_URI environment variable is not set');
     }

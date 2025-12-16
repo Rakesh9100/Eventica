@@ -54,29 +54,35 @@ const readEventsFromFile = () => {
 const writeEventsToFile = (events) => {
   try {
     const filePath = getEventsFilePath();
+    console.log('📁 Attempting to write to file path:', filePath);
+    console.log('📁 Environment variables - VERCEL:', process.env.VERCEL, 'AWS_LAMBDA:', process.env.AWS_LAMBDA_FUNCTION_NAME);
     
     // Ensure the directory exists
     const dir = path.dirname(filePath);
+    console.log('📁 Directory path:', dir);
     if (!fs.existsSync(dir)) {
+      console.log('📁 Creating directory:', dir);
       fs.mkdirSync(dir, { recursive: true });
     }
     
     // Write to file
     fs.writeFileSync(filePath, JSON.stringify(events, null, 4));
-    console.log('Updated events.json file with', events.length, 'events at:', filePath);
+    console.log('✅ Updated events.json file with', events.length, 'events at:', filePath);
     return true;
   } catch (error) {
-    console.error('Error writing events file:', error);
-    console.error('Attempted to write to:', getEventsFilePath());
+    console.error('❌ Error writing events file:', error.message);
+    console.error('❌ Error stack:', error.stack);
+    console.error('❌ Attempted to write to:', getEventsFilePath());
     
     // In serverless environments, file writing might fail
     // Log the error but don't fail the entire operation
     if (process.env.VERCEL || process.env.AWS_LAMBDA_FUNCTION_NAME) {
-      console.warn('File writing failed in serverless environment - this is expected');
-      console.warn('Events are still processed but not persisted to file');
+      console.warn('⚠️ File writing failed in serverless environment - this is expected');
+      console.warn('⚠️ Events are still processed but not persisted to file');
       return true; // Return true to not break the API response
     }
     
+    console.error('❌ File writing failed in non-serverless environment');
     return false;
   }
 };
@@ -316,10 +322,15 @@ const getEventbyId = async (req, res) => {
 // Update an event by ID
 const updateEvent = async (req, res) => {
   try {
+    console.log('🔄 updateEvent called with ID:', req.params.id);
+    console.log('🔄 Request body:', JSON.stringify(req.body, null, 2));
+    console.log('🔄 Environment check - VERCEL:', !!process.env.VERCEL);
+    
     const { id } = req.params;
     const { title, description, date, time, endTime, location, image, website } = req.body;
 
     if (!title || !description) {
+      console.log('❌ Missing title or description');
       return res.status(400).json({ message: "Title and description are required." });
     }
 
@@ -364,13 +375,18 @@ const updateEvent = async (req, res) => {
     const sortedEvents = sortEventsByDate(events);
 
     // Write back to file (non-critical in serverless environments)
+    console.log('💾 Attempting to write events to file...');
     const success = writeEventsToFile(sortedEvents);
+    console.log('💾 Write result:', success);
+    console.log('🌐 Environment - VERCEL:', !!process.env.VERCEL, 'AWS_LAMBDA:', !!process.env.AWS_LAMBDA_FUNCTION_NAME);
     
     if (!success && !process.env.VERCEL && !process.env.AWS_LAMBDA_FUNCTION_NAME) {
       // Only fail if we're not in a serverless environment
+      console.log('❌ File write failed in non-serverless environment');
       return res.status(500).json({ message: "Failed to update event in file." });
     }
 
+    console.log('✅ Event update successful');
     res.status(200).json({ 
       message: "Event updated successfully.", 
       event: events[eventIndex],

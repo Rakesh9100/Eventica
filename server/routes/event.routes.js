@@ -198,8 +198,11 @@ eventRouter.post('/migrate', async (req, res) => {
       updatedAt: new Date()
     }));
     
-    // Insert all events
-    const result = await collection.insertMany(eventsWithMetadata);
+    // Insert all events (only if there are events to insert)
+    let result = { insertedCount: 0 };
+    if (eventsWithMetadata.length > 0) {
+      result = await collection.insertMany(eventsWithMetadata);
+    }
     
     console.log(`✅ Successfully migrated ${result.insertedCount} events!`);
     

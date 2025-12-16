@@ -210,18 +210,32 @@ const addEvent = async (req, res) => {
     // Sort events by date (newest first)
     const sortedEvents = sortEventsByDate(events);
 
-    // Write back to file (non-critical in serverless environments)
-    const success = writeEventsToFile(sortedEvents);
+    // TEMPORARY: Skip file writing entirely in serverless environments
+    console.log('💾 Checking environment for file writing...');
+    console.log('🌐 Environment - VERCEL:', !!process.env.VERCEL, 'AWS_LAMBDA:', !!process.env.AWS_LAMBDA_FUNCTION_NAME);
     
-    if (!success && !process.env.VERCEL && !process.env.AWS_LAMBDA_FUNCTION_NAME) {
-      // Only fail if we're not in a serverless environment
-      return res.status(500).json({ message: "Failed to save event to file." });
+    let success = true;
+    let note = "Event processed successfully";
+    
+    // Only attempt file writing in local development
+    if (!process.env.VERCEL && !process.env.AWS_LAMBDA_FUNCTION_NAME) {
+      console.log('💾 Local environment detected - attempting file write...');
+      success = writeEventsToFile(sortedEvents);
+      note = success ? "Event saved to file" : "Failed to save to file";
+      
+      if (!success) {
+        console.log('❌ File write failed in local environment');
+        return res.status(500).json({ message: "Failed to save event to file." });
+      }
+    } else {
+      console.log('☁️ Serverless environment detected - skipping file write');
+      note = "Event processed (file writing skipped in serverless environment)";
     }
 
     res.status(201).json({ 
       message: "Event created successfully.", 
       event: newEvent,
-      note: success ? "Event saved to file" : "Event processed (file writing skipped in serverless environment)"
+      note: note
     });
   } catch (error) {
     res.status(500).json({ message: "Server Error", error: error.message });
@@ -246,18 +260,32 @@ const deleteEvent = async (req, res) => {
     // Remove event from array
     const deletedEvent = events.splice(eventIndex, 1)[0];
 
-    // Write back to file (non-critical in serverless environments)
-    const success = writeEventsToFile(events);
+    // TEMPORARY: Skip file writing entirely in serverless environments
+    console.log('💾 Checking environment for file writing...');
+    console.log('🌐 Environment - VERCEL:', !!process.env.VERCEL, 'AWS_LAMBDA:', !!process.env.AWS_LAMBDA_FUNCTION_NAME);
     
-    if (!success && !process.env.VERCEL && !process.env.AWS_LAMBDA_FUNCTION_NAME) {
-      // Only fail if we're not in a serverless environment
-      return res.status(500).json({ message: "Failed to delete event from file." });
+    let success = true;
+    let note = "Event processed successfully";
+    
+    // Only attempt file writing in local development
+    if (!process.env.VERCEL && !process.env.AWS_LAMBDA_FUNCTION_NAME) {
+      console.log('💾 Local environment detected - attempting file write...');
+      success = writeEventsToFile(events);
+      note = success ? "Event removed from file" : "Failed to remove from file";
+      
+      if (!success) {
+        console.log('❌ File write failed in local environment');
+        return res.status(500).json({ message: "Failed to delete event from file." });
+      }
+    } else {
+      console.log('☁️ Serverless environment detected - skipping file write');
+      note = "Event processed (file writing skipped in serverless environment)";
     }
 
     res.status(200).json({ 
       message: "Event deleted successfully.", 
       deletedEvent: deletedEvent,
-      note: success ? "Event removed from file" : "Event processed (file writing skipped in serverless environment)"
+      note: note
     });
   } catch (error) {
     res.status(500).json({ message: "Server Error", error: error.message });
@@ -374,23 +402,33 @@ const updateEvent = async (req, res) => {
     // Sort events by date after update (newest first)
     const sortedEvents = sortEventsByDate(events);
 
-    // Write back to file (non-critical in serverless environments)
-    console.log('💾 Attempting to write events to file...');
-    const success = writeEventsToFile(sortedEvents);
-    console.log('💾 Write result:', success);
+    // TEMPORARY: Skip file writing entirely in serverless environments
+    console.log('💾 Checking environment for file writing...');
     console.log('🌐 Environment - VERCEL:', !!process.env.VERCEL, 'AWS_LAMBDA:', !!process.env.AWS_LAMBDA_FUNCTION_NAME);
     
-    if (!success && !process.env.VERCEL && !process.env.AWS_LAMBDA_FUNCTION_NAME) {
-      // Only fail if we're not in a serverless environment
-      console.log('❌ File write failed in non-serverless environment');
-      return res.status(500).json({ message: "Failed to update event in file." });
+    let success = true;
+    let note = "Event processed successfully";
+    
+    // Only attempt file writing in local development
+    if (!process.env.VERCEL && !process.env.AWS_LAMBDA_FUNCTION_NAME) {
+      console.log('💾 Local environment detected - attempting file write...');
+      success = writeEventsToFile(sortedEvents);
+      note = success ? "Event saved to file" : "Failed to save to file";
+      
+      if (!success) {
+        console.log('❌ File write failed in local environment');
+        return res.status(500).json({ message: "Failed to update event in file." });
+      }
+    } else {
+      console.log('☁️ Serverless environment detected - skipping file write');
+      note = "Event processed (file writing skipped in serverless environment)";
     }
 
     console.log('✅ Event update successful');
     res.status(200).json({ 
       message: "Event updated successfully.", 
       event: events[eventIndex],
-      note: success ? "Event saved to file" : "Event processed (file writing skipped in serverless environment)"
+      note: note
     });
   } catch (error) {
     res.status(500).json({ message: "Server Error", error: error.message });

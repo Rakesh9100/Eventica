@@ -1,5 +1,5 @@
 import express from 'express';
-import { addEvent, updateEvent, deleteEvent, getAllEvents, getEventbyId } from '../controllers/event.controller.js';
+import { addEvent, updateEvent, deleteEvent, getAllEvents, getEventbyId } from '../controllers/event.controller.mongo.js';
 import { Event } from '../model/event.model.js';
 import { User } from '../model/user.model.js';
 import fs from 'fs';

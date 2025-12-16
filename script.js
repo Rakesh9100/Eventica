@@ -1,42 +1,56 @@
+console.log('🔄 Script.js loaded at', new Date().toISOString(), '- Version 2.0');
+
 // Function to fetch event data
 async function fetchEventData() {
+    console.log('🚀 fetchEventData called - Script updated at', new Date().toISOString());
     try {
         let eventsSource;
 
         // Try to fetch from backend API first
         try {
             const apiUrl = API_CONFIG.BASE_URL + API_CONFIG.ENDPOINTS.EVENTS;
+            console.log('🔗 Fetching from API URL:', apiUrl);
             const apiResponse = await fetch(apiUrl);
 
             if (apiResponse.ok) {
                 const apiEvents = await apiResponse.json();
+                console.log('✅ Successfully fetched', apiEvents.length, 'events from backend API');
+                console.log('📅 Sample event dates from backend:', apiEvents.slice(0, 3).map(e => ({ title: e.title, date: e.date })));
+                
                 // Convert backend events to frontend format
-                eventsSource = apiEvents.map(event => ({
-                    title: event.title,
-                    date: formatDateFromBackend(event.eventDate || event.date),
-                    time: event.time || 'Time TBD',
-                    location: event.location || 'Location TBD',
-                    description: event.description,
-                    image: event.image || 'https://via.placeholder.com/400x200?text=Event+Image',
-                    website: event.website || '#'
-                }));
-                console.log('Events loaded from backend API');
+                eventsSource = apiEvents.map(event => {
+                    return {
+                        title: event.title,
+                        date: event.date, // Use date field directly from backend (DD-MM-YYYY format)
+                        time: event.time || 'Time TBD',
+                        location: event.location || 'Location TBD',
+                        description: event.description,
+                        image: event.image || 'https://via.placeholder.com/400x200?text=Event+Image',
+                        website: event.website || '#'
+                    };
+                });
+                console.log('✅ Processed', eventsSource.length, 'events for frontend');
+                console.log('📅 Sample processed dates:', eventsSource.slice(0, 3).map(e => ({ title: e.title, date: e.date })));
             } else {
-                throw new Error('Backend API not available');
+                throw new Error(`Backend API returned ${apiResponse.status}: ${apiResponse.statusText}`);
             }
         } catch (apiError) {
-            console.log('Backend API not available, falling back to local events.json');
+            console.log('❌ Backend API error:', apiError.message);
+            console.log('🔄 Falling back to local events.json');
 
             // Fallback to local events.json
             let eventsJsonPath = 'events.json';
             if (window.location.pathname.includes('pastevents')) {
                 eventsJsonPath = '../../events.json';
             }
+            console.log('📁 Loading local events.json from:', eventsJsonPath);
             const response = await fetch(eventsJsonPath);
             if (!response.ok) {
                 throw new Error(`HTTP error! status: ${response.status}`);
             }
             eventsSource = await response.json();
+            console.log('✅ Loaded', eventsSource.length, 'events from local events.json');
+            console.log('📅 Sample local event dates:', eventsSource.slice(0, 3).map(e => ({ title: e.title, date: e.date })));
         }
 
         populateEventGrids(eventsSource);
@@ -48,14 +62,43 @@ async function fetchEventData() {
 
 // Helper function to format date from backend
 function formatDateFromBackend(dateString) {
-    if (!dateString) return new Date().toISOString().split('T')[0];
+    if (!dateString) {
+        const today = new Date();
+        const day = today.getDate().toString().padStart(2, '0');
+        const month = (today.getMonth() + 1).toString().padStart(2, '0');
+        const year = today.getFullYear();
+        return `${day}-${month}-${year}`;
+    }
 
     const date = new Date(dateString);
+    if (isNaN(date.getTime())) {
+        console.error('Invalid date:', dateString);
+        return formatDateFromBackend(null); // fallback to today
+    }
+
     const day = date.getDate().toString().padStart(2, '0');
     const month = (date.getMonth() + 1).toString().padStart(2, '0');
     const year = date.getFullYear();
 
     return `${day}-${month}-${year}`;
+}
+
+// Helper function to format time (24hr to 12hr with am/pm)
+function formatTime(timeString) {
+    if (!timeString || timeString === 'Time TBD') return timeString;
+    
+    try {
+        const [hours, minutes] = timeString.split(':');
+        const hour = parseInt(hours);
+        const min = minutes || '00';
+        
+        if (hour === 0) return `12:${min}am`;
+        if (hour < 12) return `${hour}:${min}am`;
+        if (hour === 12) return `12:${min}pm`;
+        return `${hour - 12}:${min}pm`;
+    } catch (error) {
+        return timeString; // Return original if parsing fails
+    }
 }
 
 // Helper function to show error messages
@@ -82,6 +125,47 @@ function showErrorMessage(message) {
     }, 5000);
 }
 
+// Helper functions for time-based sorting
+function parseEventTime(timeString) {
+    // Extract start time from "9:00am - 4:00pm" or "9:00am" format
+    if (!timeString || timeString === 'Time TBD') return null;
+    
+    const startTime = timeString.split(' - ')[0].trim();
+    return convertTimeToMinutes(startTime);
+}
+
+function convertTimeToMinutes(timeStr) {
+    // Convert "9:00am" to minutes since midnight for comparison
+    if (!timeStr) return 0;
+    
+    const match = timeStr.match(/(\d{1,2}):(\d{2})(am|pm)/i);
+    if (!match) return 0;
+    
+    let [, hours, minutes, period] = match;
+    hours = parseInt(hours);
+    minutes = parseInt(minutes);
+    
+    if (period.toLowerCase() === 'pm' && hours !== 12) {
+        hours += 12;
+    } else if (period.toLowerCase() === 'am' && hours === 12) {
+        hours = 0;
+    }
+    
+    return hours * 60 + minutes;
+}
+
+function compareEventTimes(timeA, timeB) {
+    // Compare two event times for sorting
+    const minutesA = parseEventTime(timeA);
+    const minutesB = parseEventTime(timeB);
+    
+    if (minutesA === null && minutesB === null) return 0;
+    if (minutesA === null) return 1; // Put "Time TBD" at the end
+    if (minutesB === null) return -1;
+    
+    return minutesA - minutesB; // Earlier times first
+}
+
 // Function to check if an event is in the past
 function isEventPast(eventDate) {
     const [day, month, year] = eventDate.split('-').map(Number);
@@ -99,16 +183,36 @@ function createEventCard(event, isPastEvent = false) {
     let formattedDate = 'Invalid Date';
 
     try {
-        // Parse date in DD-MM-YYYY format
-        const [day, month, year] = event.date.split('-').map(Number);
-        if (isNaN(day) || isNaN(month) || isNaN(year)) {
-            throw new Error('Invalid date format');
+        console.log(`🗓️ createEventCard: Processing "${event.title}" with date: "${event.date}"`);
+        
+        // Ensure we have a valid date string
+        if (!event.date || typeof event.date !== 'string') {
+            throw new Error(`Invalid date value: ${event.date}`);
         }
+        
+        // Parse date in DD-MM-YYYY format
+        const dateParts = event.date.split('-');
+        if (dateParts.length !== 3) {
+            throw new Error(`Invalid date format: ${event.date} (expected DD-MM-YYYY)`);
+        }
+        
+        const [day, month, year] = dateParts.map(Number);
+        console.log(`🗓️ Parsed date parts: day=${day}, month=${month}, year=${year}`);
+        
+        if (isNaN(day) || isNaN(month) || isNaN(year)) {
+            throw new Error(`Invalid date numbers: day=${day}, month=${month}, year=${year}`);
+        }
+        
+        if (day < 1 || day > 31 || month < 1 || month > 12 || year < 2000 || year > 3000) {
+            throw new Error(`Date values out of range: day=${day}, month=${month}, year=${year}`);
+        }
+        
         const eventDateObj = new Date(Date.UTC(year, month - 1, day));
+        console.log(`🗓️ Created date object: ${eventDateObj}`);
 
         // Check if the date is valid
         if (isNaN(eventDateObj.getTime())) {
-            throw new Error('Invalid date');
+            throw new Error('Invalid date object created');
         }
 
         // Get the components for the desired format
@@ -123,9 +227,11 @@ function createEventCard(event, isPastEvent = false) {
 
         // Combine components into the desired format
         formattedDate = `${dayNum} ${monthName} ${yearNum}, ${weekday}`;
+        console.log(`🗓️ Final formatted date: ${formattedDate}`);
     } catch (error) {
-        console.error(`Error formatting date for event "${event.title}":`, error);
-        formattedDate = 'Date not available';
+        console.error(`❌ Error formatting date for event "${event.title}":`, error);
+        console.error(`❌ Original date value:`, event.date, typeof event.date);
+        formattedDate = `Date error: ${event.date}`;
     }
 
     return `
@@ -155,18 +261,34 @@ function populateEventGrids(events) {
     const pastEvents = events.filter(event => isEventPast(event.date));
 
 
-    // Sort upcoming events by date in ascending order
+    // Sort upcoming events by date in ascending order, then by time
     upcomingEvents.sort((a, b) => {
         const dateA = new Date(a.date.split('-').reverse().join('-'));
         const dateB = new Date(b.date.split('-').reverse().join('-'));
-        return dateA - dateB;
+        
+        // First sort by date
+        const dateDiff = dateA - dateB;
+        if (dateDiff !== 0) {
+            return dateDiff;
+        }
+        
+        // If same date, sort by start time
+        return compareEventTimes(a.time, b.time);
     });
 
-    // Sort past events by date in descending order
+    // Sort past events by date in descending order, then by time
     pastEvents.sort((a, b) => {
         const dateA = new Date(a.date.split('-').reverse().join('-'));
         const dateB = new Date(b.date.split('-').reverse().join('-'));
-        return dateB - dateA;
+        
+        // First sort by date (descending)
+        const dateDiff = dateB - dateA;
+        if (dateDiff !== 0) {
+            return dateDiff;
+        }
+        
+        // If same date, sort by start time
+        return compareEventTimes(a.time, b.time);
     });
 
     // Populate upcoming events grid

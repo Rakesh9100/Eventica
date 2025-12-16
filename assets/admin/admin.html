@@ -50,55 +50,7 @@
                     </button>
                 </div>
 
-                <!-- Add Event Form -->
-                <div id="add-event-form" class="form-container hidden">
-                    <h3>Add New Event</h3>
-                    <form id="event-form">
-                        <div class="form-group">
-                            <label for="event-title">Event Title</label>
-                            <input type="text" id="event-title" name="title" required>
-                        </div>
 
-                        <div class="form-group">
-                            <label for="event-date">Event Date</label>
-                            <input type="date" id="event-date" name="date" required>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="event-time">Event Time</label>
-                            <input type="time" id="event-time" name="time" required>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="event-location">Location</label>
-                            <input type="text" id="event-location" name="location" required>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="event-image">Image URL</label>
-                            <input type="url" id="event-image" name="image" required>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="event-website">Website URL</label>
-                            <input type="url" id="event-website" name="website">
-                        </div>
-
-                        <div class="form-group">
-                            <label for="event-description">Description</label>
-                            <textarea id="event-description" name="description" rows="4" required></textarea>
-                        </div>
-
-                        <div class="form-actions">
-                            <button type="submit" class="btn btn-success">
-                                <i class="fas fa-save"></i> Save Event
-                            </button>
-                            <button type="button" id="cancel-form" class="btn btn-secondary">
-                                <i class="fas fa-times"></i> Cancel
-                            </button>
-                        </div>
-                    </form>
-                </div>
 
                 <!-- Events List -->
                 <div class="events-list">
@@ -109,6 +61,7 @@
                                 <tr>
                                     <th>Title</th>
                                     <th>Date</th>
+                                    <th>Time</th>
                                     <th>Location</th>
                                     <th>Status</th>
                                     <th>Actions</th>
@@ -164,6 +117,72 @@
     <div id="loading-overlay" class="loading-overlay hidden">
         <div class="spinner"></div>
         <p>Loading...</p>
+    </div>
+
+    <!-- Event Form Modal -->
+    <div id="event-modal" class="modal-overlay hidden">
+        <div class="modal-container">
+            <div class="modal-header">
+                <h3 id="modal-title">Add New Event</h3>
+                <button type="button" class="modal-close" id="modal-close-btn">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form id="event-form">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="event-title">Event Title</label>
+                            <input type="text" id="event-title" name="title" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="event-date">Event Date</label>
+                            <input type="date" id="event-date" name="date" required>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="event-time">Start Time</label>
+                            <input type="time" id="event-time" name="time" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="event-end-time">End Time</label>
+                            <input type="time" id="event-end-time" name="endTime" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="event-location">Location</label>
+                        <input type="text" id="event-location" name="location" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="event-image">Image URL</label>
+                        <input type="url" id="event-image" name="image" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="event-website">Website URL</label>
+                        <input type="url" id="event-website" name="website">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="event-description">Description</label>
+                        <textarea id="event-description" name="description" rows="4" required></textarea>
+                    </div>
+
+                    <div class="form-actions">
+                        <button type="submit" class="btn btn-success">
+                            <i class="fas fa-save"></i> Save Event
+                        </button>
+                        <button type="button" id="cancel-form" class="btn btn-secondary">
+                            <i class="fas fa-times"></i> Cancel
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
     </div>
 
     <!-- Success/Error Messages -->

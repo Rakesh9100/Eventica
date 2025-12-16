@@ -1,10 +1,9 @@
 // API Configuration
 const API_CONFIG = {
-    // Your deployed Vercel backend URL
-    BASE_URL: 'https://eventica-backend.vercel.app/api/v1',
-
-    // For local development, uncomment the line below
-    // BASE_URL: 'http://localhost:3000/api/v1',
+    // Automatically detect environment
+    BASE_URL: window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1' 
+        ? 'http://localhost:3001/api/v1'  // Local backend for local development
+        : 'https://eventica-backend.vercel.app/api/v1', // Production backend
 
     ENDPOINTS: {
         // Auth endpoints

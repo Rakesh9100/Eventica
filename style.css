@@ -633,14 +633,53 @@ body.dark-mode footer {
 }
 
 .event-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15);
+    transform: translateY(-8px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
     border-color: var(--primary-color);
 }
 
 .event-card:hover .blurred-image {
-    opacity: 0.6;
-    filter: blur(10px);
+    opacity: 0.3;
+    filter: blur(20px);
+    transform: scale(1.1);
+}
+
+.event-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, 
+        rgba(255, 255, 255, 0.95) 0%, 
+        rgba(255, 255, 255, 0.9) 50%, 
+        rgba(255, 255, 255, 0.85) 100%);
+    z-index: 0;
+    transition: all 0.3s ease;
+    border-radius: inherit;
+}
+
+.event-card:hover::before {
+    background: linear-gradient(135deg, 
+        rgba(255, 255, 255, 0.98) 0%, 
+        rgba(255, 255, 255, 0.95) 50%, 
+        rgba(255, 255, 255, 0.92) 100%);
+}
+
+/* Dark mode overlay adjustments */
+body.dark-mode .event-card::before {
+    background: linear-gradient(135deg, 
+        rgba(44, 44, 44, 0.95) 0%, 
+        rgba(44, 44, 44, 0.9) 50%, 
+        rgba(44, 44, 44, 0.85) 100%);
+}
+
+body.dark-mode .event-card:hover::before {
+    background: linear-gradient(135deg, 
+        rgba(44, 44, 44, 0.98) 0%, 
+        rgba(44, 44, 44, 0.95) 50%, 
+        rgba(44, 44, 44, 0.92) 100%);
 }
 
 .event-image {
@@ -649,10 +688,14 @@ body.dark-mode footer {
     height: 200px;
     object-fit: cover;
     border-radius: 10px;
+    position: relative;
+    z-index: 1;
 }
 
 .event-details {
     padding: 1.5rem;
+    position: relative;
+    z-index: 1;
 }
 
 .event-title {

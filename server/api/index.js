@@ -9,7 +9,7 @@ console.log('Starting Eventica backend...');
 console.log('Environment check - MONGO_URI exists:', !!process.env.MONGO_URI);
 console.log('Environment check - SECRET_KEY exists:', !!process.env.SECRET_KEY);
 
-// For Vercel serverless functions, we need to handle this differently
+// For Vercel serverless functions
 export default async function handler(req, res) {
   try {
     // Connect to database on each request (serverless pattern)

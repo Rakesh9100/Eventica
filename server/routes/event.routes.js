@@ -185,10 +185,15 @@ eventRouter.post('/migrate', async (req, res) => {
     // Import the event service
     const { default: eventService } = await import('../services/eventService.js');
     
-    // Clear existing events
+    // Get collection (don't clear on each request)
     const mongodb = (await import('../config/mongodb.js')).default;
     const collection = await mongodb.getCollection('events');
-    await collection.deleteMany({});
+    
+    // Only clear if this is the first batch (check if events array has a special flag)
+    if (req.body.clearFirst) {
+      console.log('🔄 Clearing existing events...');
+      await collection.deleteMany({});
+    }
     
     // Prepare events with proper IDs and metadata
     const eventsWithMetadata = events.map((event, index) => ({

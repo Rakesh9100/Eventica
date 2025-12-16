@@ -10,12 +10,8 @@ if (!secretKey) {
 
 // Helper functions for events.json operations
 const getEventsFilePath = () => {
-  // Check if we're in Vercel environment
-  if (process.env.VERCEL) {
-    return '/tmp/events.json';
-  }
-  // Local development
-  return path.join(process.cwd(), '..', 'events.json');
+  // Always use the events.json file in the server directory
+  return path.join(process.cwd(), 'events.json');
 };
 
 const readEventsFromFile = () => {

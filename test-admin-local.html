@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Admin Panel - Local Backend</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        .test-result { margin: 10px 0; padding: 10px; border-radius: 5px; }
+        .success { background-color: #d4edda; color: #155724; }
+        .error { background-color: #f8d7da; color: #721c24; }
+        .info { background-color: #d1ecf1; color: #0c5460; }
+        button { margin: 5px; padding: 10px 15px; cursor: pointer; }
+    </style>
+</head>
+<body>
+    <h1>🧪 Local Admin Panel Test</h1>
+    <p>Testing admin panel functionality with local backend (localhost:3002)</p>
+    
+    <div id="results"></div>
+    
+    <button onclick="testHealth()">Test Health</button>
+    <button onclick="testGetEvents()">Test Get Events</button>
+    <button onclick="testAddEvent()">Test Add Event</button>
+    <button onclick="testUpdateEvent()">Test Update Event</button>
+    <button onclick="testDeleteEvent()">Test Delete Event</button>
+    <button onclick="runAllTests()">Run All Tests</button>
+
+    <script src="config.js"></script>
+    <script>
+        const resultsDiv = document.getElementById('results');
+        let testEventId = null;
+
+        function addResult(message, type = 'info') {
+            const div = document.createElement('div');
+            div.className = `test-result ${type}`;
+            div.innerHTML = `${new Date().toLocaleTimeString()}: ${message}`;
+            resultsDiv.appendChild(div);
+            resultsDiv.scrollTop = resultsDiv.scrollHeight;
+        }
+
+        async function testHealth() {
+            try {
+                addResult('🔍 Testing health endpoint...', 'info');
+                const response = await fetch(`${API_CONFIG.BASE_URL}/event/health`);
+                const data = await response.json();
+                
+                if (data.status === 'healthy') {
+                    addResult(`✅ Health check passed - ${data.eventCount} events in database`, 'success');
+                } else {
+                    addResult(`❌ Health check failed - Status: ${data.status}`, 'error');
+                }
+            } catch (error) {
+                addResult(`❌ Health check error: ${error.message}`, 'error');
+            }
+        }
+
+        async function testGetEvents() {
+            try {
+                addResult('📖 Testing get all events...', 'info');
+                const response = await fetch(`${API_CONFIG.BASE_URL}/event/allevents`);
+                const events = await response.json();
+                
+                if (Array.isArray(events)) {
+                    addResult(`✅ Get events passed - Found ${events.length} events`, 'success');
+                    if (events.length > 0) {
+                        addResult(`📋 Sample event: ${events[0].title}`, 'info');
+                    }
+                } else {
+                    addResult(`❌ Get events failed - Invalid response format`, 'error');
+                }
+            } catch (error) {
+                addResult(`❌ Get events error: ${error.message}`, 'error');
+            }
+        }
+
+        async function testAddEvent() {
+            try {
+                addResult('➕ Testing add event...', 'info');
+                const newEvent = {
+                    title: 'Local Test Event ' + Date.now(),
+                    description: 'This is a test event created from local admin panel test',
+                    date: '2025-12-25',
+                    time: '10:00',
+                    endTime: '11:00',
+                    location: 'Local Test Location',
+                    image: 'https://via.placeholder.com/400x200?text=Local+Test',
+                    website: 'https://example.com'
+                };
+
+                const response = await fetch(`${API_CONFIG.BASE_URL}/event/add`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(newEvent)
+                });
+
+                const result = await response.json();
+                
+                if (response.ok) {
+                    testEventId = result.event.id;
+                    addResult(`✅ Add event passed - Created event ID: ${testEventId}`, 'success');
+                } else {
+                    addResult(`❌ Add event failed: ${result.message}`, 'error');
+                }
+            } catch (error) {
+                addResult(`❌ Add event error: ${error.message}`, 'error');
+            }
+        }
+
+        async function testUpdateEvent() {
+            if (!testEventId) {
+                addResult('⚠️ No test event ID available. Run Add Event test first.', 'error');
+                return;
+            }
+
+            try {
+                addResult(`✏️ Testing update event ID: ${testEventId}...`, 'info');
+                const updateData = {
+                    title: 'Updated Local Test Event ' + Date.now(),
+                    description: 'This event has been updated from local admin panel test',
+                    date: '2025-12-26',
+                    time: '14:00',
+                    endTime: '15:00',
+                    location: 'Updated Local Test Location',
+                    image: 'https://via.placeholder.com/400x200?text=Updated+Test',
+                    website: 'https://updated-example.com'
+                };
+
+                const response = await fetch(`${API_CONFIG.BASE_URL}/event/update/${testEventId}`, {
+                    method: 'PUT',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(updateData)
+                });
+
+                const result = await response.json();
+                
+                if (response.ok) {
+                    addResult(`✅ Update event passed - Updated event ID: ${testEventId}`, 'success');
+                } else {
+                    addResult(`❌ Update event failed: ${result.message}`, 'error');
+                }
+            } catch (error) {
+                addResult(`❌ Update event error: ${error.message}`, 'error');
+            }
+        }
+
+        async function testDeleteEvent() {
+            if (!testEventId) {
+                addResult('⚠️ No test event ID available. Run Add Event test first.', 'error');
+                return;
+            }
+
+            try {
+                addResult(`🗑️ Testing delete event ID: ${testEventId}...`, 'info');
+                const response = await fetch(`${API_CONFIG.BASE_URL}/event/delete/${testEventId}`, {
+                    method: 'DELETE'
+                });
+
+                const result = await response.json();
+                
+                if (response.ok) {
+                    addResult(`✅ Delete event passed - Deleted event ID: ${testEventId}`, 'success');
+                    testEventId = null;
+                } else {
+                    addResult(`❌ Delete event failed: ${result.message}`, 'error');
+                }
+            } catch (error) {
+                addResult(`❌ Delete event error: ${error.message}`, 'error');
+            }
+        }
+
+        async function runAllTests() {
+            addResult('🚀 Running all tests...', 'info');
+            await testHealth();
+            await new Promise(resolve => setTimeout(resolve, 500));
+            await testGetEvents();
+            await new Promise(resolve => setTimeout(resolve, 500));
+            await testAddEvent();
+            await new Promise(resolve => setTimeout(resolve, 500));
+            await testUpdateEvent();
+            await new Promise(resolve => setTimeout(resolve, 500));
+            await testDeleteEvent();
+            addResult('🎉 All tests completed!', 'success');
+        }
+
+        // Auto-run health check on page load
+        window.onload = () => {
+            addResult(`🔗 Testing connection to: ${API_CONFIG.BASE_URL}`, 'info');
+            testHealth();
+        };
+    </script>
+</body>
+</html>

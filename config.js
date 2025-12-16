@@ -2,7 +2,7 @@
 const API_CONFIG = {
     // Automatically detect environment
     BASE_URL: window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1' 
-        ? 'http://localhost:3001/api/v1'  // Local backend for local development
+        ? 'http://localhost:3002/api/v1'  // Local backend for local development
         : 'https://eventica-backend.vercel.app/api/v1', // Production backend
 
     ENDPOINTS: {

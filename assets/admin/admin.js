@@ -2,7 +2,7 @@
 class AdminDashboard {
     constructor() {
         this.apiBaseUrl = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1' 
-            ? 'http://localhost:3001/api/v1'  // Local backend
+            ? 'http://localhost:3002/api/v1'  // Local backend
             : 'https://eventica-backend.vercel.app/api/v1'; // Production backend
         this.token = localStorage.getItem('adminToken');
         this.init();

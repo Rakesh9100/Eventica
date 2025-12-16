@@ -16,7 +16,7 @@ const startServer = async () => {
     await mongodb.connect();
     console.log('✅ MongoDB connected for local development');
 
-    const PORT = process.env.PORT || 3001;
+    const PORT = process.env.PORT || 3002;
     app.listen(PORT, () => {
       console.log(`🚀 Eventica backend running on http://localhost:${PORT}`);
       console.log(`📊 API endpoints available at http://localhost:${PORT}/api/v1`);

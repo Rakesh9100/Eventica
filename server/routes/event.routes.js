@@ -206,7 +206,17 @@ eventRouter.post('/migrate', async (req, res) => {
     // Insert all events (only if there are events to insert)
     let result = { insertedCount: 0 };
     if (eventsWithMetadata.length > 0) {
-      result = await collection.insertMany(eventsWithMetadata);
+      // Handle large batches by inserting in smaller chunks
+      const chunkSize = 50;
+      let totalInserted = 0;
+      
+      for (let i = 0; i < eventsWithMetadata.length; i += chunkSize) {
+        const chunk = eventsWithMetadata.slice(i, i + chunkSize);
+        const chunkResult = await collection.insertMany(chunk);
+        totalInserted += chunkResult.insertedCount;
+      }
+      
+      result = { insertedCount: totalInserted };
     }
     
     console.log(`✅ Successfully migrated ${result.insertedCount} events!`);

@@ -1,5 +1,5 @@
 import express from 'express';
-import { addEvent, updateEvent, deleteEvent, getAllEvents, getEventbyId } from '../controllers/event.controller.mongo.js';
+import { addEvent, updateEvent, deleteEvent, getAllEvents, getEventById, healthCheck } from '../controllers/eventController.js';
 import { Event } from '../model/event.model.js';
 import { User } from '../model/user.model.js';
 import fs from 'fs';
@@ -168,10 +168,14 @@ eventRouter.post('/sync', async (req, res) => {
     }
 });
 
+// Health check endpoint
+eventRouter.get('/health', healthCheck);
+
+// Event CRUD endpoints
 eventRouter.post('/add', addEvent);
 eventRouter.put('/update/:id', updateEvent);
 eventRouter.delete('/delete/:id', deleteEvent);
 eventRouter.get('/allevents', getAllEvents);
-eventRouter.get('/:id', getEventbyId);
+eventRouter.get('/:id', getEventById);
 
 export { eventRouter };
